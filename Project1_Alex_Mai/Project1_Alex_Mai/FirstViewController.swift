@@ -10,6 +10,22 @@ import UIKit
 
 class FirstViewController: UITableViewController{
 
+    var trip: [String] = []
+    @IBOutlet var departLocation: UITextField!
+    @IBOutlet var arrivalLocation: UITextField!
+    @IBOutlet var departureDate: UITextField!
+    @IBOutlet var returnDate: UITextField!
+    @IBOutlet var numTravelers: UITextField!
+    @IBOutlet var travelerNationality: UITextField!
+    @IBOutlet var budget: UITextField!
+    @IBOutlet var ofAge: UISwitch!
+    @IBOutlet var disabilities: UISwitch!
+    @IBOutlet var purpose: UITextField!
+    
+    @IBAction func submitPressed(sender: UIButton) {
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -20,10 +36,11 @@ class FirstViewController: UITableViewController{
         tableView.contentInset = insets
         tableView.scrollIndicatorInsets = insets
         
-//        tableView.rowHeight = UITableViewAutomaticDimension
-//        tableView.estimatedRowHeight = 140
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 140
     }
 
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

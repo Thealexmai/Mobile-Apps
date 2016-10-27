@@ -11,7 +11,7 @@
         <scene sceneID="eIk-bq-gKe">
             <objects>
                 <tableViewController title="FirstViewController" id="5nU-kV-EaO" customClass="FirstViewController" customModule="Project1_Alex_Mai" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="QzG-0q-oJv">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="QzG-0q-oJv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -239,6 +239,9 @@
                                                     <frame key="frameInset" minX="152" minY="14" width="70" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="Submit"/>
+                                                    <connections>
+                                                        <action selector="submitPressedWithSender:" destination="5nU-kV-EaO" eventType="touchUpInside" id="NBa-Yn-y4w"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -252,6 +255,18 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Plan" image="Planning" id="Sye-NU-437"/>
+                    <connections>
+                        <outlet property="arrivalLocation" destination="ZJ0-KR-oUa" id="zrb-WH-z6Z"/>
+                        <outlet property="budget" destination="PiI-IQ-OBU" id="l8g-is-h5e"/>
+                        <outlet property="departLocation" destination="4As-1Q-5qe" id="Xn2-d1-Yse"/>
+                        <outlet property="departureDate" destination="0lE-ue-eGM" id="Oce-Mf-dwH"/>
+                        <outlet property="disabilities" destination="4f7-17-wL0" id="BQo-9A-LQ2"/>
+                        <outlet property="numTravelers" destination="OSt-O6-RGK" id="pTY-F0-KFF"/>
+                        <outlet property="ofAge" destination="T2y-AE-vk7" id="7ej-da-wuo"/>
+                        <outlet property="purpose" destination="dSU-m1-Ino" id="fSP-zw-Zax"/>
+                        <outlet property="returnDate" destination="arv-g9-6Ig" id="lzu-Pj-VOy"/>
+                        <outlet property="travelerNationality" destination="lga-uJ-vx8" id="lA2-mj-ky4"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wjj-TZ-hw5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
