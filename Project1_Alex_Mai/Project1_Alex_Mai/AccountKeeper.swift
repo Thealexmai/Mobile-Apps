@@ -9,10 +9,10 @@
 import Foundation
 
 class AccountKeeper: NSObject{
-    var accounts: [Account] = []
+    var accounts: [Account] = [Account("Donald Trump", "Male", 8, "trump.jpg", "admin", "password", "donald.trump@trump.com", "hillary.clinton@clinton.com")]
     
     func addAccount() {
-        accounts.append(Account("Alex Mai", "Male", 20, "trump.jpg", "admin", "password"))
+        
     }
     
     

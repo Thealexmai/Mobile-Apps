@@ -26,7 +26,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
                    shouldChangeCharactersIn range: NSRange,
                    replacementString string: String) -> Bool {
 
-        
         switch string {
             case "/", " ", "\\":
                 return false
@@ -39,8 +38,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
     //Login moves to next scene
     @IBAction func loginButtonPressed(sender: UIButton) {
         let firstViewController = self.storyboard!.instantiateViewController(withIdentifier: "TabBarController")
+
         
         self.present(firstViewController, animated:true, completion: nil)
+        
     }
     
     //Gesture recognize to dismiss keyboard
@@ -52,6 +53,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
     }
     
     override func didReceiveMemoryWarning() {
