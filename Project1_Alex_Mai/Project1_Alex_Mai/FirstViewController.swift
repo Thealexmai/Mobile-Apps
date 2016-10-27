@@ -23,7 +23,7 @@ class FirstViewController: UITableViewController{
     @IBOutlet var purpose: UITextField!
     
     @IBAction func submitPressed(sender: UIButton) {
-        
+        //take all inputs and pass to Second View Controller
     }
     
     override func viewDidLoad() {

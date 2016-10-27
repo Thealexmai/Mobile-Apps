@@ -310,7 +310,7 @@
             </objects>
             <point key="canvasLocation" x="750" y="185"/>
         </scene>
-        <!--Item-->
+        <!--About Me-->
         <scene sceneID="rBP-e1-gqO">
             <objects>
                 <tableViewController storyboardIdentifier="ThirdViewController" id="2yN-cf-mrI" customClass="ThirdViewController" customModule="Project1_Alex_Mai" customModuleProvider="target" sceneMemberID="viewController">
@@ -453,7 +453,7 @@
                             <outlet property="delegate" destination="2yN-cf-mrI" id="N1b-ea-d6o"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="J3E-pP-AO4"/>
+                    <tabBarItem key="tabBarItem" title="About Me" image="Contacts" id="J3E-pP-AO4"/>
                     <connections>
                         <outlet property="ageLabel" destination="mcq-lQ-1Jb" id="0eC-KW-hmq"/>
                         <outlet property="emailLabel" destination="mmU-CU-CiY" id="kS9-Hb-wPF"/>
@@ -558,6 +558,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Contacts" width="38" height="38"/>
         <image name="Personal" width="37" height="37"/>
         <image name="Planning" width="38" height="38"/>
     </resources>
