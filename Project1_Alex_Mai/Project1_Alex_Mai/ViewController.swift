@@ -35,6 +35,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         if let userLogin = loginText.text, let userPassword = passwordText.text {
             if AccountManager.sharedInstance.validatedAccount(userLogin, userPassword) {
                 print("Login successful")
+                print(AccountManager.sharedInstance.whoAmI)
                 let firstViewController = self.storyboard!.instantiateViewController(withIdentifier: "TabBarController")
                 
                 
