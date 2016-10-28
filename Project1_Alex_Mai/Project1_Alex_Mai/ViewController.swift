@@ -10,10 +10,13 @@ import UIKit
 
 class ViewController: UIViewController, UITextFieldDelegate {
     
+    var accounts = AccountKeeper()
+    
+    //Outlets
     @IBOutlet var loginText: UITextField!
     @IBOutlet var passwordText: UITextField!
 
-    
+    //Action
     @IBAction func loginTextChanged(sender: UITextField) {
         
     }
@@ -21,7 +24,33 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
     }
     
-    //Make sure "/" cannot be used in textfields to prevent injections
+    //Gesture recognize to dismiss keyboard
+    @IBAction func dismissKeyboard(sender: AnyObject) {
+        loginText.resignFirstResponder()
+        passwordText.resignFirstResponder()
+    }
+    
+    //Login button pressed
+    @IBAction func loginButtonPressed(sender: UIButton) {
+        
+        //if login and password validates, then move to next view
+        if let userLogin = loginText.text, let userPassword = passwordText.text {
+            if accounts.validatedAccount(userLogin, userPassword) {
+                print("Login successful")
+                let firstViewController = self.storyboard!.instantiateViewController(withIdentifier: "TabBarController")
+                
+                
+                self.present(firstViewController, animated:true, completion: nil)
+            }
+        }
+        
+        
+        
+    }
+    
+    
+    
+    //Delegate - Make sure "/" cannot be used in textfields to prevent injections
     func textField(_ textField: UITextField,
                    shouldChangeCharactersIn range: NSRange,
                    replacementString string: String) -> Bool {
@@ -35,24 +64,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     }
     
-    //Login moves to next scene
-    @IBAction func loginButtonPressed(sender: UIButton) {
-        let firstViewController = self.storyboard!.instantiateViewController(withIdentifier: "TabBarController")
-
-        
-        self.present(firstViewController, animated:true, completion: nil)
-        
-    }
-    
-    //Gesture recognize to dismiss keyboard
-    @IBAction func dismissKeyboard(sender: AnyObject) {
-        loginText.resignFirstResponder()
-        passwordText.resignFirstResponder()
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
         
     }
     
