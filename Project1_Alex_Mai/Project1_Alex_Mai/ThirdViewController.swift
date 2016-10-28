@@ -11,7 +11,6 @@ import UIKit
 class ThirdViewController: UITableViewController {
     
 //    var ViewController: ViewController
-    var accountKeeper: AccountKeeper!
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var emailLabel: UILabel!
     @IBOutlet var genderLabel: UILabel!
@@ -22,14 +21,14 @@ class ThirdViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        accountKeeper = AccountKeeper()
-        nameLabel.text = accountKeeper.accounts[0].name
-        emailLabel.text = accountKeeper.accounts[0].email
-        genderLabel.text = accountKeeper.accounts[0].gender
-        ageLabel.text = (String) (accountKeeper.accounts[0].age)
-        let image = UIImage(named: accountKeeper.accounts[0].image)
+        
+        nameLabel.text = AccountManager.sharedInstance.accounts[0].name
+        emailLabel.text = AccountManager.sharedInstance.accounts[0].email
+        genderLabel.text = AccountManager.sharedInstance.accounts[0].gender
+        ageLabel.text = (String) (AccountManager.sharedInstance.accounts[0].age)
+        let image = UIImage(named: AccountManager.sharedInstance.accounts[0].image)
         imageViewer.image = image
-        emergencyContact.text = accountKeeper.accounts[0].emergencyContact
+        emergencyContact.text = AccountManager.sharedInstance.accounts[0].emergencyContact
         
         
     }

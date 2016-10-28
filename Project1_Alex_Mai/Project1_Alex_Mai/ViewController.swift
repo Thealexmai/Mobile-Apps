@@ -9,9 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController, UITextFieldDelegate {
-    
-    var accounts = AccountKeeper()
-    
+        
     //Outlets
     @IBOutlet var loginText: UITextField!
     @IBOutlet var passwordText: UITextField!
@@ -33,9 +31,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
     //Login button pressed
     @IBAction func loginButtonPressed(sender: UIButton) {
         
+        AccountManager.sharedInstance.addAccount()
+        
         //if login and password validates, then move to next view
         if let userLogin = loginText.text, let userPassword = passwordText.text {
-            if accounts.validatedAccount(userLogin, userPassword) {
+            if AccountManager.sharedInstance.validatedAccount(userLogin, userPassword) {
                 print("Login successful")
                 let firstViewController = self.storyboard!.instantiateViewController(withIdentifier: "TabBarController")
                 
