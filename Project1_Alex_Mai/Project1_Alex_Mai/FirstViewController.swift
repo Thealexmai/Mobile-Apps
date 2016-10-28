@@ -8,6 +8,7 @@
 
 import UIKit
 
+//This class is a form - user asks an agent to plan item for him/her
 class FirstViewController: UITableViewController{
     
     @IBOutlet var departLocation: UITextField!
@@ -24,13 +25,14 @@ class FirstViewController: UITableViewController{
     @IBAction func submitPressed(sender: UIButton) {
         //take all inputs and pass to Second View Controller
         
+        purpose.resignFirstResponder()
 //        print(ofAge.isOn)
         
         if let departLocationText = departLocation.text, let arrivalLocationText = arrivalLocation.text, let departureDateText = departureDate.text, let returnDateText = returnDate.text, let numTravelersText = numTravelers.text, let travelerNationalityText = travelerNationality.text, let budgetText = budget.text, let purposeText = purpose.text {
             
-            var trip = Trip(departLocationText, arrivalLocationText, departureDateText, returnDateText, numTravelersText, travelerNationalityText, budgetText, ofAge.isOn, disabilities.isOn, purposeText)
+            let trip = Trip(departLocationText, arrivalLocationText, departureDateText, returnDateText, numTravelersText, travelerNationalityText, budgetText, ofAge.isOn, disabilities.isOn, purposeText)
             
-            TripManager.sharedInstance.trips
+            TripManager.sharedInstance.addTrip(AccountManager.sharedInstance.whoAmI, trip)
         }
     }
     

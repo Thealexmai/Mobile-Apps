@@ -8,6 +8,7 @@
 
 import Foundation
 
+//This class allows the user to create an account
 class Account:User {
     var login:String
     var password: String

@@ -8,6 +8,7 @@
 
 import Foundation
 
+//Creates a trip object - used for displaying all the trips
 class Trip:NSObject {
     var departLocationText:String , arrivalLocationText:String, departureDateText:String, returnDateText:String, numTravelersText:String, travelerNationalityText:String, budgetText:String, ofAge:Bool, disabilities:Bool, purposeText:String
     

@@ -7,6 +7,8 @@
 //
 
 import Foundation
+
+//Class is an object that details personal info
 class User:NSObject {
     var name: String
     var gender: String

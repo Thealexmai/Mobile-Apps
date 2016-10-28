@@ -8,6 +8,7 @@
 
 import UIKit
 
+//This class details the personal information of the user
 class ThirdViewController: UITableViewController {
     
 //    var ViewController: ViewController

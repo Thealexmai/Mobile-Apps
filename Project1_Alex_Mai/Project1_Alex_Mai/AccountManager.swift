@@ -8,10 +8,11 @@
 
 import Foundation
 
+//Singleton manages all accounts
 class AccountManager {
     //this class is a Singleton
     static let sharedInstance: AccountManager = {
-        let instance = AccountManager(array: [], whoAmI: "")
+        let instance = AccountManager()
         
         return instance
     }()
@@ -19,12 +20,12 @@ class AccountManager {
     var accounts: [Account]
     var whoAmI: String
     
-    private init(array: [Account], whoAmI:String) {
-        accounts = array
+    private init() {
         
+        //Create two generic accounts
         accounts = [Account("Donald Trump", "Male", 8, "trump.jpg", "admin", "password", "donald.trump@trump.com", "hillary.clinton@clinton.com"), Account("Hillary Clinton", "Female", 90, "clinton.jpg", "hillary", "clinton", "hillary.clinton@clinton.com", "donald.trump@trump.com")]
         
-        self.whoAmI = whoAmI
+        self.whoAmI = ""
     }
     
     func addAccount(_ name: String, _ gender: String, _ age: Int, _ image: String, _ login:String, _ password: String, _ email:String, _ emergencyContact:String) {

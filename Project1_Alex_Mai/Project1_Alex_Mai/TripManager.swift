@@ -8,21 +8,34 @@
 
 import Foundation
 
+//Singelton Manages all the trips
 class TripManager {
     static let sharedInstance: TripManager = {
-        let instance = TripManager(trips: [:])
+        let instance = TripManager()
         
         return instance
     }()
     
     //Local - key = login, value = stored trips
-    var trips: Dictionary<String, [Trip]>
+    var trips: [String: [Trip]]
     
     
-    private init(trips: Dictionary<String, [Trip]>) {
-        self.trips = trips
+    private init() {
+
+        trips = [String: [Trip]]()
+        
+        trips["admin"] = [Trip("Saint Louis", "Rochester", "09091999", "10112014", "2", "American", "300", false, false, "For fun")]
+        
+        
     }
     
-    
+    func addTrip(_ login:String, _ trip:Trip) {
+        
+        if var arr = trips[login] {
+            arr.append(trip)
+            trips[login] = arr
+            print("Done")
+        }
+    }
     
 }

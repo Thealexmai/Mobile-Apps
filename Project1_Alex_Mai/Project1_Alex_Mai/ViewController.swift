@@ -8,6 +8,7 @@
 
 import UIKit
 
+//This class handles the login
 class ViewController: UIViewController, UITextFieldDelegate {
         
     //Outlets
