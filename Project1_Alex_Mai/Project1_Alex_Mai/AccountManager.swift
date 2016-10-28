@@ -6,6 +6,8 @@
 //  Copyright © 2016 Mobile Application Development. All rights reserved.
 //
 
+import Foundation
+
 class AccountManager {
     //this class is a Singleton
     static let sharedInstance: AccountManager = {
@@ -22,8 +24,8 @@ class AccountManager {
         accounts = [Account("Donald Trump", "Male", 8, "trump.jpg", "admin", "password", "donald.trump@trump.com", "hillary.clinton@clinton.com"), Account("Hillary Clinton", "Female", 90, "clinton.jpg", "hillary", "clinton", "hillary.clinton@clinton.com", "donald.trump@trump.com")]
     }
     
-    func addAccount() {
-        let Alex = Account("Alex Mai", "Male", 20, "trump.jpg", "thealexmai", "password", "amai2@u.rochester.edu", "Dad")
+    func addAccount(_ name: String, _ gender: String, _ age: Int, _ image: String, _ login:String, _ password: String, _ email:String, _ emergencyContact:String) {
+        let Alex = Account(name, gender, age, image, login, password, email, emergencyContact)
         accounts.append(Alex)
     }
     

@@ -9,8 +9,7 @@
 import UIKit
 
 class FirstViewController: UITableViewController{
-
-    var trip: [String] = []
+    
     @IBOutlet var departLocation: UITextField!
     @IBOutlet var arrivalLocation: UITextField!
     @IBOutlet var departureDate: UITextField!
@@ -24,6 +23,15 @@ class FirstViewController: UITableViewController{
     
     @IBAction func submitPressed(sender: UIButton) {
         //take all inputs and pass to Second View Controller
+        
+//        print(ofAge.isOn)
+        
+        if let departLocationText = departLocation.text, let arrivalLocationText = arrivalLocation.text, let departureDateText = departureDate.text, let returnDateText = returnDate.text, let numTravelersText = numTravelers.text, let travelerNationalityText = travelerNationality.text, let budgetText = budget.text, let purposeText = purpose.text {
+            
+            var trip = Trip(departLocationText, arrivalLocationText, departureDateText, returnDateText, numTravelersText, travelerNationalityText, budgetText, ofAge.isOn, disabilities.isOn, purposeText)
+            
+            TripManager.sharedInstance.trips
+        }
     }
     
     override func viewDidLoad() {

@@ -14,7 +14,6 @@ class SecondViewController: UITableViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        print(AccountManager.sharedInstance.accounts[2].email)
     }
 
     override func didReceiveMemoryWarning() {

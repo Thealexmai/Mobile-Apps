@@ -11,6 +11,8 @@
 		FA8EA4511DC1963C00BEAAC6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8EA4501DC1963C00BEAAC6 /* User.swift */; };
 		FA8EA4531DC1989300BEAAC6 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8EA4521DC1989300BEAAC6 /* Account.swift */; };
 		FAAB1FEF1DC2DA790040604F /* AccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAB1FEE1DC2DA790040604F /* AccountManager.swift */; };
+		FAAB1FF11DC2E47B0040604F /* TripManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAB1FF01DC2E47B0040604F /* TripManager.swift */; };
+		FAAB1FF31DC2E9B70040604F /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAB1FF21DC2E9B70040604F /* Trip.swift */; };
 		FAF438801DC0FDAA0095D6FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF4387F1DC0FDAA0095D6FC /* AppDelegate.swift */; };
 		FAF438821DC0FDAA0095D6FC /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF438811DC0FDAA0095D6FC /* FirstViewController.swift */; };
 		FAF438841DC0FDAA0095D6FC /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF438831DC0FDAA0095D6FC /* SecondViewController.swift */; };
@@ -25,6 +27,8 @@
 		FA8EA4501DC1963C00BEAAC6 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FA8EA4521DC1989300BEAAC6 /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		FAAB1FEE1DC2DA790040604F /* AccountManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountManager.swift; sourceTree = "<group>"; };
+		FAAB1FF01DC2E47B0040604F /* TripManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripManager.swift; sourceTree = "<group>"; };
+		FAAB1FF21DC2E9B70040604F /* Trip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
 		FAF4387C1DC0FDAA0095D6FC /* Project1_Alex_Mai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project1_Alex_Mai.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAF4387F1DC0FDAA0095D6FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAF438811DC0FDAA0095D6FC /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -67,9 +71,11 @@
 			isa = PBXGroup;
 			children = (
 				FAF4387F1DC0FDAA0095D6FC /* AppDelegate.swift */,
-				FAAB1FEE1DC2DA790040604F /* AccountManager.swift */,
 				FA8EA4501DC1963C00BEAAC6 /* User.swift */,
 				FA8EA4521DC1989300BEAAC6 /* Account.swift */,
+				FAAB1FEE1DC2DA790040604F /* AccountManager.swift */,
+				FAAB1FF21DC2E9B70040604F /* Trip.swift */,
+				FAAB1FF01DC2E47B0040604F /* TripManager.swift */,
 				FAF438931DC110660095D6FC /* ViewController.swift */,
 				FAF438811DC0FDAA0095D6FC /* FirstViewController.swift */,
 				FAF438831DC0FDAA0095D6FC /* SecondViewController.swift */,
@@ -158,10 +164,12 @@
 				FAAB1FEF1DC2DA790040604F /* AccountManager.swift in Sources */,
 				FAF438801DC0FDAA0095D6FC /* AppDelegate.swift in Sources */,
 				FA8EA4511DC1963C00BEAAC6 /* User.swift in Sources */,
+				FAAB1FF31DC2E9B70040604F /* Trip.swift in Sources */,
 				FA8EA44D1DC1913000BEAAC6 /* ThirdViewController.swift in Sources */,
 				FAF438941DC110660095D6FC /* ViewController.swift in Sources */,
 				FAF438821DC0FDAA0095D6FC /* FirstViewController.swift in Sources */,
 				FA8EA4531DC1989300BEAAC6 /* Account.swift in Sources */,
+				FAAB1FF11DC2E47B0040604F /* TripManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
