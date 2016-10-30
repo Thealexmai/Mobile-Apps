@@ -22,7 +22,19 @@ class ThirdViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        //insets
+        let statusBarHeight = UIApplication.shared.statusBarFrame.height
+        let insets = UIEdgeInsets(top: statusBarHeight, left: 0, bottom: 0, right: 0)
         
+        tableView.contentInset = insets
+        tableView.scrollIndicatorInsets = insets
+        
+        //auto adjust table row height
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 65  
+        
+        
+        //autopopulate the user's information given login
         nameLabel.text = AccountManager.sharedInstance.accounts[0].name
         emailLabel.text = AccountManager.sharedInstance.accounts[0].email
         genderLabel.text = AccountManager.sharedInstance.accounts[0].gender

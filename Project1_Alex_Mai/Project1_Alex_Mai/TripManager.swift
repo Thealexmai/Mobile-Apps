@@ -24,7 +24,7 @@ class TripManager {
 
         trips = [String: [Trip]]()
         
-        trips["admin"] = [Trip("Saint Louis", "Rochester", "09091999", "10112014", "2", "American", "300", false, false, "For fun")]
+        trips["admin"] = [Trip("Saint Louis", "Rochester", "09091999", "10112014", "2", "American", "300", false, false, "For fun", "approved")]
         
         
     }
