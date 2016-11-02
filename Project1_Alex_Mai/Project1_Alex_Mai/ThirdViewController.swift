@@ -35,13 +35,13 @@ class ThirdViewController: UITableViewController {
         
         
         //autopopulate the user's information given login
-        nameLabel.text = AccountManager.sharedInstance.accounts[0].name
-        emailLabel.text = AccountManager.sharedInstance.accounts[0].email
-        genderLabel.text = AccountManager.sharedInstance.accounts[0].gender
-        ageLabel.text = (String) (AccountManager.sharedInstance.accounts[0].age)
-        let image = UIImage(named: AccountManager.sharedInstance.accounts[0].image)
+        nameLabel.text = AccountManager.sharedInstance.accounts[AccountManager.sharedInstance.getAccountIndex(AccountManager.sharedInstance.whoAmI)].name
+        emailLabel.text = AccountManager.sharedInstance.accounts[AccountManager.sharedInstance.getAccountIndex(AccountManager.sharedInstance.whoAmI)].email
+        genderLabel.text = AccountManager.sharedInstance.accounts[AccountManager.sharedInstance.getAccountIndex(AccountManager.sharedInstance.whoAmI)].gender
+        ageLabel.text = (String) (AccountManager.sharedInstance.accounts[AccountManager.sharedInstance.getAccountIndex(AccountManager.sharedInstance.whoAmI)].age)
+        let image = UIImage(named: AccountManager.sharedInstance.accounts[AccountManager.sharedInstance.getAccountIndex(AccountManager.sharedInstance.whoAmI)].image)
         imageViewer.image = image
-        emergencyContact.text = AccountManager.sharedInstance.accounts[0].emergencyContact
+        emergencyContact.text = AccountManager.sharedInstance.accounts[AccountManager.sharedInstance.getAccountIndex(AccountManager.sharedInstance.whoAmI)].emergencyContact
         
         
     }

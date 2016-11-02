@@ -29,10 +29,15 @@ class AccountManager {
     }
     
     func addAccount(_ name: String, _ gender: String, _ age: Int, _ image: String, _ login:String, _ password: String, _ email:String, _ emergencyContact:String) {
-        let Alex = Account(name, gender, age, image, login, password, email, emergencyContact)
-        accounts.append(Alex)
+        let newAccount = Account(name, gender, age, image, login, password, email, emergencyContact)
+        accounts.append(newAccount)
     }
     
+    func addAccount(_ newAccount: Account) {
+        accounts.append(newAccount)
+    }
+    
+    //for log in validation
     func validatedAccount(_ login:String, _ password:String) -> Bool {
         
         for i in 0..<accounts.count {
@@ -45,4 +50,27 @@ class AccountManager {
         return false
     }
     
+    //for registration - validate the login doesn't already exist
+    func matchesOtherLogin(_ login: String) -> Bool {
+        for i in 0..<accounts.count {
+            //if the login matches one that's already in the accounts array, return false
+            if login == accounts[i].login {
+                return true
+            }
+        }
+        
+        return false
+    }
+    
+    //for ThirdViewController to display user info
+    func getAccountIndex(_ login: String) -> Int {
+        var accountIndex: Int = 0
+        for i in 0..<accounts.count {
+            if login == accounts[i].login {
+                accountIndex = i
+            }
+        }
+        
+        return accountIndex
+    }
 }
