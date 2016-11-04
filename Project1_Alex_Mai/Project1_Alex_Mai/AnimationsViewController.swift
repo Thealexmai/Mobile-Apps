@@ -10,4 +10,19 @@ import UIKit
 
 class AnimationsViewController: UIViewController {
     
+    //outlet and actions
+    @IBOutlet weak var disappearLabel: UILabel!
+    @IBOutlet weak var takeoffLabel: UILabel!
+    
+    //constraints for takeoffLabel
+    @IBOutlet weak var takeoffX: NSLayoutConstraint!
+    @IBOutlet weak var takeoffY: NSLayoutConstraint!
+    
+    @IBAction func buttonPressed(_ sender: AnyObject) {
+        
+    }
+    
+    
+    
+    
 }
