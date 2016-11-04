@@ -36,7 +36,8 @@ class TripManager {
         let hardCodedTrips = [
             Trip("Rochester", "Hawaii", "01012017", "05012017", "2", "American", "10000", true, false, "Spontaneous vacation", "approved"),
             Trip("Rochester", "New York City", "12232016", "01162016", "1", "American", "1000", true, false, "Winter Break", "approved"),
-            Trip("Rochester", "Los Angeles", "01162017", "06302017", "1", "American", "6000", false, true, "Running away from winter", "approved"), Trip("Rochester", "Seattle", "06012017", "08282017", "1", "Chinese", "800", false, false, "Eat, Pray, Love", "approved"),
+            Trip("Rochester", "Los Angeles", "01162017", "06302017", "1", "American", "6000", false, true, "Running away from winter", "approved"),
+            Trip("Rochester", "Seattle", "06012017", "08282017", "1", "Chinese", "800", false, false, "Eat, Pray, Love", "approved"),
             Trip("Rochester", "Toronto", "11242017", "11282017", "5", "American, Indian", "600", false, true, "Thanksgiving break", "approved")]
         
         let randomIndex = arc4random_uniform(UInt32(hardCodedTrips.count))
