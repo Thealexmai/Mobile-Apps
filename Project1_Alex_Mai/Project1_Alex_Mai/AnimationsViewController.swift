@@ -20,9 +20,21 @@ class AnimationsViewController: UIViewController {
     
     @IBAction func buttonPressed(_ sender: AnyObject) {
         
+        alphaConstraint()
     }
     
-    
+    func alphaConstraint() {
+        UIView.animate(
+            withDuration: 2,
+            animations: {() -> Void in
+                self.disappearLabel.alpha = 0},
+            completion: {(Bool) -> Void in
+                UIView.animate(
+                    withDuration: 2,
+                    animations: {() -> Void in
+                        self.disappearLabel.alpha = 1.0})
+        })
+    }
     
     
 }
