@@ -20,7 +20,10 @@ class AnimationsViewController: UIViewController {
     
     @IBAction func buttonPressed(_ sender: AnyObject) {
         
-        alphaConstraint()
+        alphaConstraint() //alpha
+        backgroundColorChange() //color
+        labelFly() //constraint
+        
     }
     
     func alphaConstraint() {
@@ -35,6 +38,48 @@ class AnimationsViewController: UIViewController {
                         self.disappearLabel.alpha = 1.0})
         })
     }
+    
+    func backgroundColorChange() {
+        UIView.animate(
+            withDuration: 2,
+            animations: { () -> Void in
+                self.view.backgroundColor = UIColor.green},
+            completion: {(Bool) -> Void in
+                UIView.animate(
+                    withDuration: 2,
+                    animations: { () -> Void in
+                    self.view.backgroundColor = UIColor.white})
+        })
+    }
+    
+    func labelFly() {
+        let height = view.frame.height
+        let width = view.frame.width
+        
+        UIView.animate(
+            withDuration: 2,
+            delay: 0,
+            options: [.curveLinear],
+            animations: { () -> Void in
+                self.takeoffLabel.text = "And off I go"
+                self.takeoffX.constant += width
+                self.takeoffY.constant -= height
+                self.view.layoutIfNeeded() },
+            completion: {(Bool) -> Void in
+                UIView.animate(
+                    withDuration: 2,
+                    delay: 0,
+                    options: [.curveLinear],
+                    animations: { () -> Void in
+                        self.takeoffLabel.text = "Coming back"
+                        self.takeoffX.constant -= width
+                        self.takeoffY.constant += height
+                        self.view.layoutIfNeeded() },
+                    completion: { (Bool) -> Void in self.takeoffLabel.text = "Watch me takeoff"})
+        })
+        
+    }
+   
     
     
 }
