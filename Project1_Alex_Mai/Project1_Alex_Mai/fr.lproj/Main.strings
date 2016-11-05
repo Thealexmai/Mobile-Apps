@@ -1,0 +1,186 @@
+
+/* Class = "UILabel"; text = "return: MM/DD/YY"; ObjectID = "0Ou-Wn-kAa"; */
+"0Ou-Wn-kAa.text" = "date de retour: MM/DD/YY";
+
+/* Class = "UITextField"; placeholder = "Departure Date (MMDDYYYY)"; ObjectID = "0lE-ue-eGM"; */
+"0lE-ue-eGM.placeholder" = "date de départ: (MMDDYYYY)";
+
+/* Class = "UILabel"; text = "Age:"; ObjectID = "1Ms-1e-smc"; */
+"1Ms-1e-smc.text" = "âge:";
+
+/* Class = "UIButton"; normalTitle = "Edit"; ObjectID = "1ao-VX-E2i"; */
+"1ao-VX-E2i.normalTitle" = "éditer";
+
+/* Class = "UITextField"; placeholder = "Type here"; ObjectID = "1y8-wv-Ypw"; */
+"1y8-wv-Ypw.placeholder" = "écrivez ici";
+
+/* Class = "UITabBarController"; title = "TabBarController"; ObjectID = "49e-Tb-3d3"; */
+"49e-Tb-3d3.title" = "TabBarController";
+
+/* Class = "UITextField"; placeholder = "Departing location (City, State)"; ObjectID = "4As-1Q-5qe"; */
+"4As-1Q-5qe.placeholder" = "Lieu de départ: (Ville, état)";
+
+/* Class = "UITextField"; placeholder = "Email here"; ObjectID = "4gl-xc-Rai"; */
+"4gl-xc-Rai.placeholder" = "Email ici";
+
+/* Class = "UILabel"; text = "Watch me takeoff"; ObjectID = "50o-he-Qzv"; */
+"50o-he-Qzv.text" = "Regarde-moi décoller";
+
+/* Class = "UITextField"; placeholder = "Full name here"; ObjectID = "53z-uC-99g"; */
+"53z-uC-99g.placeholder" = "Nom complet ici";
+
+/* Class = "UITableViewController"; title = "FirstViewController"; ObjectID = "5nU-kV-EaO"; */
+"5nU-kV-EaO.title" = "FirstViewController";
+
+/* Class = "UILabel"; text = "Gender"; ObjectID = "9LI-mC-Cwf"; */
+"9LI-mC-Cwf.text" = "le genre";
+
+/* Class = "UIButton"; normalTitle = "Login"; ObjectID = "AF7-kJ-4nl"; */
+"AF7-kJ-4nl.normalTitle" = "Enterer";
+
+/* Class = "UITabBarItem"; title = "My Plans"; ObjectID = "CAH-QB-ywl"; */
+"CAH-QB-ywl.title" = "Mes plans";
+
+/* Class = "UIButton"; normalTitle = "Click Me"; ObjectID = "CJO-aB-OXU"; */
+"CJO-aB-OXU.normalTitle" = "Cliquez sur moi";
+
+/* Class = "UILabel"; text = "No"; ObjectID = "D9W-dc-SmM"; */
+"D9W-dc-SmM.text" = "Non";
+
+/* Class = "UILabel"; text = "status: pending"; ObjectID = "EQR-RX-nHG"; */
+"EQR-RX-nHG.text" = "Statut: En attente";
+
+/* Class = "UIButton"; normalTitle = "Submit"; ObjectID = "EVU-tc-fUo"; */
+"EVU-tc-fUo.normalTitle" = "Soumettre";
+
+/* Class = "UILabel"; text = "Emergency Email"; ObjectID = "Frt-VG-drr"; */
+"Frt-VG-drr.text" = "Courriel d'urgence";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "G2V-na-Sac"; */
+"G2V-na-Sac.text" = "prénom";
+
+/* Class = "UITableViewSection"; headerTitle = "Contact Info"; ObjectID = "GCL-R1-29G"; */
+"GCL-R1-29G.headerTitle" = "Informations de contact";
+
+/* Class = "UIButton"; normalTitle = "+Spontaneous trip"; ObjectID = "GOh-Mv-Sd5"; */
+"GOh-Mv-Sd5.normalTitle" = "+Voyage spontané";
+
+/* Class = "UITableViewSection"; headerTitle = "More Info"; ObjectID = "I0n-hE-r0T"; */
+"I0n-hE-r0T.headerTitle" = "Plus d'informations";
+
+/* Class = "UITabBarItem"; title = "About Me"; ObjectID = "J3E-pP-AO4"; */
+"J3E-pP-AO4.title" = "À propos de moi";
+
+/* Class = "UILabel"; text = "Disabilities?"; ObjectID = "NpI-iO-N47"; */
+"NpI-iO-N47.text" = "Handicapées?";
+
+/* Class = "UITextField"; placeholder = "Number of Travelers"; ObjectID = "OSt-O6-RGK"; */
+"OSt-O6-RGK.placeholder" = "Nombre de voyageurs";
+
+/* Class = "UITextField"; placeholder = "Max budget per person (include flight + hotel)"; ObjectID = "PiI-IQ-OBU"; */
+"PiI-IQ-OBU.placeholder" = "Budget maximum par personne (Inclure vol + hôtel)";
+
+/* Class = "UILabel"; text = "Emergency:"; ObjectID = "R2f-55-KCA"; */
+"R2f-55-KCA.text" = "Emergency:";
+
+/* Class = "UILabel"; text = "arrivalDestination"; ObjectID = "SP4-41-qXM"; */
+"SP4-41-qXM.text" = "arrivéeDestination";
+
+/* Class = "UITabBarItem"; title = "Plan"; ObjectID = "Sye-NU-437"; */
+"Sye-NU-437.title" = "Plan";
+
+/* Class = "UILabel"; text = "Gender:"; ObjectID = "UHG-ad-7yJ"; */
+"UHG-ad-7yJ.text" = "Le genre:";
+
+/* Class = "UILabel"; text = "Password:"; ObjectID = "Ure-SJ-Tyi"; */
+"Ure-SJ-Tyi.text" = "Mot de passe:";
+
+/* Class = "UITextField"; placeholder = "Login"; ObjectID = "VTC-ir-Nam"; */
+"VTC-ir-Nam.placeholder" = "Entrer";
+
+/* Class = "UITextField"; placeholder = "Emergency Email"; ObjectID = "YFt-xe-4Za"; */
+"YFt-xe-4Za.placeholder" = "Courriel d'urgence";
+
+/* Class = "UITextField"; placeholder = "Arrival Location (City, State)"; ObjectID = "ZJ0-KR-oUa"; */
+"ZJ0-KR-oUa.placeholder" = "Arrivée (Ville, Etat)";
+
+/* Class = "UIButton"; normalTitle = "Register"; ObjectID = "aRf-K2-PWZ"; */
+"aRf-K2-PWZ.normalTitle" = "Enregistrer";
+
+/* Class = "UITextField"; placeholder = "Login"; ObjectID = "ada-44-OoL"; */
+"ada-44-OoL.placeholder" = "Entrer";
+
+/* Class = "UITextField"; placeholder = "Return Date (MMDDYYYY)"; ObjectID = "arv-g9-6Ig"; */
+"arv-g9-6Ig.placeholder" = "Date de retour (MMDDYYYY)";
+
+/* Class = "UILabel"; text = "Full Name:"; ObjectID = "bgI-X1-iMJ"; */
+"bgI-X1-iMJ.text" = "Nom complet:";
+
+/* Class = "UILabel"; text = "Emergency Contact Email:"; ObjectID = "ccF-jH-UQ7"; */
+"ccF-jH-UQ7.text" = "Courriel de contact d'urgence:";
+
+/* Class = "UITableViewSection"; headerTitle = "A trip advisor will get back to you within 24 hours"; ObjectID = "cuw-xD-Z4n"; */
+"cuw-xD-Z4n.headerTitle" = "Un conseiller de voyage vous répondra dans les 24 heures";
+
+/* Class = "UITextField"; placeholder = "Purpose of trip?"; ObjectID = "dSU-m1-Ino"; */
+"dSU-m1-Ino.placeholder" = "But du voyage?";
+
+/* Class = "UILabel"; text = "Login:"; ObjectID = "eAs-1S-twV"; */
+"eAs-1S-twV.text" = "Login:";
+
+/* Class = "UIButton"; normalTitle = "Register"; ObjectID = "eKw-F3-pPj"; */
+"eKw-F3-pPj.normalTitle" = "Enregistrer";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "ejg-Y9-2NN"; */
+"ejg-Y9-2NN.text" = "Étiquette";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "hAv-0q-u6F"; */
+"hAv-0q-u6F.placeholder" = "Mot de passe";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "ig9-ED-mAv"; */
+"ig9-ED-mAv.placeholder" = "Mot de passe";
+
+/* Class = "UITextField"; placeholder = "Male, Female, etc."; ObjectID = "jHW-sn-Hcg"; */
+"jHW-sn-Hcg.placeholder" = "Male, Femelle, etc.";
+
+/* Class = "UITableViewSection"; headerTitle = "Account Info"; ObjectID = "jwP-s8-fYo"; */
+"jwP-s8-fYo.headerTitle" = "Informations de compte";
+
+/* Class = "UILabel"; text = "No"; ObjectID = "l53-uG-YzW"; */
+"l53-uG-YzW.text" = "Non";
+
+/* Class = "UITextField"; placeholder = "Nationalities of Travelers"; ObjectID = "lga-uJ-vx8"; */
+"lga-uJ-vx8.placeholder" = "Nationalités des voyageurs";
+
+/* Class = "UILabel"; text = "Yes"; ObjectID = "lvy-RK-SSM"; */
+"lvy-RK-SSM.text" = "Oui";
+
+/* Class = "UILabel"; text = "All above 21?"; ObjectID = "may-E6-cTy"; */
+"may-E6-cTy.text" = "Tous ci-dessus 21?";
+
+/* Class = "UILabel"; text = "#"; ObjectID = "mcq-lQ-1Jb"; */
+"mcq-lQ-1Jb.text" = "#";
+
+/* Class = "UILabel"; text = "Email"; ObjectID = "mmU-CU-CiY"; */
+"mmU-CU-CiY.text" = "Email";
+
+/* Class = "UILabel"; text = "Email:"; ObjectID = "nez-vL-72P"; */
+"nez-vL-72P.text" = "Email:";
+
+/* Class = "UILabel"; text = "Age"; ObjectID = "rAh-BN-ng7"; */
+"rAh-BN-ng7.text" = "Âge";
+
+/* Class = "UILabel"; text = "I will disappear"; ObjectID = "rGN-y4-aLd"; */
+"rGN-y4-aLd.text" = "Je vais disparaître";
+
+/* Class = "UILabel"; text = "depart: MM/DD/YY"; ObjectID = "tcb-DR-Zwd"; */
+"tcb-DR-Zwd.text" = "partir: MM/DD/YY";
+
+/* Class = "UILabel"; text = "Yes"; ObjectID = "vbY-Us-9aD"; */
+"vbY-Us-9aD.text" = "Oui";
+
+/* Class = "UIViewController"; title = "ViewController"; ObjectID = "wKJ-Tn-Dl3"; */
+"wKJ-Tn-Dl3.title" = "ViewController";
+
+/* Class = "UITableViewSection"; headerTitle = "Personal info"; ObjectID = "ytx-1q-axS"; */
+"ytx-1q-axS.headerTitle" = "Informations personnelles";
