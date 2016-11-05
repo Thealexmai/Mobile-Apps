@@ -11,3 +11,14 @@ Alex Mai (amai2@u.rochester.edu)
 (d) Segue - I use segues to transition from one View Controller to the next.
 (e) Translated all the strings to French. To see it happen, close the app, open settings and configure language to french, and then relaunch the application.
 (f) Supports dynamic type - you can resize the text in your general settings and the app will change the size of its fonts.
+
+4. Instructions:
+Launch the app and click on the buttons as you wish. If you want to log into an already generated account(I did for test purposes), here are the credentials:
+
+Login: admin
+Password: password
+
+or
+
+Login: hillary
+Password: clinton
