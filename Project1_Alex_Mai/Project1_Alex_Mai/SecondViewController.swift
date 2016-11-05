@@ -6,6 +6,9 @@
 //  Copyright © 2016 Mobile Application Development. All rights reserved.
 //
 
+// Localize strings with variables - https://craiggrummitt.com/2015/02/13/localization-playing-nicely-with-string-interpolation-in-swift/
+
+
 import UIKit
 
 //This class displays the trips the user has stored
@@ -55,10 +58,13 @@ class SecondViewController: UITableViewController {
             let trips = trip[indexPath.row]
             
             print("cell ran once")
-            cell.arrivalDestination.text = trips.arrivalLocationText
-            cell.departureDate.text = "depart: \(trips.friendlyDateFormat(trips.departureDateText))"
-            cell.returnDate.text = "return: \(trips.friendlyDateFormat(trips.returnDateText))"
-            cell.statusLabel.text = "status: \(trips.statusText)"
+            
+            
+            
+            cell.arrivalDestination.text = String(format: NSLocalizedString("cell-trip-arrival", comment: "%@"), trips.arrivalLocationText)
+            cell.departureDate.text = String(format: NSLocalizedString("cell-trip-departDate", comment: "depart: %@"), trips.friendlyDateFormat(trips.departureDateText))
+            cell.returnDate.text = String(format: NSLocalizedString("cell-trip-returnDate", comment: "return: %@"), trips.friendlyDateFormat(trips.returnDateText))
+            cell.statusLabel.text = String(format: NSLocalizedString("cell-trip-status", comment: "status: %@"), trips.statusText)
 //            cell.purpose.text = trips.purposeText
         }
 
@@ -88,15 +94,15 @@ class SecondViewController: UITableViewController {
     
     //confirm delete helper method
     func verifyDelete(_ name: String, _ delete: @escaping (UIAlertAction) -> Void) {
-        let title = "Delete \(name)?"
-        let message = "Are you sure that you want to delete \(title)?"
+        let title = String(format: NSLocalizedString("verifyDelete-title", comment: "Delete %@?"), name)
+        let message = String(format: NSLocalizedString("verifyDelete-message", comment: "Are you sure that you want to delete %@?"), title)
         
         let ac = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: NSLocalizedString("verifyDelete-cancel", comment: "Cancel"), style: .cancel, handler: nil)
         ac.addAction(cancelAction)
         
-        let deleteAction = UIAlertAction(title: "Delete", style: .destructive, handler: delete)
+        let deleteAction = UIAlertAction(title: NSLocalizedString("verifyDelete-delete", comment: "Delete"), style: .destructive, handler: delete)
         ac.addAction(deleteAction)
         
         present(ac, animated: true, completion: nil)
