@@ -13,7 +13,7 @@ import UIKit
 
 //This class displays the trips the user has stored
 class SecondViewController: UITableViewController {
-    //will need to use TripManager singleton because user can create trips from FirstVC
+    //will need to use TripManager singleton
     
     //Actions
     @IBAction func spontaneousButtonPressed(_ sender: UIButton) {

@@ -61,7 +61,7 @@ class AnimationsViewController: UIViewController {
             delay: 0,
             options: [.curveLinear],
             animations: { () -> Void in
-                self.takeoffLabel.text = "And off I go"
+                self.takeoffLabel.text = NSLocalizedString("label-fly", comment: "And off I go")
                 self.takeoffX.constant += width
                 self.takeoffY.constant -= height
                 self.view.layoutIfNeeded() },
@@ -71,11 +71,13 @@ class AnimationsViewController: UIViewController {
                     delay: 0,
                     options: [.curveLinear],
                     animations: { () -> Void in
-                        self.takeoffLabel.text = "Coming back"
+                        self.takeoffLabel.text = NSLocalizedString("label-fly-return", comment: "Coming back")
                         self.takeoffX.constant -= width
                         self.takeoffY.constant += height
                         self.view.layoutIfNeeded() },
-                    completion: { (Bool) -> Void in self.takeoffLabel.text = "Watch me takeoff"})
+                    completion: { (Bool) -> Void in
+                        self.takeoffLabel.text = NSLocalizedString("label-fly-takeoff", comment: "Watch me takeoff")
+                })
         })
         
     }
