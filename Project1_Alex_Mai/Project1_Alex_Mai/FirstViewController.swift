@@ -66,12 +66,12 @@ class FirstViewController: UITableViewController{
     
     //confirm button pressed
     func confirmButtonPressed() {
-        let title = "Information captured!"
-        let message = "The information you entered has been submitted to our team. One of our advisors will reach out to you for more information."
+        let title = NSLocalizedString("info-captured", comment: "Information captured!")
+        let message = NSLocalizedString("info-submitted", comment: "The information you entered has been submitted to our team. One of our advisors will reach out to you for more information.")
         
         let ac = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
         
-        let confirmAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        let confirmAction = UIAlertAction(title: NSLocalizedString("ok", comment: "Ok"), style: .default, handler: nil)
         ac.addAction(confirmAction)
 
         

@@ -29,19 +29,19 @@ class RegisterViewController: UITableViewController, UITextFieldDelegate {
             // if empty, then alert user to fill it in
             if (nameText.isEmpty || genderText.isEmpty || ageText.isEmpty || emailText.isEmpty || emergencyEmailText.isEmpty || lowercaseLogin.isEmpty || passwordText.isEmpty) {
                 //exit out of the method tell user that something's empty
-                promptUser("One of the fields is empty", true, { (UIAlertAction) in
+                promptUser(NSLocalizedString("emptyWarning", comment: "One of the fields is empty"), true, { (UIAlertAction) in
                     return
                 })
             }
             else if (AccountManager.sharedInstance.matchesOtherLogin(lowercaseLogin)) {
                 //if login matches one of the logins already in the array, then deny account creation and alert user to choose another
-                promptUser("Login already exists, please choose another one!", true, { (UIAlertAction) in
+                promptUser(NSLocalizedString("dualLoginWarning", comment: "Login already exists, please choose another one!"), true, { (UIAlertAction) in
                     return
                 })
             }
             else if (containsIllegalCharacters(nameText) || containsIllegalCharacters(ageText) || containsIllegalCharacters(emailText) || containsIllegalCharacters(emergencyEmailText) || containsIllegalCharacters(lowercaseLogin) || containsIllegalCharacters(passwordText)) {
                 //blacklisted a few characters
-                promptUser("Do not use any characters like / or \\", true, { (UIAlertAction) in
+                promptUser(NSLocalizedString("illegalCharactersWarning", comment: "Do not use any characters like / or \\"), true, { (UIAlertAction) in
                     return
                 })
             }
@@ -52,7 +52,7 @@ class RegisterViewController: UITableViewController, UITextFieldDelegate {
                 AccountManager.sharedInstance.addAccount(newAccount)
                 
                 //show alert saying true and dismiss this view controller
-                promptUser("Your account has been created! Please log in", false, { (UIAlertAction) in
+                promptUser(NSLocalizedString("accountCreatedWarning", comment: "Your account has been created! Please log in"), false, { (UIAlertAction) in
                     self.dismiss(animated: true, completion: nil)
                 })
                 
@@ -80,19 +80,19 @@ class RegisterViewController: UITableViewController, UITextFieldDelegate {
     func promptUser(_ message: String, _ warning:Bool, _ dismiss: @escaping (UIAlertAction) -> Void) {
         
         if (warning) {
-            let title = "Error!"
+            let title = NSLocalizedString("error", comment: "Error!")
             let ac = UIAlertController(title: title, message: message, preferredStyle: .alert)
 
-            let warningMessage = UIAlertAction(title: "Fix Error", style: .cancel, handler: dismiss)
+            let warningMessage = UIAlertAction(title: NSLocalizedString("fix-error", comment: "Fix Error"), style: .cancel, handler: dismiss)
             ac.addAction(warningMessage)
             
             present(ac, animated: true, completion: nil)
         }
         else {
-            let title = "Registration Successful!"
+            let title = NSLocalizedString("registration-successful", comment: "Registration Successful!")
             let ac = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
 
-            let confirmMessage = UIAlertAction(title: "Return to login", style: .default, handler: dismiss)
+            let confirmMessage = UIAlertAction(title: NSLocalizedString("return-login", comment: "Return to login"), style: .default, handler: dismiss)
             ac.addAction(confirmMessage)
             
             present(ac, animated: true, completion: nil)

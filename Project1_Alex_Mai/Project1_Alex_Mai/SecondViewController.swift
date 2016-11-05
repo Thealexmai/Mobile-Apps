@@ -23,11 +23,11 @@ class SecondViewController: UITableViewController {
     @IBAction func editButtonPressed(_ sender: UIButton) {
         if isEditing == false {
             setEditing(true, animated: true)
-            sender.setTitle("Done", for: UIControlState.normal)
+            sender.setTitle(NSLocalizedString("edit-done", comment: "Done"), for: UIControlState.normal)
         }
         else {
             setEditing(false, animated: true)
-            sender.setTitle("Edit", for: UIControlState.normal)
+            sender.setTitle(NSLocalizedString("edit-edit", comment: "Edit"), for: UIControlState.normal)
         }
     }
     
