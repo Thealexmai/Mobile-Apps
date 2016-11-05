@@ -20,20 +20,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="briefcase" translatesAutoresizingMaskIntoConstraints="NO" id="g5r-Qt-PC5"/>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Play. Live. Overcome. Yes!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NJz-OR-Vf2">
-                                <fontDescription key="fontDescription" type="italicSystem" pointSize="20"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.30778670310974121" green="0.36318093538284302" blue="0.4504542350769043" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="NJz-OR-Vf2" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-0.5" id="6su-CC-fze"/>
+                            <constraint firstItem="g5r-Qt-PC5" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="109" id="0xR-lS-joe"/>
                             <constraint firstItem="g5r-Qt-PC5" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="74" id="70d-fX-Dfb"/>
                             <constraint firstAttribute="trailingMargin" secondItem="g5r-Qt-PC5" secondAttribute="trailing" constant="74" id="BQV-G7-Pzu"/>
-                            <constraint firstItem="NJz-OR-Vf2" firstAttribute="top" secondItem="g5r-Qt-PC5" secondAttribute="bottom" constant="38" id="NRU-bt-V0l"/>
-                            <constraint firstItem="NJz-OR-Vf2" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="beb-tX-MIU"/>
-                            <constraint firstItem="g5r-Qt-PC5" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="109" id="nun-XH-dl0"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="g5r-Qt-PC5" secondAttribute="bottom" constant="270" id="XD7-ef-t9p"/>
                         </constraints>
                     </view>
                 </viewController>

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		FA09FAFE1DC58DDB00ED9599 /* SecondViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA09FAFD1DC58DDB00ED9599 /* SecondViewCell.swift */; };
 		FA48D45C1DCE4E9D00D0B4D2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA48D45E1DCE4E9D00D0B4D2 /* Localizable.strings */; };
+		FA48D4621DCE8EC500D0B4D2 /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA48D4611DCE8EC500D0B4D2 /* LaunchScreenViewController.swift */; };
 		FA8EA44D1DC1913000BEAAC6 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8EA44C1DC1913000BEAAC6 /* ThirdViewController.swift */; };
 		FA8EA4511DC1963C00BEAAC6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8EA4501DC1963C00BEAAC6 /* User.swift */; };
 		FA8EA4531DC1989300BEAAC6 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8EA4521DC1989300BEAAC6 /* Account.swift */; };
@@ -35,6 +36,7 @@
 		FA48D45D1DCE4E9D00D0B4D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FA48D45F1DCE4E9E00D0B4D2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FA48D4601DCE4E9F00D0B4D2 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FA48D4611DCE8EC500D0B4D2 /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
 		FA8EA44C1DC1913000BEAAC6 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		FA8EA4501DC1963C00BEAAC6 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FA8EA4521DC1989300BEAAC6 /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 				FAF438851DC0FDAA0095D6FC /* Main.storyboard */,
 				FAF438881DC0FDAA0095D6FC /* Assets.xcassets */,
 				FAF4388A1DC0FDAA0095D6FC /* LaunchScreen.storyboard */,
+				FA48D4611DCE8EC500D0B4D2 /* LaunchScreenViewController.swift */,
 				FAF4388D1DC0FDAA0095D6FC /* Info.plist */,
 			);
 			path = Project1_Alex_Mai;
@@ -186,6 +189,7 @@
 				FAF438801DC0FDAA0095D6FC /* AppDelegate.swift in Sources */,
 				FAC5B1ED1DC8ED6B006C9156 /* RegisterViewController.swift in Sources */,
 				FA8EA4511DC1963C00BEAAC6 /* User.swift in Sources */,
+				FA48D4621DCE8EC500D0B4D2 /* LaunchScreenViewController.swift in Sources */,
 				FAAB1FF31DC2E9B70040604F /* Trip.swift in Sources */,
 				FA8EA44D1DC1913000BEAAC6 /* ThirdViewController.swift in Sources */,
 				FAF438941DC110660095D6FC /* ViewController.swift in Sources */,
