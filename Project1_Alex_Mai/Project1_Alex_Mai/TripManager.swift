@@ -26,19 +26,25 @@ class TripManager {
         
         //initialize the array
         trips[AccountManager.sharedInstance.whoAmI] = []
-        trips["admin"] = [Trip("Saint Louis", "Rochester", "09092018", "10112018", "2", "American", "900", false, false, "For fun", "approved")]
+        trips["admin"] = [Trip("Saint Louis", "Rochester", "09092018", "10112018", "2", NSLocalizedString("American", comment: "American"), "900", false, false, NSLocalizedString("For fun", comment: "For fun purpose of trip"), NSLocalizedString("approved", comment: "approved status"))]
         
         
     }
     
     //adding trips
     func addSpontaneousTrip(_ login: String) -> Int? {
+        
+        //for localization
+        let statusApproved = NSLocalizedString("approved", comment: "approved status")
+        let rochester = NSLocalizedString("Rochester", comment: "Rochester as a location")
+        
+        
         let hardCodedTrips = [
-            Trip("Rochester", "Hawaii", "01012017", "05012017", "2", "American", "10000", true, false, "Spontaneous vacation", "approved"),
-            Trip("Rochester", "New York City", "12232016", "01162016", "1", "American", "1000", true, false, "Winter Break", "approved"),
-            Trip("Rochester", "Los Angeles", "01162017", "06302017", "1", "American", "6000", false, true, "Running away from winter", "approved"),
-            Trip("Rochester", "Seattle", "06012017", "08282017", "1", "Chinese", "800", false, false, "Eat, Pray, Love", "approved"),
-            Trip("Rochester", "Toronto", "11242017", "11282017", "5", "American, Indian", "600", false, true, "Thanksgiving break", "approved")]
+            Trip(rochester, String(format: NSLocalizedString("%@", comment: "location"), "Hawaii"), "01012017", "05012017", "2", "American", "10000", true, false, String(format: NSLocalizedString("%@", comment: "reason"), "Spontaneous vacation"), statusApproved),
+            Trip(rochester, String(format: NSLocalizedString("%@", comment: "location"), "New York City"), "12232016", "01162016", "1", String(format: NSLocalizedString("%@", comment: "nationality"), "American"), "1000", true, false, String(format: NSLocalizedString("%@", comment: "reason"), "Winter Break"), statusApproved),
+            Trip(rochester, String(format: NSLocalizedString("%@", comment: "location"), "Los Angeles"), "01162017", "06302017", "1", String(format: NSLocalizedString("%@", comment: "nationality"), "American"), "6000", false, true, String(format: NSLocalizedString("%@", comment: "reason"), "Running away from winter"), statusApproved),
+            Trip(rochester, String(format: NSLocalizedString("%@", comment: "location"), "Seattle"), "06012017", "08282017", "1", String(format: NSLocalizedString("%@", comment: "nationality"), "Chinese"), "800", false, false, String(format: NSLocalizedString("%@", comment: "reason"), "Eat, Pray, Love"), statusApproved),
+            Trip(rochester, String(format: NSLocalizedString("%@", comment: "location"), "Toronto"), "11242017", "11282017", "5", String(format: NSLocalizedString("%@", comment: "nationality"), "American, Indian"), "600", false, true, String(format: NSLocalizedString("%@", comment: "reason"), "Thanksgiving break"), statusApproved)]
         
         let randomIndex = arc4random_uniform(UInt32(hardCodedTrips.count))
         let randomTrip = hardCodedTrips[Int(randomIndex)]

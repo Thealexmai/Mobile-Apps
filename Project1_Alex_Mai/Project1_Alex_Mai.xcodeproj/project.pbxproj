@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		FA09FAFE1DC58DDB00ED9599 /* SecondViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA09FAFD1DC58DDB00ED9599 /* SecondViewCell.swift */; };
-		FA3C462F1DCDB10A0027BE25 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA3C46311DCDB10A0027BE25 /* Localizable.strings */; };
+		FA48D45C1DCE4E9D00D0B4D2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA48D45E1DCE4E9D00D0B4D2 /* Localizable.strings */; };
 		FA8EA44D1DC1913000BEAAC6 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8EA44C1DC1913000BEAAC6 /* ThirdViewController.swift */; };
 		FA8EA4511DC1963C00BEAAC6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8EA4501DC1963C00BEAAC6 /* User.swift */; };
 		FA8EA4531DC1989300BEAAC6 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8EA4521DC1989300BEAAC6 /* Account.swift */; };
@@ -32,9 +32,9 @@
 		FA3C46281DCD984A0027BE25 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
 		FA3C462A1DCD98530027BE25 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		FA3C462C1DCD98590027BE25 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		FA3C46301DCDB10A0027BE25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
-		FA3C46321DCDB10C0027BE25 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		FA3C46331DCDB10D0027BE25 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FA48D45D1DCE4E9D00D0B4D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FA48D45F1DCE4E9E00D0B4D2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FA48D4601DCE4E9F00D0B4D2 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FA8EA44C1DC1913000BEAAC6 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		FA8EA4501DC1963C00BEAAC6 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FA8EA4521DC1989300BEAAC6 /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
@@ -68,7 +68,7 @@
 		FAF438731DC0FDAA0095D6FC = {
 			isa = PBXGroup;
 			children = (
-				FA3C46311DCDB10A0027BE25 /* Localizable.strings */,
+				FA48D45E1DCE4E9D00D0B4D2 /* Localizable.strings */,
 				FAF4387E1DC0FDAA0095D6FC /* Project1_Alex_Mai */,
 				FAF4387D1DC0FDAA0095D6FC /* Products */,
 			);
@@ -167,7 +167,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAF4388C1DC0FDAA0095D6FC /* LaunchScreen.storyboard in Resources */,
-				FA3C462F1DCDB10A0027BE25 /* Localizable.strings in Resources */,
+				FA48D45C1DCE4E9D00D0B4D2 /* Localizable.strings in Resources */,
 				FAF438891DC0FDAA0095D6FC /* Assets.xcassets in Resources */,
 				FAF438871DC0FDAA0095D6FC /* Main.storyboard in Resources */,
 			);
@@ -199,12 +199,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		FA3C46311DCDB10A0027BE25 /* Localizable.strings */ = {
+		FA48D45E1DCE4E9D00D0B4D2 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				FA3C46301DCDB10A0027BE25 /* Base */,
-				FA3C46321DCDB10C0027BE25 /* en */,
-				FA3C46331DCDB10D0027BE25 /* fr */,
+				FA48D45D1DCE4E9D00D0B4D2 /* Base */,
+				FA48D45F1DCE4E9E00D0B4D2 /* en */,
+				FA48D4601DCE4E9F00D0B4D2 /* fr */,
 			);
 			name = Localizable.strings;
 			path = Project1_Alex_Mai;
