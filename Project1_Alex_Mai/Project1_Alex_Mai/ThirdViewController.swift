@@ -8,10 +8,10 @@
 
 import UIKit
 
+
 //This class details the personal information of the user
 class ThirdViewController: UITableViewController {
     
-//    var ViewController: ViewController
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var emailLabel: UILabel!
     @IBOutlet var genderLabel: UILabel!
@@ -22,6 +22,7 @@ class ThirdViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
         //insets
         let statusBarHeight = UIApplication.shared.statusBarFrame.height
         let insets = UIEdgeInsets(top: statusBarHeight, left: 0, bottom: 0, right: 0)
