@@ -47,6 +47,9 @@
 /* Class = "UILabel"; text = "No"; ObjectID = "D9W-dc-SmM"; */
 "D9W-dc-SmM.text" = "Non";
 
+/* Class = "UILabel"; text = "Play. Live. Overcome. Yes!"; ObjectID = "EEy-ef-Iy7"; */
+"EEy-ef-Iy7.text" = "Jouer. Vivre. Surmonter. Oui!";
+
 /* Class = "UILabel"; text = "status: pending"; ObjectID = "EQR-RX-nHG"; */
 "EQR-RX-nHG.text" = "Statut: En attente";
 
