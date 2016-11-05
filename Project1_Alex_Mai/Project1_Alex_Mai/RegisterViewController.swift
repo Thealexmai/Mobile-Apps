@@ -101,9 +101,11 @@ class RegisterViewController: UITableViewController, UITextFieldDelegate {
     }
     
     
-    //Delegate for dismissing keyboard
+    //Delegate for dismissing keyboard when presses return button
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
         textField.resignFirstResponder()
+        
         return false
     }
     
