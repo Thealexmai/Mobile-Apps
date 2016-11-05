@@ -8,25 +8,17 @@
 
 import UIKit
 
-class RegisterViewController: UITableViewController {
+class RegisterViewController: UITableViewController, UITextFieldDelegate {
     
-
     @IBOutlet weak var name: UITextField!
-    
     @IBOutlet weak var gender: UITextField!
-    
     @IBOutlet weak var age: UITextField!
-    
     @IBOutlet weak var email: UITextField!
-    
     @IBOutlet weak var emergencyEmail: UITextField!
-    
     @IBOutlet weak var login: UITextField!
-    
     @IBOutlet weak var password: UITextField!
     
     @IBAction func registerPressed(_ sender: UIButton) {
-        
         
         //if all are not null
         if let nameText = name.text, let genderText = gender.text, let ageText = age.text, let emailText = email.text, let emergencyEmailText = emergencyEmail.text, let loginText = login.text, let passwordText = password.text {
@@ -49,7 +41,7 @@ class RegisterViewController: UITableViewController {
             }
             else if (containsIllegalCharacters(nameText) || containsIllegalCharacters(ageText) || containsIllegalCharacters(emailText) || containsIllegalCharacters(emergencyEmailText) || containsIllegalCharacters(lowercaseLogin) || containsIllegalCharacters(passwordText)) {
                 //blacklisted a few characters
-                promptUser("Do not use any characters like /\\", true, { (UIAlertAction) in
+                promptUser("Do not use any characters like / or \\", true, { (UIAlertAction) in
                     return
                 })
             }
@@ -106,6 +98,13 @@ class RegisterViewController: UITableViewController {
             present(ac, animated: true, completion: nil)
         }
         
+    }
+    
+    
+    //Delegate for dismissing keyboard
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return false
     }
     
     override func viewDidLoad() {
