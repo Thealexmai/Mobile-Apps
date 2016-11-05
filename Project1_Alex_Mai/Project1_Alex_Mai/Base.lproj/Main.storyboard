@@ -259,16 +259,25 @@
                                             <frame key="frameInset" width="375" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EVU-tc-fUo">
-                                                    <state key="normal" title="Submit"/>
+                                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EVU-tc-fUo">
+                                                    <color key="backgroundColor" red="0.37647058820000001" green="0.34509803919999998" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <state key="normal" title="Submit">
+                                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </state>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="4"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                     <connections>
                                                         <action selector="submitPressedWithSender:" destination="5nU-kV-EaO" eventType="touchUpInside" id="NBa-Yn-y4w"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="EVU-tc-fUo" secondAttribute="trailing" constant="145" id="O7e-0a-Wqs"/>
+                                                <constraint firstItem="EVU-tc-fUo" firstAttribute="leading" secondItem="M3P-Up-GHj" secondAttribute="leadingMargin" constant="144" id="heY-Rq-YNR"/>
                                                 <constraint firstItem="EVU-tc-fUo" firstAttribute="centerY" secondItem="M3P-Up-GHj" secondAttribute="centerY" id="ksp-dS-2Vq"/>
-                                                <constraint firstItem="EVU-tc-fUo" firstAttribute="centerX" secondItem="M3P-Up-GHj" secondAttribute="centerX" id="vIj-Il-f3X"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -298,7 +307,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wjj-TZ-hw5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="749.60000000000002" y="-470.01499250374815"/>
+            <point key="canvasLocation" x="749.60000000000002" y="-470.46476761619192"/>
         </scene>
         <!--About Me-->
         <scene sceneID="rBP-e1-gqO">
@@ -653,8 +662,17 @@
                                     <outlet property="delegate" destination="wKJ-Tn-Dl3" id="525-p5-BXH"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eKw-F3-pPj">
-                                <state key="normal" title="Register"/>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eKw-F3-pPj">
+                                <color key="backgroundColor" red="1" green="0.72941176470588232" blue="0.42745098039215684" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                <state key="normal" title="Register">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <segue destination="RME-2Y-Wnu" kind="presentation" id="mQZ-y6-WbA"/>
                                 </connections>
@@ -667,7 +685,7 @@
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="6"/>
+                                        <integer key="value" value="4"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
@@ -678,14 +696,15 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="eKw-F3-pPj" firstAttribute="centerX" secondItem="h64-cR-wrq" secondAttribute="centerX" id="0PN-5e-Bok"/>
                             <constraint firstAttribute="trailingMargin" secondItem="AF7-kJ-4nl" secondAttribute="trailing" constant="131" id="4Zy-lB-gDH"/>
                             <constraint firstItem="AF7-kJ-4nl" firstAttribute="top" secondItem="ig9-ED-mAv" secondAttribute="bottom" constant="24" id="4ra-72-5Yc"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ada-44-OoL" secondAttribute="trailing" constant="70" id="BF8-sk-L7p"/>
                             <constraint firstItem="AF7-kJ-4nl" firstAttribute="leading" secondItem="h64-cR-wrq" secondAttribute="leadingMargin" constant="130" id="CS5-dZ-2yI"/>
                             <constraint firstItem="ada-44-OoL" firstAttribute="leading" secondItem="h64-cR-wrq" secondAttribute="leadingMargin" constant="70" id="IOB-Oh-Y1I"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="eKw-F3-pPj" secondAttribute="trailing" constant="131" id="gMb-EK-usH"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ig9-ED-mAv" secondAttribute="trailing" constant="70" id="ggd-YN-ep2"/>
                             <constraint firstItem="eKw-F3-pPj" firstAttribute="top" secondItem="AF7-kJ-4nl" secondAttribute="bottom" constant="16" id="hMl-ya-ftk"/>
+                            <constraint firstItem="eKw-F3-pPj" firstAttribute="leading" secondItem="h64-cR-wrq" secondAttribute="leadingMargin" constant="130" id="jwG-8B-WKq"/>
                             <constraint firstItem="ig9-ED-mAv" firstAttribute="top" secondItem="ada-44-OoL" secondAttribute="bottom" constant="12" id="k4u-7h-LFx"/>
                             <constraint firstItem="ig9-ED-mAv" firstAttribute="leading" secondItem="h64-cR-wrq" secondAttribute="leadingMargin" constant="70" id="uwD-WS-nb7"/>
                             <constraint firstItem="AF7-kJ-4nl" firstAttribute="centerY" secondItem="h64-cR-wrq" secondAttribute="centerY" constant="53.5" id="yVP-J1-tXb"/>
@@ -954,17 +973,26 @@
                                             <frame key="frameInset" width="375" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aRf-K2-PWZ">
+                                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aRf-K2-PWZ">
+                                                    <color key="backgroundColor" red="1" green="0.72941176470000002" blue="0.42745098040000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                    <state key="normal" title="Register"/>
+                                                    <state key="normal" title="Register">
+                                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </state>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="4"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                     <connections>
                                                         <action selector="registerPressed:" destination="RME-2Y-Wnu" eventType="touchUpInside" id="ZaH-Wb-GOD"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="aRf-K2-PWZ" secondAttribute="trailing" constant="139" id="5Rb-Sg-rPN"/>
                                                 <constraint firstItem="aRf-K2-PWZ" firstAttribute="centerY" secondItem="rFL-kT-NbJ" secondAttribute="centerY" id="Z81-6Y-u3L"/>
-                                                <constraint firstItem="aRf-K2-PWZ" firstAttribute="centerX" secondItem="rFL-kT-NbJ" secondAttribute="centerX" id="taP-yQ-baY"/>
+                                                <constraint firstItem="aRf-K2-PWZ" firstAttribute="leading" secondItem="rFL-kT-NbJ" secondAttribute="leadingMargin" constant="138" id="oG5-XP-cpF"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
