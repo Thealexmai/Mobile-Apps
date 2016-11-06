@@ -22,3 +22,9 @@ or
 
 Login: hillary
 Password: clinton
+
+Otherwise, if you want to register for an account, you may do so. After you register, you can immediately use those credentials to log in.
+
+5. Attachments
+proposal.pdf - for the proposal requirement of the project
+SampleOutput - images of the functioning application.
