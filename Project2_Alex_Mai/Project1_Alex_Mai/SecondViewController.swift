@@ -16,23 +16,6 @@ class SecondViewController: UITableViewController {
     //will need to use TripManager singleton
     
     //Actions
-    @IBAction func spontaneousButtonPressed(_ sender: UIButton) {
-        if let index = TripManager.sharedInstance.addSpontaneousTrip(AccountManager.sharedInstance.whoAmI) {
-            let indexPath = NSIndexPath(row: index, section: 0)
-            tableView.insertRows(at: [indexPath as IndexPath], with: .automatic)
-            
-        }
-    }
-    @IBAction func editButtonPressed(_ sender: UIButton) {
-        if isEditing == false {
-            setEditing(true, animated: true)
-            sender.setTitle(NSLocalizedString("edit-done", comment: "Done"), for: UIControlState.normal)
-        }
-        else {
-            setEditing(false, animated: true)
-            sender.setTitle(NSLocalizedString("edit-edit", comment: "Edit"), for: UIControlState.normal)
-        }
-    }
     
     //how many cells need to be created
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -114,10 +97,10 @@ class SecondViewController: UITableViewController {
         //insets
         let statusBarHeight = UIApplication.shared.statusBarFrame.height
         let tabBarHeight = self.tabBarController?.tabBar.frame.size.height
-        let insets = UIEdgeInsets(top: statusBarHeight, left: 0, bottom: tabBarHeight!, right: 0)
-        
-        tableView.contentInset = insets
-        tableView.scrollIndicatorInsets = insets
+//        let insets = UIEdgeInsets(top: statusBarHeight, left: 0, bottom: tabBarHeight!, right: 0)
+//        
+//        tableView.contentInset = insets
+//        tableView.scrollIndicatorInsets = insets
         
         //adjust height if necessary
         tableView.rowHeight = UITableViewAutomaticDimension

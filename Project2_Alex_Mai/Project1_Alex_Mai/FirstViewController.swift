@@ -83,8 +83,7 @@ class FirstViewController: UITableViewController{
         
         //insets
         let statusBarHeight = UIApplication.shared.statusBarFrame.height
-        let tabBarHeight = self.tabBarController?.tabBar.frame.size.height
-        let insets = UIEdgeInsets(top: statusBarHeight, left: 0, bottom: tabBarHeight!, right: 0)
+        let insets = UIEdgeInsets(top: statusBarHeight, left: 0, bottom: 0, right: 0)
         
         tableView.contentInset = insets
         tableView.scrollIndicatorInsets = insets
