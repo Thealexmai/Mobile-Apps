@@ -13,7 +13,6 @@
 		FA8EA44D1DC1913000BEAAC6 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8EA44C1DC1913000BEAAC6 /* ThirdViewController.swift */; };
 		FA8EA4511DC1963C00BEAAC6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8EA4501DC1963C00BEAAC6 /* User.swift */; };
 		FA8EA4531DC1989300BEAAC6 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8EA4521DC1989300BEAAC6 /* Account.swift */; };
-		FAA4FBB31DC95FC80052B5C0 /* AnimationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA4FBB21DC95FC80052B5C0 /* AnimationsViewController.swift */; };
 		FAAB1FEF1DC2DA790040604F /* AccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAB1FEE1DC2DA790040604F /* AccountManager.swift */; };
 		FAAB1FF11DC2E47B0040604F /* TripManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAB1FF01DC2E47B0040604F /* TripManager.swift */; };
 		FAAB1FF31DC2E9B70040604F /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAB1FF21DC2E9B70040604F /* Trip.swift */; };
@@ -40,7 +39,6 @@
 		FA8EA44C1DC1913000BEAAC6 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		FA8EA4501DC1963C00BEAAC6 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FA8EA4521DC1989300BEAAC6 /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
-		FAA4FBB21DC95FC80052B5C0 /* AnimationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationsViewController.swift; sourceTree = "<group>"; };
 		FAAB1FEE1DC2DA790040604F /* AccountManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountManager.swift; sourceTree = "<group>"; };
 		FAAB1FF01DC2E47B0040604F /* TripManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripManager.swift; sourceTree = "<group>"; };
 		FAAB1FF21DC2E9B70040604F /* Trip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
@@ -99,7 +97,6 @@
 				FA09FAFD1DC58DDB00ED9599 /* SecondViewCell.swift */,
 				FAF438831DC0FDAA0095D6FC /* SecondViewController.swift */,
 				FA8EA44C1DC1913000BEAAC6 /* ThirdViewController.swift */,
-				FAA4FBB21DC95FC80052B5C0 /* AnimationsViewController.swift */,
 				FAF438851DC0FDAA0095D6FC /* Main.storyboard */,
 				FAF438881DC0FDAA0095D6FC /* Assets.xcassets */,
 				FAF4388A1DC0FDAA0095D6FC /* LaunchScreen.storyboard */,
@@ -185,7 +182,6 @@
 			files = (
 				FAF438841DC0FDAA0095D6FC /* SecondViewController.swift in Sources */,
 				FAAB1FEF1DC2DA790040604F /* AccountManager.swift in Sources */,
-				FAA4FBB31DC95FC80052B5C0 /* AnimationsViewController.swift in Sources */,
 				FAF438801DC0FDAA0095D6FC /* AppDelegate.swift in Sources */,
 				FAC5B1ED1DC8ED6B006C9156 /* RegisterViewController.swift in Sources */,
 				FA8EA4511DC1963C00BEAAC6 /* User.swift in Sources */,

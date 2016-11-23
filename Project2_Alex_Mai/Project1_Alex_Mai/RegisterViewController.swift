@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RegisterViewController: UITableViewController, UITextFieldDelegate {
+class RegisterViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var name: UITextField!
     @IBOutlet weak var gender: UITextField!
