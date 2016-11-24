@@ -10,38 +10,69 @@ import UIKit
 
 
 //This class details the personal information of the user
-class ThirdViewController: UITableViewController {
+class ThirdViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate {
     
+    //MARK: Outlets
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var emailLabel: UILabel!
     @IBOutlet var genderLabel: UILabel!
     @IBOutlet var ageLabel: UILabel!
     @IBOutlet var imageViewer: UIImageView!
     @IBOutlet var emergencyContact: UILabel!
+    @IBOutlet weak var cameraItem: UIBarButtonItem!
     
+    //MARK: Actions
+    @IBAction func cameraButtonPressed(_ sender: AnyObject) {
+        let picker = UIImagePickerController()
+        
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            picker.sourceType = .camera
+            picker.delegate = self
+            present(picker, animated: true, completion: nil)
+            
+        }
+    }
+    
+    @IBAction func photolibraryButtonPressed(_ sender: AnyObject) {
+        let picker = UIImagePickerController()
+
+        picker.sourceType = .photoLibrary
+        picker.delegate = self
+        present(picker, animated: true, completion: nil)
+    }
+    
+    // picker controller delegate
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        let photo = info[UIImagePickerControllerOriginalImage] as! UIImage
+        
+        //save the photo - tie the unique ID from caption to the image, so link
+        ImagePersister.saveImage(photo, forEmail: AccountManager.sharedInstance.accounts[AccountManager.sharedInstance.getAccountIndex(AccountManager.sharedInstance.whoAmI)].email)
+        
+        imageViewer.image = photo
+        
+        dismiss(animated: true, completion: nil)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
-        //insets
-        let statusBarHeight = UIApplication.shared.statusBarFrame.height
-        let insets = UIEdgeInsets(top: statusBarHeight, left: 0, bottom: 0, right: 0)
-        
-        tableView.contentInset = insets
-        tableView.scrollIndicatorInsets = insets
+        //if camera is unavailable, disable the camera button
+        if !UIImagePickerController.isSourceTypeAvailable(.camera) {
+            cameraItem.isEnabled = false
+        }
         
         //autopopulate the user's information given login
         nameLabel.text = AccountManager.sharedInstance.accounts[AccountManager.sharedInstance.getAccountIndex(AccountManager.sharedInstance.whoAmI)].name
         emailLabel.text = AccountManager.sharedInstance.accounts[AccountManager.sharedInstance.getAccountIndex(AccountManager.sharedInstance.whoAmI)].email
         genderLabel.text = AccountManager.sharedInstance.accounts[AccountManager.sharedInstance.getAccountIndex(AccountManager.sharedInstance.whoAmI)].gender
         ageLabel.text = (String) (AccountManager.sharedInstance.accounts[AccountManager.sharedInstance.getAccountIndex(AccountManager.sharedInstance.whoAmI)].age)
-        let image = UIImage(named: AccountManager.sharedInstance.accounts[AccountManager.sharedInstance.getAccountIndex(AccountManager.sharedInstance.whoAmI)].image)
-        imageViewer.image = image
+        
+        if let img = ImagePersister.getImage(forEmail: AccountManager.sharedInstance.accounts[AccountManager.sharedInstance.getAccountIndex(AccountManager.sharedInstance.whoAmI)].email) {
+            imageViewer.image = img
+        }
+        
         emergencyContact.text = AccountManager.sharedInstance.accounts[AccountManager.sharedInstance.getAccountIndex(AccountManager.sharedInstance.whoAmI)].emergencyContact
         
-        //auto adjust table row height
-        tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 65
     }
     
     override func didReceiveMemoryWarning() {

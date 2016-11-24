@@ -37,10 +37,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
             if AccountManager.sharedInstance.validatedAccount(userLogin, userPassword) {
                 print("Login successful")
                 print(AccountManager.sharedInstance.whoAmI)
-                let firstViewController = self.storyboard!.instantiateViewController(withIdentifier: "TabBarController")
+                let navController = self.storyboard!.instantiateViewController(withIdentifier: "NavController")
                 
                 
-                self.present(firstViewController, animated:true, completion: nil)
+                self.present(navController, animated:true, completion: nil)
             }
         }
         

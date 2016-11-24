@@ -15,8 +15,6 @@ import UIKit
 class SecondViewController: UITableViewController {
     //will need to use TripManager singleton
     
-    //Actions
-    
     //how many cells need to be created
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
@@ -47,8 +45,7 @@ class SecondViewController: UITableViewController {
             cell.arrivalDestination.text = String(format: NSLocalizedString("cell-trip-arrival", comment: "%@"), trips.arrivalLocationText)
             cell.departureDate.text = String(format: NSLocalizedString("cell-trip-departDate", comment: "depart: %@"), trips.friendlyDateFormat(trips.departureDateText))
             cell.returnDate.text = String(format: NSLocalizedString("cell-trip-returnDate", comment: "return: %@"), trips.friendlyDateFormat(trips.returnDateText))
-            cell.statusLabel.text = String(format: NSLocalizedString("cell-trip-status", comment: "status: %@"), trips.statusText)
-//            cell.purpose.text = trips.purposeText
+
         }
 
         
@@ -96,11 +93,11 @@ class SecondViewController: UITableViewController {
         
         //insets
         let statusBarHeight = UIApplication.shared.statusBarFrame.height
-        let tabBarHeight = self.tabBarController?.tabBar.frame.size.height
-//        let insets = UIEdgeInsets(top: statusBarHeight, left: 0, bottom: tabBarHeight!, right: 0)
-//        
-//        tableView.contentInset = insets
-//        tableView.scrollIndicatorInsets = insets
+
+        let insets = UIEdgeInsets(top: statusBarHeight, left: 0, bottom: 0, right: 0)
+        
+        tableView.contentInset = insets
+        tableView.scrollIndicatorInsets = insets
         
         //adjust height if necessary
         tableView.rowHeight = UITableViewAutomaticDimension
