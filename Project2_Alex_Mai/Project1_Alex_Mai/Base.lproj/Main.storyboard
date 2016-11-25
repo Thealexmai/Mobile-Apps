@@ -13,7 +13,7 @@
         <!--FirstViewController-->
         <scene sceneID="eIk-bq-gKe">
             <objects>
-                <tableViewController storyboardIdentifier="FirstViewController" title="FirstViewController" id="5nU-kV-EaO" customClass="FirstViewController" customModule="Project2_Alex_Mai" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="FirstViewController" title="FirstViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="5nU-kV-EaO" customClass="FirstViewController" customModule="Project2_Alex_Mai" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="static" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="60" sectionHeaderHeight="18" sectionFooterHeight="18" id="QzG-0q-oJv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="800"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -33,6 +33,9 @@
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
+                                                    <connections>
+                                                        <action selector="departLocationValueChanged:" destination="5nU-kV-EaO" eventType="editingChanged" id="nZa-My-xbW"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -54,6 +57,9 @@
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
+                                                    <connections>
+                                                        <action selector="arrivalLocationValueChanged:" destination="5nU-kV-EaO" eventType="editingChanged" id="97d-ms-6dM"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -75,6 +81,9 @@
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
+                                                    <connections>
+                                                        <action selector="departureDateValueChanged:" destination="5nU-kV-EaO" eventType="editingChanged" id="OQw-ZT-rjN"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -96,6 +105,9 @@
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
+                                                    <connections>
+                                                        <action selector="returnDateValueChanged:" destination="5nU-kV-EaO" eventType="editingChanged" id="IPw-DA-Pc6"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -117,6 +129,9 @@
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
+                                                    <connections>
+                                                        <action selector="numTravelersValueChanged:" destination="5nU-kV-EaO" eventType="editingChanged" id="Z6V-Xq-ljQ"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -138,6 +153,9 @@
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="nationalitiesValueChanged:" destination="5nU-kV-EaO" eventType="editingChanged" id="Om4-Jn-fpA"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -159,6 +177,9 @@
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad"/>
+                                                    <connections>
+                                                        <action selector="budgetValueChanged:" destination="5nU-kV-EaO" eventType="editingChanged" id="qH3-gR-BAf"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -177,6 +198,9 @@
                                             <subviews>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="T2y-AE-vk7">
                                                     <rect key="frame" x="131" y="6.5" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="ofAgeValueChanged:" destination="5nU-kV-EaO" eventType="valueChanged" id="Avw-sB-iTG"/>
+                                                    </connections>
                                                 </switch>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l53-uG-YzW">
                                                     <rect key="frame" x="98" y="15" width="16" height="14.5"/>
@@ -219,6 +243,9 @@
                                             <subviews>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="4f7-17-wL0">
                                                     <rect key="frame" x="124.5" y="6.5" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="disabilitiesValueChanged:" destination="5nU-kV-EaO" eventType="valueChanged" id="LdG-MA-dYD"/>
+                                                    </connections>
                                                 </switch>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D9W-dc-SmM">
                                                     <rect key="frame" x="91.5" y="15" width="16" height="14.5"/>
@@ -264,6 +291,9 @@
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="purposeValueChanged:" destination="5nU-kV-EaO" eventType="editingChanged" id="TGf-8v-gkI"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -334,7 +364,7 @@
         <!--Third View Controller-->
         <scene sceneID="lPq-hm-2ln">
             <objects>
-                <viewController id="wlD-Ld-Z9s" customClass="ThirdViewController" customModule="Project2_Alex_Mai" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ThirdViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="wlD-Ld-Z9s" customClass="ThirdViewController" customModule="Project2_Alex_Mai" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SmH-FD-fwJ"/>
                         <viewControllerLayoutGuide type="bottom" id="Jhk-FL-Ha2"/>
@@ -471,7 +501,7 @@
         <!--My Trips-->
         <scene sceneID="500-5A-4Q7">
             <objects>
-                <tableViewController id="9DR-hP-FGJ" customClass="SecondViewController" customModule="Project2_Alex_Mai" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="SecondViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9DR-hP-FGJ" customClass="SecondViewController" customModule="Project2_Alex_Mai" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="145" sectionHeaderHeight="28" sectionFooterHeight="28" id="SIl-2n-QEB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -543,7 +573,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="+Add Trip" id="uLs-TL-fl1">
                             <connections>
-                                <segue destination="5nU-kV-EaO" kind="show" id="qSz-6p-2er"/>
+                                <segue destination="5nU-kV-EaO" kind="show" identifier="SecondVC-to-FirstVC" id="qSz-6p-2er"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -555,7 +585,7 @@
         <!--View Controller-->
         <scene sceneID="TwZ-Gt-kvX">
             <objects>
-                <viewController id="qeO-4A-XI3" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FourthViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qeO-4A-XI3" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="GLB-lq-1rB"/>
                         <viewControllerLayoutGuide type="bottom" id="26J-Bf-4HS"/>
@@ -635,7 +665,7 @@
         <!--ViewController-->
         <scene sceneID="NI8-3e-sOh">
             <objects>
-                <viewController storyboardIdentifier="ViewController" title="ViewController" id="wKJ-Tn-Dl3" customClass="ViewController" customModule="Project2_Alex_Mai" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" title="ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="wKJ-Tn-Dl3" customClass="ViewController" customModule="Project2_Alex_Mai" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Wwd-Pe-jZC"/>
                         <viewControllerLayoutGuide type="bottom" id="DGg-Ze-qDE"/>
@@ -695,6 +725,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
+                                    <action selector="registerbuttonPressedWithSender:" destination="wKJ-Tn-Dl3" eventType="touchUpInside" id="hjY-fp-bqX"/>
                                     <segue destination="wtt-0m-BsQ" kind="presentation" id="XoT-Md-hXo"/>
                                 </connections>
                             </button>
@@ -745,7 +776,7 @@
         <!--Register View Controller-->
         <scene sceneID="Nr6-US-gWB">
             <objects>
-                <viewController id="wtt-0m-BsQ" customClass="RegisterViewController" customModule="Project2_Alex_Mai" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegisterViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="wtt-0m-BsQ" customClass="RegisterViewController" customModule="Project2_Alex_Mai" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="IXM-Se-rib"/>
                         <viewControllerLayoutGuide type="bottom" id="GKT-Pc-RJw"/>

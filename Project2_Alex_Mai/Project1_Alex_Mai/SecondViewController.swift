@@ -15,6 +15,15 @@ import UIKit
 class SecondViewController: UITableViewController {
     //will need to use TripManager singleton
     
+    var tempTrip = TempTripPersister.getTempTrip()
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "SecondVC-to-FirstVC" {
+            let buttonChanger = segue.destination as! FirstViewController
+            
+            buttonChanger.tempTrip = tempTrip
+        }
+    }
     
     //how many cells need to be created
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

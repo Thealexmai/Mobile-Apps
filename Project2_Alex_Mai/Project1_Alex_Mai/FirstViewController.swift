@@ -9,8 +9,11 @@
 import UIKit
 
 //This class is a form - user asks an agent to plan item for him/her
-class FirstViewController: UITableViewController{
+class FirstViewController: UITableViewController {
     
+    var tempTrip: TempTrip!
+    
+    //MARK: Outlets
     @IBOutlet var departLocation: UITextField!
     @IBOutlet var arrivalLocation: UITextField!
     @IBOutlet var departureDate: UITextField!
@@ -22,6 +25,8 @@ class FirstViewController: UITableViewController{
     @IBOutlet var disabilities: UISwitch!
     @IBOutlet var purpose: UITextField!
     
+    
+    //MARK: Actions
     @IBAction func submitPressed(sender: UIButton) {
         //resign first responder whichever is active
         departLocation.resignFirstResponder()
@@ -66,6 +71,54 @@ class FirstViewController: UITableViewController{
         }
     }
     
+    @IBAction func departLocationValueChanged(_ sender: Any) {
+        if let departLocationString = departLocation.text {
+            tempTrip.departLocationText = departLocationString
+        }
+    }
+    @IBAction func arrivalLocationValueChanged(_ sender: Any) {
+        if let arrivalLocationString = arrivalLocation.text {
+            tempTrip.arrivalLocationText = arrivalLocationString
+        }
+    }
+    @IBAction func departureDateValueChanged(_ sender: Any) {
+        if let departureDateString = departureDate.text {
+            tempTrip.departureDateText = departureDateString
+        }
+    }
+    @IBAction func returnDateValueChanged(_ sender: Any) {
+        if let returnDateString = returnDate.text {
+            tempTrip.returnDateText = returnDateString
+        }
+    }
+    @IBAction func numTravelersValueChanged(_ sender: Any) {
+        if let numTravelersString = numTravelers.text {
+            tempTrip.numTravelersText = numTravelersString
+        }
+    }
+    @IBAction func nationalitiesValueChanged(_ sender: Any) {
+        if let nationalitiesString = travelerNationality.text {
+            tempTrip.travelerNationalityText = nationalitiesString
+        }
+    }
+    @IBAction func budgetValueChanged(_ sender: Any) {
+        if let budgetString = budget.text {
+            tempTrip.budgetText = budgetString
+        }
+    }
+    @IBAction func ofAgeValueChanged(_ sender: Any) {
+        tempTrip.ofAge = ofAge.isOn
+    }
+    @IBAction func disabilitiesValueChanged(_ sender: Any) {
+        tempTrip.disabilities = disabilities.isOn
+    }
+    @IBAction func purposeValueChanged(_ sender: Any) {
+        if let purposeString = purpose.text {
+            tempTrip.purposeText = purposeString
+        }
+    }
+
+    
     //confirm button pressed
     func confirmButtonPressed() {
         let title = NSLocalizedString("info-captured", comment: "Information captured!")
@@ -89,8 +142,11 @@ class FirstViewController: UITableViewController{
         
         tableView.contentInset = insets
         tableView.scrollIndicatorInsets = insets
+        
+        //load in data if it were previously entered in
+        departLocation.text = tempTrip.departLocationText
+        
     }
-
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

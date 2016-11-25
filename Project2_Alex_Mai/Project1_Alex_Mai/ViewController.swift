@@ -47,12 +47,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 self.present(navController, animated:true, completion: nil)
             }
         }
-        
-        
-        
+
     }
-    
-    
     
     //Delegate - Make sure "/" cannot be used in textfields to prevent injections
     func textField(_ textField: UITextField,
@@ -68,16 +64,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     }
     
-    //does same thing as if user presses login button - only used when the screen finishes launching for automated login with correct credentials
-    func checkLogin(_ login:String, _ password:String) {
-        
-        if AccountManager.sharedInstance.validatedAccount(login, password) {
-            let navController = self.storyboard!.instantiateViewController(withIdentifier: "NavController")
-            
-            self.present(navController, animated:true, completion: nil)
-        }
-        
-    }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -104,6 +90,16 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
     }
 
+    //does same thing as if user presses login button - only used when the screen finishes launching for automated login with correct credentials
+    func checkLogin(_ login:String, _ password:String) {
+        
+        if AccountManager.sharedInstance.validatedAccount(login, password) {
+            let navController = self.storyboard!.instantiateViewController(withIdentifier: "NavController")
+            
+            self.present(navController, animated:true, completion: nil)
+        }
+        
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
