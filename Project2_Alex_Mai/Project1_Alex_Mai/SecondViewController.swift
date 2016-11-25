@@ -15,6 +15,7 @@ import UIKit
 class SecondViewController: UITableViewController {
     //will need to use TripManager singleton
     
+    
     //how many cells need to be created
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
@@ -30,6 +31,7 @@ class SecondViewController: UITableViewController {
     
     //what goes in each cell
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "SecondViewCell", for: indexPath) as! SecondViewCell
         
         cell.updateLabels()
@@ -39,8 +41,6 @@ class SecondViewController: UITableViewController {
             let trips = trip[indexPath.row]
             
             print("cell ran once")
-            
-            
             
             cell.arrivalDestination.text = String(format: NSLocalizedString("cell-trip-arrival", comment: "%@"), trips.arrivalLocationText)
             cell.departureDate.text = String(format: NSLocalizedString("cell-trip-departDate", comment: "depart: %@"), trips.friendlyDateFormat(trips.departureDateText))
@@ -107,6 +107,14 @@ class SecondViewController: UITableViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.tableView.reloadData()
+        print("Hello")
+        
     }
 
 

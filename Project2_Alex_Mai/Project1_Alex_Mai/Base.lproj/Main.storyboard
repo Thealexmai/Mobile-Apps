@@ -397,9 +397,6 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="p9p-XE-JEg" secondAttribute="trailing" id="xmS-Ea-1EF"/>
-                                        </constraints>
                                     </stackView>
                                     <view contentMode="scaleToFill" verticalHuggingPriority="248" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="xQX-vM-feM">
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

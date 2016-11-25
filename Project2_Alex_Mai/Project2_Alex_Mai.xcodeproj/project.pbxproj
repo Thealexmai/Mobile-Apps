@@ -12,6 +12,7 @@
 		FA48D4621DCE8EC500D0B4D2 /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA48D4611DCE8EC500D0B4D2 /* LaunchScreenViewController.swift */; };
 		FA5305101DE796DD001EB674 /* ImagePersister.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA53050F1DE796DD001EB674 /* ImagePersister.swift */; };
 		FA5305161DE7D2C7001EB674 /* UIButton+CustomBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5305151DE7D2C7001EB674 /* UIButton+CustomBorder.swift */; };
+		FA53051A1DE7F9AB001EB674 /* TempTrip.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5305191DE7F9AB001EB674 /* TempTrip.swift */; };
 		FA8EA44D1DC1913000BEAAC6 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8EA44C1DC1913000BEAAC6 /* ThirdViewController.swift */; };
 		FA8EA4511DC1963C00BEAAC6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8EA4501DC1963C00BEAAC6 /* User.swift */; };
 		FA8EA4531DC1989300BEAAC6 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8EA4521DC1989300BEAAC6 /* Account.swift */; };
@@ -40,6 +41,7 @@
 		FA48D4661DCE972D00D0B4D2 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
 		FA53050F1DE796DD001EB674 /* ImagePersister.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePersister.swift; sourceTree = "<group>"; };
 		FA5305151DE7D2C7001EB674 /* UIButton+CustomBorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIButton+CustomBorder.swift"; path = "Extensions/UIButton+CustomBorder.swift"; sourceTree = "<group>"; };
+		FA5305191DE7F9AB001EB674 /* TempTrip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TempTrip.swift; sourceTree = "<group>"; };
 		FA8EA44C1DC1913000BEAAC6 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		FA8EA4501DC1963C00BEAAC6 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FA8EA4521DC1989300BEAAC6 /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
@@ -78,6 +80,15 @@
 			path = Project1_Alex_Mai;
 			sourceTree = "<group>";
 		};
+		FA5305181DE7F979001EB674 /* PersistentStorage */ = {
+			isa = PBXGroup;
+			children = (
+				FA53050F1DE796DD001EB674 /* ImagePersister.swift */,
+				FA5305191DE7F9AB001EB674 /* TempTrip.swift */,
+			);
+			name = PersistentStorage;
+			sourceTree = "<group>";
+		};
 		FAF438731DC0FDAA0095D6FC = {
 			isa = PBXGroup;
 			children = (
@@ -105,7 +116,7 @@
 				FAAB1FEE1DC2DA790040604F /* AccountManager.swift */,
 				FAAB1FF21DC2E9B70040604F /* Trip.swift */,
 				FAAB1FF01DC2E47B0040604F /* TripManager.swift */,
-				FA53050F1DE796DD001EB674 /* ImagePersister.swift */,
+				FA5305181DE7F979001EB674 /* PersistentStorage */,
 				FAF438931DC110660095D6FC /* ViewController.swift */,
 				FAC5B1EC1DC8ED6B006C9156 /* RegisterViewController.swift */,
 				FAF438811DC0FDAA0095D6FC /* FirstViewController.swift */,
@@ -210,6 +221,7 @@
 				FAF438821DC0FDAA0095D6FC /* FirstViewController.swift in Sources */,
 				FA09FAFE1DC58DDB00ED9599 /* SecondViewCell.swift in Sources */,
 				FA8EA4531DC1989300BEAAC6 /* Account.swift in Sources */,
+				FA53051A1DE7F9AB001EB674 /* TempTrip.swift in Sources */,
 				FAAB1FF11DC2E47B0040604F /* TripManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

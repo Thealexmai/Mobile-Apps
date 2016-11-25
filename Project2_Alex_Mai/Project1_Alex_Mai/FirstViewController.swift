@@ -58,6 +58,8 @@ class FirstViewController: UITableViewController{
             //user-requested trips are pending a travel advisor's plan
             let trip = Trip(departLocationText, arrivalLocationText, departureDateText, returnDateText, numTravelersText, travelerNationalityText, budgetText, ofAge.isOn, disabilities.isOn, purposeText, "pending")
             
+            //add this trip into the singleton
+            
             dump(trip) //dumping for now, later will add to database
             
             confirmButtonPressed()
