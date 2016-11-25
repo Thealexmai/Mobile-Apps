@@ -11,6 +11,7 @@
 		FA48D45C1DCE4E9D00D0B4D2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA48D45E1DCE4E9D00D0B4D2 /* Localizable.strings */; };
 		FA48D4621DCE8EC500D0B4D2 /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA48D4611DCE8EC500D0B4D2 /* LaunchScreenViewController.swift */; };
 		FA5305101DE796DD001EB674 /* ImagePersister.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA53050F1DE796DD001EB674 /* ImagePersister.swift */; };
+		FA5305161DE7D2C7001EB674 /* UIButton+CustomBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5305151DE7D2C7001EB674 /* UIButton+CustomBorder.swift */; };
 		FA8EA44D1DC1913000BEAAC6 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8EA44C1DC1913000BEAAC6 /* ThirdViewController.swift */; };
 		FA8EA4511DC1963C00BEAAC6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8EA4501DC1963C00BEAAC6 /* User.swift */; };
 		FA8EA4531DC1989300BEAAC6 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8EA4521DC1989300BEAAC6 /* Account.swift */; };
@@ -38,6 +39,7 @@
 		FA48D4641DCE972800D0B4D2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		FA48D4661DCE972D00D0B4D2 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
 		FA53050F1DE796DD001EB674 /* ImagePersister.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePersister.swift; sourceTree = "<group>"; };
+		FA5305151DE7D2C7001EB674 /* UIButton+CustomBorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIButton+CustomBorder.swift"; path = "Extensions/UIButton+CustomBorder.swift"; sourceTree = "<group>"; };
 		FA8EA44C1DC1913000BEAAC6 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		FA8EA4501DC1963C00BEAAC6 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FA8EA4521DC1989300BEAAC6 /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
@@ -67,10 +69,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FA5305171DE7DE0D001EB674 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FA5305151DE7D2C7001EB674 /* UIButton+CustomBorder.swift */,
+			);
+			name = Extensions;
+			path = Project1_Alex_Mai;
+			sourceTree = "<group>";
+		};
 		FAF438731DC0FDAA0095D6FC = {
 			isa = PBXGroup;
 			children = (
 				FA48D45E1DCE4E9D00D0B4D2 /* Localizable.strings */,
+				FA5305171DE7DE0D001EB674 /* Extensions */,
 				FAF4387E1DC0FDAA0095D6FC /* Project1_Alex_Mai */,
 				FAF4387D1DC0FDAA0095D6FC /* Products */,
 			);
@@ -194,6 +206,7 @@
 				FAAB1FF31DC2E9B70040604F /* Trip.swift in Sources */,
 				FA8EA44D1DC1913000BEAAC6 /* ThirdViewController.swift in Sources */,
 				FAF438941DC110660095D6FC /* ViewController.swift in Sources */,
+				FA5305161DE7D2C7001EB674 /* UIButton+CustomBorder.swift in Sources */,
 				FAF438821DC0FDAA0095D6FC /* FirstViewController.swift in Sources */,
 				FA09FAFE1DC58DDB00ED9599 /* SecondViewCell.swift in Sources */,
 				FA8EA4531DC1989300BEAAC6 /* Account.swift in Sources */,
