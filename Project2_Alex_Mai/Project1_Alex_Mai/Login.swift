@@ -6,7 +6,7 @@
 //  Copyright © 2016 Mobile Application Development. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class Login: NSObject, NSCoding {
     static let aLoginKey = "aLogin"

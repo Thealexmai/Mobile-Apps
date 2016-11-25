@@ -15,20 +15,10 @@ import UIKit
 class SecondViewController: UITableViewController {
     //will need to use TripManager singleton
     
-    var tempTrip = TempTripPersister.getTempTrip()
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "SecondVC-to-FirstVC" {
-            let buttonChanger = segue.destination as! FirstViewController
-            
-            buttonChanger.tempTrip = tempTrip
-        }
-    }
-    
     //how many cells need to be created
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         var toReturnNumRows = 0
+        
         //get the number of rows needed that's tied from the user's login
         if let numRows = TripManager.sharedInstance.trips[AccountManager.sharedInstance.whoAmI] {
             toReturnNumRows = numRows.count
@@ -122,7 +112,6 @@ class SecondViewController: UITableViewController {
         super.viewWillAppear(animated)
         
         self.tableView.reloadData()
-        print("Hello")
         
     }
 

@@ -6,7 +6,7 @@
 //  Copyright © 2016 Mobile Application Development. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class LoginTextPersister: NSObject {
     static let loginTextPersisterURL: NSURL = {

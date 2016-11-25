@@ -9,7 +9,7 @@
 import Foundation
 
 //Creates a trip object - used for displaying all the trips
-class Trip:NSObject {
+class Trip: NSObject {
     var departLocationText:String , arrivalLocationText:String, departureDateText:String, returnDateText:String, numTravelersText:String, travelerNationalityText:String, budgetText:String, ofAge:Bool, disabilities:Bool, purposeText:String, statusText: String
     
     init(_ departLocationText:String , _ arrivalLocationText:String, _ departureDateText:String, _ returnDateText:String, _ numTravelersText:String, _ travelerNationalityText:String, _ budgetText:String, _ ofAge:Bool, _ disabilities:Bool, _ purposeText:String, _ statusText:String) {
@@ -32,6 +32,7 @@ class Trip:NSObject {
         //there should be 8 chars in MMDDYYYY, only need MMDDYY
         let stringArray = Array(date.characters)
         var month = ""
+        dump(stringArray)
         month.append(stringArray[0])
         month.append(stringArray[1])
         var day = ""
