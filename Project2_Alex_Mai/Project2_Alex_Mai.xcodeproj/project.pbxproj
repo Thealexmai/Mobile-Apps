@@ -20,6 +20,8 @@
 		FAAB1FF11DC2E47B0040604F /* TripManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAB1FF01DC2E47B0040604F /* TripManager.swift */; };
 		FAAB1FF31DC2E9B70040604F /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAB1FF21DC2E9B70040604F /* Trip.swift */; };
 		FAAC45111DE891480032A3A5 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAC45101DE891480032A3A5 /* Login.swift */; };
+		FAAC45131DE896110032A3A5 /* LoginTextPersister.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAC45121DE896110032A3A5 /* LoginTextPersister.swift */; };
+		FAAC45151DE8B2030032A3A5 /* TempTripPersister.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAC45141DE8B2030032A3A5 /* TempTripPersister.swift */; };
 		FAC5B1ED1DC8ED6B006C9156 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC5B1EC1DC8ED6B006C9156 /* RegisterViewController.swift */; };
 		FAF438801DC0FDAA0095D6FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF4387F1DC0FDAA0095D6FC /* AppDelegate.swift */; };
 		FAF438821DC0FDAA0095D6FC /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF438811DC0FDAA0095D6FC /* FirstViewController.swift */; };
@@ -50,6 +52,8 @@
 		FAAB1FF01DC2E47B0040604F /* TripManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripManager.swift; sourceTree = "<group>"; };
 		FAAB1FF21DC2E9B70040604F /* Trip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
 		FAAC45101DE891480032A3A5 /* Login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		FAAC45121DE896110032A3A5 /* LoginTextPersister.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginTextPersister.swift; sourceTree = "<group>"; };
+		FAAC45141DE8B2030032A3A5 /* TempTripPersister.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TempTripPersister.swift; sourceTree = "<group>"; };
 		FAC5B1EC1DC8ED6B006C9156 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		FAF4387C1DC0FDAA0095D6FC /* Project2_Alex_Mai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project2_Alex_Mai.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAF4387F1DC0FDAA0095D6FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -87,9 +91,24 @@
 			children = (
 				FA53050F1DE796DD001EB674 /* ImagePersister.swift */,
 				FA5305191DE7F9AB001EB674 /* TempTrip.swift */,
+				FAAC45141DE8B2030032A3A5 /* TempTripPersister.swift */,
 				FAAC45101DE891480032A3A5 /* Login.swift */,
+				FAAC45121DE896110032A3A5 /* LoginTextPersister.swift */,
 			);
 			name = PersistentStorage;
+			sourceTree = "<group>";
+		};
+		FAAC45161DE8BB380032A3A5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FA8EA4501DC1963C00BEAAC6 /* User.swift */,
+				FA8EA4521DC1989300BEAAC6 /* Account.swift */,
+				FAAB1FEE1DC2DA790040604F /* AccountManager.swift */,
+				FAAB1FF21DC2E9B70040604F /* Trip.swift */,
+				FAAB1FF01DC2E47B0040604F /* TripManager.swift */,
+				FA5305181DE7F979001EB674 /* PersistentStorage */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		FAF438731DC0FDAA0095D6FC = {
@@ -114,12 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				FAF4387F1DC0FDAA0095D6FC /* AppDelegate.swift */,
-				FA8EA4501DC1963C00BEAAC6 /* User.swift */,
-				FA8EA4521DC1989300BEAAC6 /* Account.swift */,
-				FAAB1FEE1DC2DA790040604F /* AccountManager.swift */,
-				FAAB1FF21DC2E9B70040604F /* Trip.swift */,
-				FAAB1FF01DC2E47B0040604F /* TripManager.swift */,
-				FA5305181DE7F979001EB674 /* PersistentStorage */,
+				FAAC45161DE8BB380032A3A5 /* Model */,
 				FAF438931DC110660095D6FC /* ViewController.swift */,
 				FAC5B1EC1DC8ED6B006C9156 /* RegisterViewController.swift */,
 				FAF438811DC0FDAA0095D6FC /* FirstViewController.swift */,
@@ -162,7 +176,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "Mobile Application Development";
 				TargetAttributes = {
 					FAF4387B1DC0FDAA0095D6FC = {
@@ -221,11 +235,13 @@
 				FAAB1FF31DC2E9B70040604F /* Trip.swift in Sources */,
 				FA8EA44D1DC1913000BEAAC6 /* ThirdViewController.swift in Sources */,
 				FAF438941DC110660095D6FC /* ViewController.swift in Sources */,
+				FAAC45151DE8B2030032A3A5 /* TempTripPersister.swift in Sources */,
 				FA5305161DE7D2C7001EB674 /* UIButton+CustomBorder.swift in Sources */,
 				FAF438821DC0FDAA0095D6FC /* FirstViewController.swift in Sources */,
 				FA09FAFE1DC58DDB00ED9599 /* SecondViewCell.swift in Sources */,
 				FA8EA4531DC1989300BEAAC6 /* Account.swift in Sources */,
 				FA53051A1DE7F9AB001EB674 /* TempTrip.swift in Sources */,
+				FAAC45131DE896110032A3A5 /* LoginTextPersister.swift in Sources */,
 				FAAB1FF11DC2E47B0040604F /* TripManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -286,6 +302,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -336,6 +353,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
