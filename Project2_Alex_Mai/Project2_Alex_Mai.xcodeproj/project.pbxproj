@@ -19,6 +19,7 @@
 		FAAB1FEF1DC2DA790040604F /* AccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAB1FEE1DC2DA790040604F /* AccountManager.swift */; };
 		FAAB1FF11DC2E47B0040604F /* TripManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAB1FF01DC2E47B0040604F /* TripManager.swift */; };
 		FAAB1FF31DC2E9B70040604F /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAB1FF21DC2E9B70040604F /* Trip.swift */; };
+		FAAC45111DE891480032A3A5 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAC45101DE891480032A3A5 /* Login.swift */; };
 		FAC5B1ED1DC8ED6B006C9156 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC5B1EC1DC8ED6B006C9156 /* RegisterViewController.swift */; };
 		FAF438801DC0FDAA0095D6FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF4387F1DC0FDAA0095D6FC /* AppDelegate.swift */; };
 		FAF438821DC0FDAA0095D6FC /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF438811DC0FDAA0095D6FC /* FirstViewController.swift */; };
@@ -48,6 +49,7 @@
 		FAAB1FEE1DC2DA790040604F /* AccountManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountManager.swift; sourceTree = "<group>"; };
 		FAAB1FF01DC2E47B0040604F /* TripManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripManager.swift; sourceTree = "<group>"; };
 		FAAB1FF21DC2E9B70040604F /* Trip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
+		FAAC45101DE891480032A3A5 /* Login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		FAC5B1EC1DC8ED6B006C9156 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		FAF4387C1DC0FDAA0095D6FC /* Project2_Alex_Mai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project2_Alex_Mai.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAF4387F1DC0FDAA0095D6FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 			children = (
 				FA53050F1DE796DD001EB674 /* ImagePersister.swift */,
 				FA5305191DE7F9AB001EB674 /* TempTrip.swift */,
+				FAAC45101DE891480032A3A5 /* Login.swift */,
 			);
 			name = PersistentStorage;
 			sourceTree = "<group>";
@@ -208,6 +211,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAF438841DC0FDAA0095D6FC /* SecondViewController.swift in Sources */,
+				FAAC45111DE891480032A3A5 /* Login.swift in Sources */,
 				FAAB1FEF1DC2DA790040604F /* AccountManager.swift in Sources */,
 				FAF438801DC0FDAA0095D6FC /* AppDelegate.swift in Sources */,
 				FA5305101DE796DD001EB674 /* ImagePersister.swift in Sources */,
