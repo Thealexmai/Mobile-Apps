@@ -67,53 +67,53 @@ class FirstViewController: UITableViewController {
         
     }
     
-//    @IBAction func departLocationValueChanged(_ sender: Any) {
-//        if let departLocationString = departLocation.text {
-//            tempTrip.departLocationText = departLocationString
-//            print("Assigned")
-//        }
-//    }
-//    @IBAction func arrivalLocationValueChanged(_ sender: Any) {
-//        if let arrivalLocationString = arrivalLocation.text {
-//            tempTrip.arrivalLocationText = arrivalLocationString
-//        }
-//    }
-//    @IBAction func departureDateValueChanged(_ sender: Any) {
-//        if let departureDateString = departureDate.text {
-//            tempTrip.departureDateText = departureDateString
-//        }
-//    }
-//    @IBAction func returnDateValueChanged(_ sender: Any) {
-//        if let returnDateString = returnDate.text {
-//            tempTrip.returnDateText = returnDateString
-//        }
-//    }
-//    @IBAction func numTravelersValueChanged(_ sender: Any) {
-//        if let numTravelersString = numTravelers.text {
-//            tempTrip.numTravelersText = numTravelersString
-//        }
-//    }
-//    @IBAction func nationalitiesValueChanged(_ sender: Any) {
-//        if let nationalitiesString = travelerNationality.text {
-//            tempTrip.travelerNationalityText = nationalitiesString
-//        }
-//    }
-//    @IBAction func budgetValueChanged(_ sender: Any) {
-//        if let budgetString = budget.text {
-//            tempTrip.budgetText = budgetString
-//        }
-//    }
-//    @IBAction func ofAgeValueChanged(_ sender: Any) {
-//        tempTrip.ofAge = ofAge.isOn
-//    }
-//    @IBAction func disabilitiesValueChanged(_ sender: Any) {
-//        tempTrip.disabilities = disabilities.isOn
-//    }
-//    @IBAction func purposeValueChanged(_ sender: Any) {
-//        if let purposeString = purpose.text {
-//            tempTrip.purposeText = purposeString
-//        }
-//    }
+    @IBAction func departLocationValueChanged(_ sender: Any) {
+        if let departLocationString = departLocation.text {
+            tempTrip.departLocationText = departLocationString
+        }
+    }
+    @IBAction func arrivalLocationValueChanged(_ sender: Any) {
+        if let arrivalLocationString = arrivalLocation.text {
+            tempTrip.arrivalLocationText = arrivalLocationString
+        }
+
+    }
+    @IBAction func departureDateValueChanged(_ sender: Any) {
+        if let departureDateString = departureDate.text {
+            tempTrip.departureDateText = departureDateString
+        }
+    }
+    @IBAction func returnDateValueChanged(_ sender: Any) {
+        if let returnDateString = returnDate.text {
+            tempTrip.returnDateText = returnDateString
+        }
+    }
+    @IBAction func numTravelersValueChanged(_ sender: Any) {
+        if let numTravelersString = numTravelers.text {
+            tempTrip.numTravelersText = numTravelersString
+        }
+    }
+    @IBAction func nationalitiesValueChanged(_ sender: Any) {
+        if let nationalitiesString = travelerNationality.text {
+            tempTrip.travelerNationalityText = nationalitiesString
+        }
+    }
+    @IBAction func budgetValueChanged(_ sender: Any) {
+        if let budgetString = budget.text {
+            tempTrip.budgetText = budgetString
+        }
+    }
+    @IBAction func ofAgeValueChanged(_ sender: Any) {
+        tempTrip.ofAge = ofAge.isOn
+    }
+    @IBAction func disabilitiesValueChanged(_ sender: Any) {
+        tempTrip.disabilities = disabilities.isOn
+    }
+    @IBAction func purposeValueChanged(_ sender: Any) {
+        if let purposeString = purpose.text {
+            tempTrip.purposeText = purposeString
+        }
+    }
 
     
     //confirm button pressed
@@ -141,15 +141,19 @@ class FirstViewController: UITableViewController {
         tableView.scrollIndicatorInsets = insets
         
         let myDelegate = UIApplication.shared.delegate as! AppDelegate
-        var someVariable = myDelegate.hello
-        print(someVariable)
-        
-    }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+        tempTrip = myDelegate.tempTripForm
         
         //load in data if it were previously entered in
-//        departLocation.text = tempTrip.departLocationText
+        departLocation.text = tempTrip.departLocationText
+        arrivalLocation.text = tempTrip.arrivalLocationText
+        departureDate.text = tempTrip.departureDateText
+        returnDate.text = tempTrip.returnDateText
+        numTravelers.text = tempTrip.numTravelersText
+        travelerNationality.text = tempTrip.travelerNationalityText
+        budget.text = tempTrip.budgetText
+        ofAge.isOn = tempTrip.ofAge
+        disabilities.isOn = tempTrip.disabilities
+        purpose.text = tempTrip.purposeText
     }
     
     override func viewWillDisappear(_ animated: Bool) {
