@@ -12,7 +12,12 @@ import UIKit
 class FirstViewController: UITableViewController {
     
     var tempTrip: TempTrip!
-//    var toReturnNumRows: Int!
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(indexPath.row)
+    }
+    
+    
     
     //MARK: Outlets
     @IBOutlet var departLocation: UITextField!

@@ -76,15 +76,15 @@ class ViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        loginText.text = loginTextFields.login
-        passwordText.text = loginTextFields.password
+        
         
     }
     
     //automatically log the user in if the credentials are right
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
+        loginText.text = loginTextFields.login
+        passwordText.text = loginTextFields.password
 //        if let login = loginText.text, let password = passwordText.text {
 //            checkLogin(login, password)
 //        }
