@@ -6,7 +6,7 @@
 //  Copyright © 2016 Mobile Application Development. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 //Singleton manages all accounts
 class AccountManager {
@@ -16,6 +16,10 @@ class AccountManager {
         
         return instance
     }()
+    
+    //for encoding and decoding
+    static let accountsKey = "accounts"
+    static let whoAmIKey = "whoamI"
     
     var accounts: [Account]
     var whoAmI: String
@@ -73,4 +77,21 @@ class AccountManager {
         
         return accountIndex
     }
+    
+
+    
+//    //encode account stuff
+//    func encode(with aCoder: NSCoder) {
+//        aCoder.encode(accounts, forKey: AccountManager.accountsKey)
+//        aCoder.encode(whoAmI, forKey: AccountManager.whoAmIKey)
+//
+//    }
+//    
+//    //decode account stuff
+//    required init(coder aDecoder: NSCoder) {
+//        accounts = aDecoder.decodeObject(forKey: AccountManager.accountsKey) as! Array
+//        whoAmI = aDecoder.decodeObject(forKey: AccountManager.whoAmIKey) as! String
+//    }
+    
+    
 }
