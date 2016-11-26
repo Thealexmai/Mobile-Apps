@@ -550,7 +550,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7ry-Bd-U1x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="742" y="0.0"/>
+            <point key="canvasLocation" x="754" y="220"/>
         </scene>
         <!--Details About Trip-->
         <scene sceneID="TwZ-Gt-kvX">
@@ -573,7 +573,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" verticalHuggingPriority="248" verticalCompressionResistancePriority="748" image="trump" translatesAutoresizingMaskIntoConstraints="NO" id="AhM-Ge-g0R">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" verticalHuggingPriority="248" verticalCompressionResistancePriority="748" image="rochester" translatesAutoresizingMaskIntoConstraints="NO" id="AhM-Ge-g0R">
                                         <rect key="frame" x="0.0" y="43.5" width="343" height="366.5"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Depart From:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bMf-SG-Mod">
@@ -917,12 +917,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m9o-Md-igl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-70" y="0.0"/>
+            <point key="canvasLocation" x="-66" y="220"/>
         </scene>
     </scenes>
     <resources>
         <image name="Personal" width="37" height="37"/>
         <image name="Planning" width="38" height="38"/>
+        <image name="rochester" width="2353" height="1225"/>
         <image name="trump" width="1180" height="842"/>
     </resources>
 </document>

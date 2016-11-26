@@ -37,8 +37,6 @@ class FourthViewController: UIViewController {
             statusLabel.text = "Status: \(thisTrip.statusText)"
         }
             
-            
-        
         
     }
     
