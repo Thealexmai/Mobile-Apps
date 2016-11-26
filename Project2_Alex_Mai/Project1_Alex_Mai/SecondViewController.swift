@@ -15,6 +15,22 @@ import UIKit
 class SecondViewController: UITableViewController {
     //will need to use TripManager singleton
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //find out which cell is clicked
+        if segue.identifier == "SecondVC-to-FourthVC" {
+            
+            //get the cell row that has been selected and pass to 4th VC
+            let indexPath:Int = self.tableView.indexPathForSelectedRow!.row
+            
+            if let fourthVC = segue.destination as? FourthViewController {
+            
+                fourthVC.cellClicked = indexPath
+                
+            }
+            
+        }
+    }
+    
     //how many cells need to be created
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         var toReturnNumRows = 0
@@ -22,7 +38,6 @@ class SecondViewController: UITableViewController {
         //get the number of rows needed that's tied from the user's login
         if let numRows = TripManager.sharedInstance.trips[AccountManager.sharedInstance.whoAmI] {
             toReturnNumRows = numRows.count
-            print(toReturnNumRows)
         }
         
         return toReturnNumRows
@@ -39,15 +54,12 @@ class SecondViewController: UITableViewController {
         if let trip = TripManager.sharedInstance.trips[AccountManager.sharedInstance.whoAmI] {
             let trips = trip[indexPath.row]
             
-            print("cell ran once")
-            
             cell.arrivalDestination.text = String(format: NSLocalizedString("cell-trip-arrival", comment: "%@"), trips.arrivalLocationText)
             cell.departureDate.text = String(format: NSLocalizedString("cell-trip-departDate", comment: "depart: %@"), trips.friendlyDateFormat(trips.departureDateText))
             cell.returnDate.text = String(format: NSLocalizedString("cell-trip-returnDate", comment: "return: %@"), trips.friendlyDateFormat(trips.returnDateText))
 
         }
 
-        
         return cell
     }
     

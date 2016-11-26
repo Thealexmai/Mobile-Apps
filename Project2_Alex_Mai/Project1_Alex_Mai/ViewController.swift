@@ -85,9 +85,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        if let login = loginText.text, let password = passwordText.text {
-            checkLogin(login, password)
-        }
+//        if let login = loginText.text, let password = passwordText.text {
+//            checkLogin(login, password)
+//        }
     }
 
     //does same thing as if user presses login button - only used when the screen finishes launching for automated login with correct credentials

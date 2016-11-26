@@ -526,7 +526,7 @@
                                     <outlet property="arrivalDestination" destination="SP4-41-qXM" id="Gig-PN-cml"/>
                                     <outlet property="departureDate" destination="tcb-DR-Zwd" id="b1G-16-z3i"/>
                                     <outlet property="returnDate" destination="0Ou-Wn-kAa" id="XbJ-Bg-w8a"/>
-                                    <segue destination="qeO-4A-XI3" kind="show" id="m5B-Qz-j1c"/>
+                                    <segue destination="qeO-4A-XI3" kind="show" identifier="SecondVC-to-FourthVC" id="m5B-Qz-j1c"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -552,10 +552,10 @@
             </objects>
             <point key="canvasLocation" x="742" y="0.0"/>
         </scene>
-        <!--View Controller-->
+        <!--Details About Trip-->
         <scene sceneID="TwZ-Gt-kvX">
             <objects>
-                <viewController storyboardIdentifier="FourthViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qeO-4A-XI3" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FourthViewController" title="Details About Trip" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qeO-4A-XI3" customClass="FourthViewController" customModule="Project2_Alex_Mai" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="GLB-lq-1rB"/>
                         <viewControllerLayoutGuide type="bottom" id="26J-Bf-4HS"/>
@@ -627,6 +627,16 @@
                             <constraint firstItem="26J-Bf-4HS" firstAttribute="top" secondItem="uLM-0z-Vq8" secondAttribute="bottom" id="wOb-nA-6xq"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="departFromLabel" destination="bMf-SG-Mod" id="EyD-6r-N9Y"/>
+                        <outlet property="departureDateLabel" destination="fB8-Sj-zD9" id="MPz-Sr-cKr"/>
+                        <outlet property="destinationImageView" destination="AhM-Ge-g0R" id="msb-uG-cPM"/>
+                        <outlet property="destinationLabel" destination="7z1-zl-EAh" id="ynB-vU-iRf"/>
+                        <outlet property="numTravelersLabel" destination="H93-Sq-scD" id="V0d-Fe-Pt2"/>
+                        <outlet property="purposeLabel" destination="yYz-DS-XEg" id="MbR-se-KHt"/>
+                        <outlet property="returnDateLabel" destination="JrU-aq-ofE" id="cqg-iW-q62"/>
+                        <outlet property="statusLabel" destination="Y4d-ZD-OF0" id="3ph-ay-E6v"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7A2-OQ-q2I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -695,7 +705,6 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="registerbuttonPressedWithSender:" destination="wKJ-Tn-Dl3" eventType="touchUpInside" id="hjY-fp-bqX"/>
                                     <segue destination="wtt-0m-BsQ" kind="presentation" id="XoT-Md-hXo"/>
                                 </connections>
                             </button>

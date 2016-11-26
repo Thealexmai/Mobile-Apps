@@ -32,7 +32,6 @@ class Trip: NSObject {
         //there should be 8 chars in MMDDYYYY, only need MMDDYY
         let stringArray = Array(date.characters)
         var month = ""
-        dump(stringArray)
         month.append(stringArray[0])
         month.append(stringArray[1])
         var day = ""
