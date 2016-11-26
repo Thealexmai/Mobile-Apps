@@ -35,6 +35,33 @@ class FourthViewController: UIViewController {
             numTravelersLabel.text = "Num Travelers: \(thisTrip.numTravelersText)"
             purposeLabel.text = "Purpose of Trip: \(thisTrip.purposeText)"
             statusLabel.text = "Status: \(thisTrip.statusText)"
+            
+            let imageToDisplay: UIImage
+            
+            //eventually I want to make API Calls to grab the first image off of Google's search engine
+            switch thisTrip.arrivalLocationText {
+            case "Rochester, NY":
+                imageToDisplay = UIImage(named: "rochester")!
+            case "Los Angeles, CA":
+                imageToDisplay = UIImage(named: "la")!
+            case "Saint Louis, Missouri":
+                imageToDisplay = UIImage(named: "stlouis")!
+            case "Toronto, Ontario":
+                imageToDisplay = UIImage(named: "toronto")!
+            case "Honolulu, HI":
+                imageToDisplay = UIImage(named: "honolulu")!
+            case "New York, NY":
+                imageToDisplay = UIImage(named: "nyc")!
+            case "Los Angeles, CA":
+                imageToDisplay = UIImage(named: "la")!
+            case "Seattle, Washington":
+                imageToDisplay = UIImage(named: "seattle")!
+            default:
+                imageToDisplay = UIImage(named: "cruise")!
+            }
+            
+            destinationImageView.image = imageToDisplay
+            
         }
             
         

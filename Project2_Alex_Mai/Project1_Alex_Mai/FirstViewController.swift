@@ -140,7 +140,9 @@ class FirstViewController: UITableViewController {
         tableView.contentInset = insets
         tableView.scrollIndicatorInsets = insets
         
-        
+        let myDelegate = UIApplication.shared.delegate as! AppDelegate
+        var someVariable = myDelegate.hello
+        print(someVariable)
         
     }
     override func viewWillAppear(_ animated: Bool) {
