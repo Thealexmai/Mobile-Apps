@@ -20,6 +20,11 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var login: UITextField!
     @IBOutlet weak var password: UITextField!
 
+    @IBAction func xButtonPressed(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
     @IBAction func registerPressed(_ sender: UIButton) {
         
         //if all are not null
