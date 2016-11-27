@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--FirstViewController-->
+        <!--Request a Plan-->
         <scene sceneID="eIk-bq-gKe">
             <objects>
-                <tableViewController storyboardIdentifier="FirstViewController" title="FirstViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" clearsSelectionOnViewWillAppear="NO" id="5nU-kV-EaO" customClass="FirstViewController" customModule="Project2_Alex_Mai" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="FirstViewController" title="Request a Plan" useStoryboardIdentifierAsRestorationIdentifier="YES" clearsSelectionOnViewWillAppear="NO" id="5nU-kV-EaO" customClass="FirstViewController" customModule="Project2_Alex_Mai" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="static" style="grouped" separatorStyle="none" rowHeight="60" sectionHeaderHeight="18" sectionFooterHeight="18" id="QzG-0q-oJv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -429,10 +429,10 @@
             </objects>
             <point key="canvasLocation" x="1588" y="-838.38080959520244"/>
         </scene>
-        <!--Third View Controller-->
+        <!--Personal Info-->
         <scene sceneID="lPq-hm-2ln">
             <objects>
-                <viewController storyboardIdentifier="ThirdViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="wlD-Ld-Z9s" customClass="ThirdViewController" customModule="Project2_Alex_Mai" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ThirdViewController" title="Personal Info" useStoryboardIdentifierAsRestorationIdentifier="YES" id="wlD-Ld-Z9s" customClass="ThirdViewController" customModule="Project2_Alex_Mai" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SmH-FD-fwJ"/>
                         <viewControllerLayoutGuide type="bottom" id="Jhk-FL-Ha2"/>
@@ -566,7 +566,7 @@
             </objects>
             <point key="canvasLocation" x="801" y="-898"/>
         </scene>
-        <!--My Trips-->
+        <!--My Plans-->
         <scene sceneID="500-5A-4Q7">
             <objects>
                 <tableViewController storyboardIdentifier="SecondViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9DR-hP-FGJ" customClass="SecondViewController" customModule="Project2_Alex_Mai" customModuleProvider="target" sceneMemberID="viewController">
@@ -633,13 +633,13 @@
                             <outlet property="delegate" destination="9DR-hP-FGJ" id="HjO-cD-Z6O"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="My Trips" id="dvt-4R-MhI">
+                    <navigationItem key="navigationItem" title="My Plans" id="dvt-4R-MhI">
                         <barButtonItem key="leftBarButtonItem" title="My Profile" id="R0S-Jm-uZc">
                             <connections>
                                 <segue destination="wlD-Ld-Z9s" kind="show" id="gSM-5h-rck"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="+Add Trip" id="uLs-TL-fl1">
+                        <barButtonItem key="rightBarButtonItem" title="+Add Plan" id="uLs-TL-fl1">
                             <connections>
                                 <segue destination="5nU-kV-EaO" kind="show" identifier="SecondVC-to-FirstVC" id="qSz-6p-2er"/>
                             </connections>

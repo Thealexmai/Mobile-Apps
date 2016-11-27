@@ -9,6 +9,7 @@
 import UIKit
 
 //This class is a form - user asks an agent to plan item for him/her
+//Help for UIDatePicker from http://stackoverflow.com/questions/29678471/expanding-and-collapsing-uitableviewcells-with-datepicker
 class FirstViewController: UITableViewController {
     
     var tempTrip: TempTrip!
@@ -23,8 +24,6 @@ class FirstViewController: UITableViewController {
     @IBOutlet weak var returnDatePickerOutlet: UIDatePicker!
     @IBOutlet weak var departureDateLabel: UILabel!
     @IBOutlet weak var returnDateLabel: UILabel!
-//    @IBOutlet var departureDate: UITextField!
-//    @IBOutlet var returnDate: UITextField!
     @IBOutlet var numTravelers: UITextField!
     @IBOutlet var travelerNationality: UITextField!
     @IBOutlet var budget: UITextField!

@@ -28,19 +28,4 @@ class Trip: NSObject {
         
     }
     
-    func friendlyDateFormat(_ date: String) -> String {
-        //there should be 8 chars in MMDDYYYY, only need MMDDYY
-        let stringArray = Array(date.characters)
-        var month = ""
-        month.append(stringArray[0])
-        month.append(stringArray[1])
-        var day = ""
-        day.append(stringArray[2])
-        day.append(stringArray[3])
-        var year = ""
-        year.append(stringArray[6])
-        year.append(stringArray[7])
-
-        return month + "/" + day + "/" + year
-    }
 }
