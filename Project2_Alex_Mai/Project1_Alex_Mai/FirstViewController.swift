@@ -13,80 +13,18 @@ class FirstViewController: UITableViewController {
     
     var tempTrip: TempTrip!
     
-    var departureDatePickerVisible = false
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath.row)
-        if (indexPath.row == 2) {
-            if (!departureDatePickerVisible) {
-                showDatePickerCell()
-            }
-            else {
-                hideDatePickerCell()
-            }
-        }
-        
-        tableView.deselectRow(at: indexPath, animated: true)
-        
-    }
-    
-    //helper function 1
-    func showDatePickerCell() {
-        departureDatePickerVisible = true
-        self.tableView.beginUpdates()
-        self.tableView.endUpdates()
-        
-        departureDatePickerOutlet.isHidden = false
-        departureDatePickerOutlet.alpha = 0.0
-        
-        UIView.animate(withDuration: 0.25, animations: { () -> Void in
-            self.departureDatePickerOutlet.alpha = 1.0})
-    }
-    
-    //helper function 2
-    func hideDatePickerCell() {
-        departureDatePickerVisible = false
-        self.tableView.beginUpdates()
-        self.tableView.endUpdates()
-        UIView.animate(withDuration: 0.25, animations: { () -> Void in self.departureDatePickerOutlet.alpha = 0.0}, completion: { (bool) -> Void in self.departureDatePickerOutlet.isHidden = true})
-    }
-    
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
-        var height: CGFloat = 44
-        
-        if (indexPath.row == 3) {
-            height = departureDatePickerVisible ? 193.0 : 0.0
-        }
-        return height
-    }
-    
-    @IBOutlet weak var departureDatePickerOutlet: UIDatePicker!
-    @IBOutlet weak var departureDateLabel: UILabel!
-
-    @IBAction func departureDatePicker(_ sender: Any) {
-        print(departureDatePickerOutlet.date)
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MM-dd-YYYY"
-        let strDate = dateFormatter.string(from: departureDatePickerOutlet.date)
-        
-        departureDateLabel.text = strDate
-    }
-    
-    
-    override func viewWillAppear(_ animated: Bool) {
-
-        departureDateLabel.text = ""
-        departureDatePickerOutlet.isHidden = true
-        departureDatePickerOutlet.translatesAutoresizingMaskIntoConstraints = false
-    }
-    
+    var departureDatePickerisVisible = false
+    var returnDatePickerisVisible = false
+  
     //MARK: Outlets
     @IBOutlet var departLocation: UITextField!
     @IBOutlet var arrivalLocation: UITextField!
+    @IBOutlet weak var departureDatePickerOutlet: UIDatePicker!
+    @IBOutlet weak var returnDatePickerOutlet: UIDatePicker!
+    @IBOutlet weak var departureDateLabel: UILabel!
+    @IBOutlet weak var returnDateLabel: UILabel!
 //    @IBOutlet var departureDate: UITextField!
-    @IBOutlet var returnDate: UITextField!
+//    @IBOutlet var returnDate: UITextField!
     @IBOutlet var numTravelers: UITextField!
     @IBOutlet var travelerNationality: UITextField!
     @IBOutlet var budget: UITextField!
@@ -96,44 +34,6 @@ class FirstViewController: UITableViewController {
     
     
     //MARK: Actions
-//    @IBAction func submitPressed(sender: UIButton) {
-//        
-//        //takes all valid input and add to tripmanager
-//        if let departLocationText = departLocation.text,
-//            let arrivalLocationText = arrivalLocation.text,
-//            let departureDateText = departureDate.text,
-//            let returnDateText = returnDate.text,
-//            let numTravelersText = numTravelers.text,
-//            let travelerNationalityText = travelerNationality.text,
-//            let budgetText = budget.text,
-//            let purposeText = purpose.text {
-//            
-//            //user-requested trips are pending a travel advisor's plan
-//            let trip = Trip(departLocationText, arrivalLocationText, departureDateText, returnDateText, numTravelersText, travelerNationalityText, budgetText, ofAge.isOn, disabilities.isOn, purposeText, "pending")
-//            
-//            //add this trip into the singleton
-//            
-//            _ = TripManager.sharedInstance.addTrip(AccountManager.sharedInstance.whoAmI, trip)
-//            
-//            confirmButtonPressed()
-//        }
-//        
-//        //resign first responder whichever is active
-//        view.endEditing(true)
-//        
-//        //reset the text fields to be blank
-//        departLocation.text = nil
-//        arrivalLocation.text = nil
-//        departureDate.text = nil
-//        returnDate.text = nil
-//        numTravelers.text = nil
-//        travelerNationality.text = nil
-//        budget.text = nil
-//        ofAge.isOn = false
-//        disabilities.isOn = false
-//        purpose.text = nil
-//        
-//    }
     
     @IBAction func departLocationValueChanged(_ sender: Any) {
         if let departLocationString = departLocation.text {
@@ -144,17 +44,23 @@ class FirstViewController: UITableViewController {
         if let arrivalLocationString = arrivalLocation.text {
             tempTrip.arrivalLocationText = arrivalLocationString
         }
-
+        
     }
-//    @IBAction func departureDateValueChanged(_ sender: Any) {
-//        if let departureDateString = departureDate.text {
-//            tempTrip.departureDateText = departureDateString
-//        }
-//    }
-    @IBAction func returnDateValueChanged(_ sender: Any) {
-        if let returnDateString = returnDate.text {
-            tempTrip.returnDateText = returnDateString
-        }
+    @IBAction func departureDatePicker(_ sender: Any) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM-dd-YYYY"
+        let customDate = dateFormatter.string(from: departureDatePickerOutlet.date)
+        
+        departureDateLabel.text = customDate
+        tempTrip.departureDateText = customDate
+    }
+    @IBAction func returnDatePicker(_ sender: Any) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM-dd-YYYY"
+        let customDate = dateFormatter.string(from: returnDatePickerOutlet.date)
+        
+        returnDateLabel.text = customDate
+        tempTrip.returnDateText = customDate
     }
     @IBAction func numTravelersValueChanged(_ sender: Any) {
         if let numTravelersString = numTravelers.text {
@@ -182,7 +88,128 @@ class FirstViewController: UITableViewController {
             tempTrip.purposeText = purposeString
         }
     }
+    
+    
+    
+    @IBAction func submitPressed(sender: UIButton) {
+        
+        //takes all valid input and add to tripmanager
+        if let departLocationText = departLocation.text,
+            let arrivalLocationText = arrivalLocation.text,
+            let departureDateText = departureDateLabel.text,
+            let returnDateText = returnDateLabel.text,
+            let numTravelersText = numTravelers.text,
+            let travelerNationalityText = travelerNationality.text,
+            let budgetText = budget.text,
+            let purposeText = purpose.text {
+            
+            //user-requested trips are pending a travel advisor's plan
+            let trip = Trip(departLocationText, arrivalLocationText, departureDateText, returnDateText, numTravelersText, travelerNationalityText, budgetText, ofAge.isOn, disabilities.isOn, purposeText, "pending")
+            
+            //add this trip into the singleton
+            
+            _ = TripManager.sharedInstance.addTrip(AccountManager.sharedInstance.whoAmI, trip)
+            
+            confirmButtonPressed()
+        }
+        
+        //resign first responder whichever is active
+        view.endEditing(true)
+        
+        //reset the text fields to be blank
+        departLocation.text = nil
+        arrivalLocation.text = nil
+        departureDateLabel.text = nil
+        returnDateLabel.text = nil
+        numTravelers.text = nil
+        travelerNationality.text = nil
+        budget.text = nil
+        ofAge.isOn = false
+        disabilities.isOn = false
+        purpose.text = nil
+        
+    }
 
+    //delegates used for hiding and showing the cell when dates are selected
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        var height: CGFloat = 44.0
+        
+        if (indexPath.row == 3) {
+            height = departureDatePickerisVisible ? 193.0 : 0.0
+        }
+        if (indexPath.row == 5) {
+            height = returnDatePickerisVisible ? 193.0 : 0.0
+        }
+        return height
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if (indexPath.row == 2) {
+            //if departure is selected, then it should not show return date
+            hideDatePickerCell(returnDatePickerOutlet)
+            
+            if (!departureDatePickerisVisible) {
+                showDatePickerCell(departureDatePickerOutlet)
+            }
+            else {
+                hideDatePickerCell(departureDatePickerOutlet)
+            }
+        }
+        else if (indexPath.row == 4) {
+            //if return date is selected, then it should not show departure date
+            hideDatePickerCell(departureDatePickerOutlet)
+            
+            if(!returnDatePickerisVisible) {
+                showDatePickerCell(returnDatePickerOutlet)
+            }
+            else {
+                hideDatePickerCell(returnDatePickerOutlet)
+            }
+        }
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+    }
+    
+    //helper function 1
+    func showDatePickerCell(_ picker: UIDatePicker) {
+        if (picker == departureDatePickerOutlet) {
+            departureDatePickerisVisible = true
+            
+        }
+        else if (picker == returnDatePickerOutlet) {
+            returnDatePickerisVisible = true
+        }
+        
+        self.tableView.beginUpdates()
+        self.tableView.endUpdates()
+        
+        picker.isHidden = false
+        picker.alpha = 0.0
+        
+        UIView.animate(withDuration: 0.25, animations: { () -> Void in
+            picker.alpha = 1.0})
+    }
+    
+    //helper function 2
+    func hideDatePickerCell(_ picker: UIDatePicker) {
+        if (picker == departureDatePickerOutlet) {
+            departureDatePickerisVisible = false
+        }
+        else if (picker == returnDatePickerOutlet) {
+            returnDatePickerisVisible = false
+        }
+        
+        self.tableView.beginUpdates()
+        self.tableView.endUpdates()
+        
+        UIView.animate(withDuration: 0.25,
+                       animations: { () -> Void in
+                        picker.alpha = 0.0},
+                       completion: { (bool) -> Void in
+                        picker.isHidden = true})
+    }
     
     //confirm button pressed
     func confirmButtonPressed() {
@@ -198,8 +225,23 @@ class FirstViewController: UITableViewController {
         present(ac, animated: true, completion: nil)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        
+        departureDatePickerOutlet.isHidden = true
+        departureDatePickerOutlet.translatesAutoresizingMaskIntoConstraints = false
+        
+
+        returnDatePickerOutlet.isHidden = true
+        returnDatePickerOutlet.translatesAutoresizingMaskIntoConstraints = false
+    }
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //make initial label to blank
+        departureDateLabel.text = ""
+        returnDateLabel.text = ""
         
         //insets
         let statusBarHeight = UIApplication.shared.statusBarFrame.height
@@ -208,26 +250,21 @@ class FirstViewController: UITableViewController {
         tableView.contentInset = insets
         tableView.scrollIndicatorInsets = insets
         
+        //Access app delegate to persist the form information
         let myDelegate = UIApplication.shared.delegate as! AppDelegate
         tempTrip = myDelegate.tempTripForm
         
         //load in data if it were previously entered in
         departLocation.text = tempTrip.departLocationText
         arrivalLocation.text = tempTrip.arrivalLocationText
-//        departureDate.text = tempTrip.departureDateText
-        returnDate.text = tempTrip.returnDateText
+        departureDateLabel.text = tempTrip.departureDateText
+        returnDateLabel.text = tempTrip.returnDateText
         numTravelers.text = tempTrip.numTravelersText
         travelerNationality.text = tempTrip.travelerNationalityText
         budget.text = tempTrip.budgetText
         ofAge.isOn = tempTrip.ofAge
         disabilities.isOn = tempTrip.disabilities
         purpose.text = tempTrip.purposeText
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-        
     }
     
     override func didReceiveMemoryWarning() {

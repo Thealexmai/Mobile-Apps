@@ -55,8 +55,8 @@ class SecondViewController: UITableViewController {
             let trips = trip[indexPath.row]
             
             cell.arrivalDestination.text = String(format: NSLocalizedString("cell-trip-arrival", comment: "%@"), trips.arrivalLocationText)
-            cell.departureDate.text = String(format: NSLocalizedString("cell-trip-departDate", comment: "depart: %@"), trips.friendlyDateFormat(trips.departureDateText))
-            cell.returnDate.text = String(format: NSLocalizedString("cell-trip-returnDate", comment: "return: %@"), trips.friendlyDateFormat(trips.returnDateText))
+            cell.departureDate.text = String(format: NSLocalizedString("cell-trip-departDate", comment: "depart: %@"), trips.departureDateText)
+            cell.returnDate.text = String(format: NSLocalizedString("cell-trip-returnDate", comment: "return: %@"), trips.returnDateText)
 
         }
 

@@ -30,8 +30,8 @@ class FourthViewController: UIViewController {
             
             destinationLabel.text = thisTrip.arrivalLocationText
             departFromLabel.text = "Depart From: \(thisTrip.departLocationText)"
-            departureDateLabel.text = "Depart Date: \(thisTrip.friendlyDateFormat(thisTrip.departureDateText))"
-            returnDateLabel.text = "Return Date: \(thisTrip.friendlyDateFormat(thisTrip.returnDateText))"
+            departureDateLabel.text = "Depart Date: \(thisTrip.departureDateText)"
+            returnDateLabel.text = "Return Date: \(thisTrip.returnDateText)"
             numTravelersLabel.text = "Num Travelers: \(thisTrip.numTravelersText)"
             purposeLabel.text = "Purpose of Trip: \(thisTrip.purposeText)"
             statusLabel.text = "Status: \(thisTrip.statusText)"
