@@ -24,7 +24,7 @@ class TempTrip: NSObject, NSCoding {
     
     override init() {
         departLocationText = ""
-        arrivalLocationText = "asdfg"
+        arrivalLocationText = ""
         departureDateText = ""
         returnDateText = ""
         numTravelersText = ""

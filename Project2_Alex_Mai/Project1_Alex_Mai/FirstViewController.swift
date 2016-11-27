@@ -13,12 +13,12 @@ class FirstViewController: UITableViewController {
     
     var tempTrip: TempTrip!
     
-    var datePickerVisible = false
+    var departureDatePickerVisible = false
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(indexPath.row)
         if (indexPath.row == 2) {
-            if (!datePickerVisible) {
+            if (!departureDatePickerVisible) {
                 showDatePickerCell()
             }
             else {
@@ -30,50 +30,57 @@ class FirstViewController: UITableViewController {
         
     }
     
+    //helper function 1
+    func showDatePickerCell() {
+        departureDatePickerVisible = true
+        self.tableView.beginUpdates()
+        self.tableView.endUpdates()
+        
+        departureDatePickerOutlet.isHidden = false
+        departureDatePickerOutlet.alpha = 0.0
+        
+        UIView.animate(withDuration: 0.25, animations: { () -> Void in
+            self.departureDatePickerOutlet.alpha = 1.0})
+    }
+    
+    //helper function 2
+    func hideDatePickerCell() {
+        departureDatePickerVisible = false
+        self.tableView.beginUpdates()
+        self.tableView.endUpdates()
+        UIView.animate(withDuration: 0.25, animations: { () -> Void in self.departureDatePickerOutlet.alpha = 0.0}, completion: { (bool) -> Void in self.departureDatePickerOutlet.isHidden = true})
+    }
+    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         var height: CGFloat = 44
         
         if (indexPath.row == 3) {
-            height = datePickerVisible ? 216.0 : 0.0
+            height = departureDatePickerVisible ? 193.0 : 0.0
         }
         return height
     }
     
-    @IBOutlet weak var datePickerOutlet: UIDatePicker!
+    @IBOutlet weak var departureDatePickerOutlet: UIDatePicker!
     @IBOutlet weak var departureDateLabel: UILabel!
-    
-    @IBAction func datePicker(_ sender: Any) {
-        print(datePickerOutlet.date)
-        departureDateLabel.text = datePickerOutlet.date.description)
+
+    @IBAction func departureDatePicker(_ sender: Any) {
+        print(departureDatePickerOutlet.date)
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM-dd-YYYY"
+        let strDate = dateFormatter.string(from: departureDatePickerOutlet.date)
+        
+        departureDateLabel.text = strDate
     }
     
     
     override func viewWillAppear(_ animated: Bool) {
 
-        datePickerOutlet.isHidden = true
-        datePickerOutlet.translatesAutoresizingMaskIntoConstraints = false
+        departureDateLabel.text = ""
+        departureDatePickerOutlet.isHidden = true
+        departureDatePickerOutlet.translatesAutoresizingMaskIntoConstraints = false
     }
-    
-    func showDatePickerCell() {
-        datePickerVisible = true
-        self.tableView.beginUpdates()
-        self.tableView.endUpdates()
-        
-        datePickerOutlet.isHidden = false
-        datePickerOutlet.alpha = 0.0
-        
-        UIView.animate(withDuration: 0.25, animations: { () -> Void in
-            self.datePickerOutlet.alpha = 1.0})
-    }
-    
-    func hideDatePickerCell() {
-        datePickerVisible = false
-        self.tableView.beginUpdates()
-        self.tableView.endUpdates()
-        UIView.animate(withDuration: 0.25, animations: { () -> Void in self.datePickerOutlet.alpha = 0.0}, completion: { (bool) -> Void in self.datePickerOutlet.isHidden = true})
-    }
-    
     
     //MARK: Outlets
     @IBOutlet var departLocation: UITextField!
