@@ -33,7 +33,6 @@ class FirstViewController: UITableViewController {
     
     
     //MARK: Actions
-    
     @IBAction func departLocationValueChanged(_ sender: Any) {
         if let departLocationString = departLocation.text {
             tempTrip.departLocationText = departLocationString
@@ -43,7 +42,6 @@ class FirstViewController: UITableViewController {
         if let arrivalLocationString = arrivalLocation.text {
             tempTrip.arrivalLocationText = arrivalLocationString
         }
-        
     }
     @IBAction func departureDatePicker(_ sender: Any) {
         let dateFormatter = DateFormatter()
@@ -87,8 +85,6 @@ class FirstViewController: UITableViewController {
             tempTrip.purposeText = purposeString
         }
     }
-    
-    
     
     @IBAction func submitPressed(sender: UIButton) {
         
@@ -238,6 +234,9 @@ class FirstViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //set title of nav
+        navigationItem.title = "Request a Plan"
+        
         //make initial label to blank
         departureDateLabel.text = ""
         returnDateLabel.text = ""
@@ -253,7 +252,7 @@ class FirstViewController: UITableViewController {
         let myDelegate = UIApplication.shared.delegate as! AppDelegate
         tempTrip = myDelegate.tempTripForm
         
-        //load in data if it were previously entered in
+        //load in data if it were previously saved in
         departLocation.text = tempTrip.departLocationText
         arrivalLocation.text = tempTrip.arrivalLocationText
         departureDateLabel.text = tempTrip.departureDateText
