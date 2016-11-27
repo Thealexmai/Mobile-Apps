@@ -77,17 +77,26 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Departure Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ASI-V3-YDl">
-                                                    <rect key="frame" x="8" y="8" width="359" height="44"/>
+                                                    <rect key="frame" x="8" y="8" width="122.5" height="44"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hvJ-bU-uGU">
+                                                    <rect key="frame" x="139" y="8" width="229" height="44"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="ASI-V3-YDl" firstAttribute="top" secondItem="uDz-2v-2mp" secondAttribute="topMargin" id="2E2-ww-E3j"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="ASI-V3-YDl" secondAttribute="trailing" id="8IL-r0-tgo"/>
-                                                <constraint firstItem="ASI-V3-YDl" firstAttribute="leading" secondItem="uDz-2v-2mp" secondAttribute="leadingMargin" id="Xsb-II-Bct"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="ASI-V3-YDl" secondAttribute="bottom" id="e5g-5v-Sgk"/>
+                                                <constraint firstItem="ASI-V3-YDl" firstAttribute="top" secondItem="uDz-2v-2mp" secondAttribute="topMargin" id="4pR-Kd-ETq"/>
+                                                <constraint firstItem="ASI-V3-YDl" firstAttribute="leading" secondItem="uDz-2v-2mp" secondAttribute="leadingMargin" id="4xi-OK-K82"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="hvJ-bU-uGU" secondAttribute="trailing" constant="-1" id="DhJ-Pe-9A1"/>
+                                                <constraint firstItem="hvJ-bU-uGU" firstAttribute="leading" secondItem="ASI-V3-YDl" secondAttribute="trailing" constant="8.5" id="cJg-XI-wAx"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="hvJ-bU-uGU" secondAttribute="bottom" id="iTj-eP-dPi"/>
+                                                <constraint firstItem="hvJ-bU-uGU" firstAttribute="top" secondItem="uDz-2v-2mp" secondAttribute="topMargin" id="og5-sk-4B1"/>
+                                                <constraint firstItem="ASI-V3-YDl" firstAttribute="bottom" secondItem="uDz-2v-2mp" secondAttribute="bottomMargin" id="twy-rs-KDy"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -370,7 +379,7 @@
                         <outlet property="budget" destination="PiI-IQ-OBU" id="l8g-is-h5e"/>
                         <outlet property="datePickerOutlet" destination="zRw-Pu-dfT" id="qfA-cx-esV"/>
                         <outlet property="departLocation" destination="4As-1Q-5qe" id="Xn2-d1-Yse"/>
-                        <outlet property="departureDateLabel" destination="ASI-V3-YDl" id="erD-C6-b2S"/>
+                        <outlet property="departureDateLabel" destination="hvJ-bU-uGU" id="ha9-0R-T1k"/>
                         <outlet property="disabilities" destination="4f7-17-wL0" id="BQo-9A-LQ2"/>
                         <outlet property="numTravelers" destination="OSt-O6-RGK" id="pTY-F0-KFF"/>
                         <outlet property="ofAge" destination="T2y-AE-vk7" id="7ej-da-wuo"/>

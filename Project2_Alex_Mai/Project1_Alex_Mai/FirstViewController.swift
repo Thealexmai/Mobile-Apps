@@ -45,7 +45,7 @@ class FirstViewController: UITableViewController {
     
     @IBAction func datePicker(_ sender: Any) {
         print(datePickerOutlet.date)
-        departureDateLabel.text = "Departure Date: \(datePickerOutlet.date.description)"
+        departureDateLabel.text = datePickerOutlet.date.description)
     }
     
     
