@@ -41,6 +41,11 @@ class ThirdViewController: UIViewController, UINavigationControllerDelegate, UII
         present(picker, animated: true, completion: nil)
     }
     
+    @IBAction func logoutButtonPressed(_ sender: Any) {
+        AccountManager.sharedInstance.whoAmI = ""
+        dismiss(animated: true, completion: nil)
+    }
+    
     // picker controller delegate
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         let photo = info[UIImagePickerControllerOriginalImage] as! UIImage
@@ -67,11 +72,18 @@ class ThirdViewController: UIViewController, UINavigationControllerDelegate, UII
         genderLabel.text = AccountManager.sharedInstance.accounts[AccountManager.sharedInstance.getAccountIndex(AccountManager.sharedInstance.whoAmI)].gender
         ageLabel.text = (String) (AccountManager.sharedInstance.accounts[AccountManager.sharedInstance.getAccountIndex(AccountManager.sharedInstance.whoAmI)].age)
         
+        //if the image were saved, then persist the last saved image, otherwise display its default associated with the account
         if let img = ImagePersister.getImage(forEmail: AccountManager.sharedInstance.accounts[AccountManager.sharedInstance.getAccountIndex(AccountManager.sharedInstance.whoAmI)].email) {
             imageViewer.image = img
         }
+        else {
+            let img = AccountManager.sharedInstance.accounts[AccountManager.sharedInstance.getAccountIndex(AccountManager.sharedInstance.whoAmI)].image
+            
+            imageViewer.image = UIImage(named: img)
+        }
         
         emergencyContact.text = AccountManager.sharedInstance.accounts[AccountManager.sharedInstance.getAccountIndex(AccountManager.sharedInstance.whoAmI)].emergencyContact
+        
         
     }
     

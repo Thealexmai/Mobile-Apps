@@ -43,6 +43,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
             if AccountManager.sharedInstance.validatedAccount(userLogin, userPassword) {
                 let navController = self.storyboard!.instantiateViewController(withIdentifier: "NavController")
                 
+                print("Login successful")
+                print(AccountManager.sharedInstance.whoAmI)
                 
                 self.present(navController, animated:true, completion: nil)
             }
@@ -67,8 +69,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        print("Login successful")
-        print(AccountManager.sharedInstance.whoAmI)
         
     }
     
