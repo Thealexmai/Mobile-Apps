@@ -309,6 +309,9 @@ class FirstViewController: UITableViewController, UITextFieldDelegate {
         disabilities.isOn = tempTrip.disabilities
         purpose.text = tempTrip.purposeText
         
+        departureDatePickerOutlet.minimumDate = Date()
+        returnDatePickerOutlet.minimumDate = Date()
+        
     }
     
     override func didReceiveMemoryWarning() {
