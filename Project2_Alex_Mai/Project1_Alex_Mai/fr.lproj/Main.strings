@@ -1,4 +1,7 @@
 
+/* Class = "UIButton"; normalTitle = "Log Out"; ObjectID = "0Jv-8g-mEQ"; */
+"0Jv-8g-mEQ.normalTitle" = "Se déconnecter";
+
 /* Class = "UILabel"; text = "return: MM/DD/YY"; ObjectID = "0Ou-Wn-kAa"; */
 "0Ou-Wn-kAa.text" = "date de retour: MM/DD/YY";
 

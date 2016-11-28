@@ -35,8 +35,8 @@
 
 /* Begin PBXFileReference section */
 		FA09FAFD1DC58DDB00ED9599 /* SecondViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewCell.swift; sourceTree = "<group>"; };
-		FA31CBA61DECC56E000A84CC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
-		FA31CBA81DECC576000A84CC /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
+		FA31CBAA1DECF4AD000A84CC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		FA31CBAC1DECF4B5000A84CC /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
 		FA3C462A1DCD98530027BE25 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		FA3C462C1DCD98590027BE25 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		FA48D45D1DCE4E9D00D0B4D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -268,8 +268,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				FAF438861DC0FDAA0095D6FC /* Base */,
-				FA31CBA61DECC56E000A84CC /* en */,
-				FA31CBA81DECC576000A84CC /* fr */,
+				FA31CBAA1DECF4AD000A84CC /* en */,
+				FA31CBAC1DECF4B5000A84CC /* fr */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
