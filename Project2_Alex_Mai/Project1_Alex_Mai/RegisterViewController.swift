@@ -116,12 +116,6 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        
-    }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
@@ -131,5 +125,6 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
         super.viewWillAppear(animated)
         
         registerButton.setBorder(sampleButton: registerButton)
+
     }
 }

@@ -35,6 +35,7 @@
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                                     <connections>
                                                         <action selector="departLocationValueChanged:" destination="5nU-kV-EaO" eventType="editingChanged" id="f2L-uG-dZU"/>
+                                                        <outlet property="delegate" destination="5nU-kV-EaO" id="erY-Tl-d8f"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
@@ -59,6 +60,7 @@
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                                     <connections>
                                                         <action selector="arrivalLocationValueChanged:" destination="5nU-kV-EaO" eventType="editingChanged" id="3dC-Qt-hPu"/>
+                                                        <outlet property="delegate" destination="5nU-kV-EaO" id="JB7-bH-XfD"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
@@ -197,6 +199,7 @@
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
                                                     <connections>
                                                         <action selector="numTravelersValueChanged:" destination="5nU-kV-EaO" eventType="editingChanged" id="anf-bb-MDN"/>
+                                                        <outlet property="delegate" destination="5nU-kV-EaO" id="Jm4-x2-de9"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
@@ -221,6 +224,7 @@
                                                     <textInputTraits key="textInputTraits"/>
                                                     <connections>
                                                         <action selector="nationalitiesValueChanged:" destination="5nU-kV-EaO" eventType="editingChanged" id="ZIj-et-vHH"/>
+                                                        <outlet property="delegate" destination="5nU-kV-EaO" id="wOQ-J6-SuJ"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
@@ -245,6 +249,7 @@
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad"/>
                                                     <connections>
                                                         <action selector="budgetValueChanged:" destination="5nU-kV-EaO" eventType="editingChanged" id="sTH-hK-fFq"/>
+                                                        <outlet property="delegate" destination="5nU-kV-EaO" id="YFm-FX-mPg"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
@@ -359,6 +364,7 @@
                                                     <textInputTraits key="textInputTraits"/>
                                                     <connections>
                                                         <action selector="purposeValueChanged:" destination="5nU-kV-EaO" eventType="editingChanged" id="how-j7-OMQ"/>
+                                                        <outlet property="delegate" destination="5nU-kV-EaO" id="uXg-Vs-7sW"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
