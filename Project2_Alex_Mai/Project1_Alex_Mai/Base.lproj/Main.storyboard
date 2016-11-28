@@ -469,7 +469,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="j3D-Tv-A5M">
                                 <rect key="frame" x="16" y="64" width="343" height="559"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="748" image="trump" translatesAutoresizingMaskIntoConstraints="NO" id="j8T-nE-HY9">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="748" image="noperson" translatesAutoresizingMaskIntoConstraints="NO" id="j8T-nE-HY9">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="0.0"/>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="zRg-cY-mev">
@@ -954,7 +954,7 @@
                                                 <rect key="frame" x="0.0" y="210" width="343" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="wtt-0m-BsQ" id="bVv-E5-BG6"/>
                                                 </connections>
@@ -1054,7 +1054,7 @@
     <resources>
         <image name="Personal" width="37" height="37"/>
         <image name="Planning" width="38" height="38"/>
+        <image name="noperson" width="300" height="400"/>
         <image name="rochester" width="2353" height="1225"/>
-        <image name="trump" width="1180" height="842"/>
     </resources>
 </document>

@@ -55,7 +55,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
             else {
                 //insert into the Singleton
                 let fullName = firstnameText + " " + lastnameText
-                let newAccount = Account(fullName, genderText, Int(ageText)!, "trump.jpg", lowercaseLogin, passwordText, emailText, emergencyEmailText)
+                let newAccount = Account(fullName, genderText, Int(ageText)!, "noperson.jpg", lowercaseLogin, passwordText, emailText, emergencyEmailText)
                 
                 AccountManager.sharedInstance.addAccount(newAccount)
                 
