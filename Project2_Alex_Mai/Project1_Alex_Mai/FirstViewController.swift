@@ -309,6 +309,7 @@ class FirstViewController: UITableViewController, UITextFieldDelegate {
         disabilities.isOn = tempTrip.disabilities
         purpose.text = tempTrip.purposeText
         
+        //set the minimum date to be today's date
         departureDatePickerOutlet.minimumDate = Date()
         returnDatePickerOutlet.minimumDate = Date()
         
