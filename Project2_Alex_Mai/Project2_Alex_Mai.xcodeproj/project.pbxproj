@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		FA09FAFE1DC58DDB00ED9599 /* SecondViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA09FAFD1DC58DDB00ED9599 /* SecondViewCell.swift */; };
+		FA31CBA41DEC9028000A84CC /* UITextField+RegisterBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA31CBA31DEC9028000A84CC /* UITextField+RegisterBackground.swift */; };
 		FA48D45C1DCE4E9D00D0B4D2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA48D45E1DCE4E9D00D0B4D2 /* Localizable.strings */; };
 		FA48D4621DCE8EC500D0B4D2 /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA48D4611DCE8EC500D0B4D2 /* LaunchScreenViewController.swift */; };
 		FA5305101DE796DD001EB674 /* ImagePersister.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA53050F1DE796DD001EB674 /* ImagePersister.swift */; };
@@ -35,6 +36,7 @@
 
 /* Begin PBXFileReference section */
 		FA09FAFD1DC58DDB00ED9599 /* SecondViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewCell.swift; sourceTree = "<group>"; };
+		FA31CBA31DEC9028000A84CC /* UITextField+RegisterBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+RegisterBackground.swift"; sourceTree = "<group>"; };
 		FA3C462A1DCD98530027BE25 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		FA3C462C1DCD98590027BE25 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		FA48D45D1DCE4E9D00D0B4D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				FA5305151DE7D2C7001EB674 /* UIButton+CustomBorder.swift */,
+				FA31CBA31DEC9028000A84CC /* UITextField+RegisterBackground.swift */,
 			);
 			name = Extensions;
 			path = Project1_Alex_Mai;
@@ -243,6 +246,7 @@
 				FA5305161DE7D2C7001EB674 /* UIButton+CustomBorder.swift in Sources */,
 				FAF438821DC0FDAA0095D6FC /* FirstViewController.swift in Sources */,
 				FA09FAFE1DC58DDB00ED9599 /* SecondViewCell.swift in Sources */,
+				FA31CBA41DEC9028000A84CC /* UITextField+RegisterBackground.swift in Sources */,
 				FA8EA4531DC1989300BEAAC6 /* Account.swift in Sources */,
 				FA53051A1DE7F9AB001EB674 /* TempTrip.swift in Sources */,
 				FAAC45131DE896110032A3A5 /* LoginTextPersister.swift in Sources */,

@@ -113,12 +113,12 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
         textField.resignFirstResponder()
-        
-        return false
+        return true
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
     }
     
