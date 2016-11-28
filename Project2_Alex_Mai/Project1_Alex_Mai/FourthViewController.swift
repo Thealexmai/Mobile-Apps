@@ -36,6 +36,11 @@ class FourthViewController: UIViewController {
             purposeLabel.text = "Purpose of Trip: \(thisTrip.purposeText)"
             statusLabel.text = "Status: \(thisTrip.statusText)"
             
+            //if the trip has been approved, then 
+            if (thisTrip.statusText == "approved") {
+                statusLabel.textColor = UIColor.green
+            }
+            
             let imageToDisplay: UIImage
             
             //eventually I want to make API Calls to grab the first image off of Google's search engine

@@ -10,7 +10,7 @@ import UIKit
 
 //This class is a form - user asks an agent to plan item for him/her
 //Help for UIDatePicker from http://stackoverflow.com/questions/29678471/expanding-and-collapsing-uitableviewcells-with-datepicker
-class FirstViewController: UITableViewController {
+class FirstViewController: UITableViewController, UITextFieldDelegate {
     
     var tempTrip: TempTrip!
     
@@ -30,7 +30,6 @@ class FirstViewController: UITableViewController {
     @IBOutlet var ofAge: UISwitch!
     @IBOutlet var disabilities: UISwitch!
     @IBOutlet var purpose: UITextField!
-    
     
     //MARK: Actions
     @IBAction func departLocationValueChanged(_ sender: Any) {
@@ -88,6 +87,9 @@ class FirstViewController: UITableViewController {
     
     @IBAction func submitPressed(sender: UIButton) {
         
+        //resign first responder whichever is active
+        view.endEditing(true)
+        
         //takes all valid input and add to tripmanager
         if let departLocationText = departLocation.text,
             let arrivalLocationText = arrivalLocation.text,
@@ -98,30 +100,38 @@ class FirstViewController: UITableViewController {
             let budgetText = budget.text,
             let purposeText = purpose.text {
             
-            //user-requested trips are pending a travel advisor's plan
-            let trip = Trip(departLocationText, arrivalLocationText, departureDateText, returnDateText, numTravelersText, travelerNationalityText, budgetText, ofAge.isOn, disabilities.isOn, purposeText, "pending")
+            //Check things to see if they are valid
+            if (departLocationText.isEmpty || arrivalLocationText.isEmpty || departureDateText.isEmpty || returnDateText.isEmpty || numTravelersText.isEmpty || travelerNationalityText.isEmpty || budgetText.isEmpty || purposeText.isEmpty) {
+                warnUser("At least one of the fields is empty. Please go back and fix it.")
+            }
+            else if (!cityStateConforms(departLocationText) || !cityStateConforms(arrivalLocationText)) {
+                warnUser("Your location must match 'City, State' format. Please go back and fix it.")
+            }
+            else {
+                //user-requested trips are pending a travel advisor's plan
+                let trip = Trip(departLocationText, arrivalLocationText, departureDateText, returnDateText, numTravelersText, travelerNationalityText, budgetText, ofAge.isOn, disabilities.isOn, purposeText, "pending")
+                
+                //add this trip into the singleton
+                
+                _ = TripManager.sharedInstance.addTrip(AccountManager.sharedInstance.whoAmI, trip)
+                
+                //reset the text fields to be blank
+                departLocation.text = nil
+                arrivalLocation.text = nil
+                departureDateLabel.text = nil
+                returnDateLabel.text = nil
+                numTravelers.text = nil
+                travelerNationality.text = nil
+                budget.text = nil
+                ofAge.isOn = false
+                disabilities.isOn = false
+                purpose.text = nil
+                
+                confirmButtonPressed()
+
+            }
             
-            //add this trip into the singleton
-            
-            _ = TripManager.sharedInstance.addTrip(AccountManager.sharedInstance.whoAmI, trip)
-            
-            confirmButtonPressed()
         }
-        
-        //resign first responder whichever is active
-        view.endEditing(true)
-        
-        //reset the text fields to be blank
-        departLocation.text = nil
-        arrivalLocation.text = nil
-        departureDateLabel.text = nil
-        returnDateLabel.text = nil
-        numTravelers.text = nil
-        travelerNationality.text = nil
-        budget.text = nil
-        ofAge.isOn = false
-        disabilities.isOn = false
-        purpose.text = nil
         
     }
 
@@ -206,6 +216,12 @@ class FirstViewController: UITableViewController {
                         picker.isHidden = true})
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        view.endEditing(true)
+        
+        return true
+    }
+    
     //confirm button pressed
     func confirmButtonPressed() {
         let title = NSLocalizedString("info-captured", comment: "Information captured!")
@@ -218,6 +234,35 @@ class FirstViewController: UITableViewController {
 
         
         present(ac, animated: true, completion: nil)
+    }
+    
+    //warn user of invalid input
+    func warnUser(_ warnMessage: String) {
+        let title = NSLocalizedString("Warning", comment: "Warning!")
+        let message = warnMessage
+//        let message = NSLocalizedString("something-wrong", comment: warnMessage)
+        
+        let ac = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        let confirmAction = UIAlertAction(title: NSLocalizedString("ok", comment: "Ok"), style: .default, handler: nil)
+        ac.addAction(confirmAction)
+        
+        
+        present(ac, animated: true, completion: nil)
+    }
+    
+    //make sure Departure Location and Arrival Location conform to City, State template
+    func cityStateConforms(_ location: String) -> Bool {
+        let characters = location.components(separatedBy: " ")
+        
+        if (!characters[0].contains(",")) {
+            return false
+        }
+        else if (characters.count > 2) {
+            return false
+        }
+        
+        return true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -263,6 +308,7 @@ class FirstViewController: UITableViewController {
         ofAge.isOn = tempTrip.ofAge
         disabilities.isOn = tempTrip.disabilities
         purpose.text = tempTrip.purposeText
+        
     }
     
     override func didReceiveMemoryWarning() {

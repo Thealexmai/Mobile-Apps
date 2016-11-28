@@ -84,7 +84,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
 
     }
     
-    //prompt User with message - warn and confirm account deletion
+    //prompt User with message - warn and confirm account register
     func promptUser(_ message: String, _ warning:Bool, _ dismiss: @escaping (UIAlertAction) -> Void) {
         
         if (warning) {
