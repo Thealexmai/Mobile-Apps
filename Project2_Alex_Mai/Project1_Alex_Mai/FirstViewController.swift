@@ -258,7 +258,7 @@ class FirstViewController: UITableViewController, UITextFieldDelegate {
         if (!characters[0].contains(",")) {
             return false
         }
-        else if (characters.count > 2) {
+        else if (characters.count != 2) {
             return false
         }
         
