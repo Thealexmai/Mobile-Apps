@@ -29,12 +29,12 @@ class FourthViewController: UIViewController {
             //assign thisTrip to the SPECIFIC one clicked
             
             destinationLabel.text = thisTrip.arrivalLocationText
-            departFromLabel.text = "Depart From: \(thisTrip.departLocationText)"
-            departureDateLabel.text = "Depart Date: \(thisTrip.departureDateText)"
-            returnDateLabel.text = "Return Date: \(thisTrip.returnDateText)"
-            numTravelersLabel.text = "Num Travelers: \(thisTrip.numTravelersText)"
-            purposeLabel.text = "Purpose of Trip: \(thisTrip.purposeText)"
-            statusLabel.text = "Status: \(thisTrip.statusText)"
+            departFromLabel.text = String(format: NSLocalizedString("Depart From: %@", comment: "departFromLabel"), thisTrip.departLocationText)
+            departureDateLabel.text = String(format: NSLocalizedString("Depart Date: %@", comment: "departureDateLabel"), thisTrip.departureDateText)
+            returnDateLabel.text = String(format: NSLocalizedString("Return Date: %@", comment: "returnDateLabel"), thisTrip.returnDateText)
+            numTravelersLabel.text = String(format: NSLocalizedString("Num Travelers: %@", comment: "numTravelersLabel"), thisTrip.numTravelersText)
+            purposeLabel.text = String(format: NSLocalizedString("Purpose of Trip: %@", comment: "purposeLabel"), thisTrip.purposeText)
+            statusLabel.text = String(format: NSLocalizedString("Status: %@", comment: "statusLabel"), thisTrip.statusText)
             
             //if the trip has been approved, then 
             if (thisTrip.statusText == "approved") {
@@ -69,13 +69,6 @@ class FourthViewController: UIViewController {
             
         }
             
-        
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        
         
     }
     

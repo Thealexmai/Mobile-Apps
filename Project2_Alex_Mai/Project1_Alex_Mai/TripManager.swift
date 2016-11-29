@@ -26,7 +26,7 @@ class TripManager {
         
         //initialize the array
         trips[AccountManager.sharedInstance.whoAmI] = []
-        trips["admin"] = [Trip("Saint Louis, MO", "Rochester, NY", "09-09-2018", "10-11-2018", "2", NSLocalizedString("American", comment: "American"), "900", false, false, NSLocalizedString("For fun", comment: "For fun purpose of trip"), NSLocalizedString("approved", comment: "approved status")), Trip("Rochester, NY", String(format: NSLocalizedString("%@", comment: "location"), "Los Angeles, CA"), "01-16-2017", "06-30-2017", "1", String(format: NSLocalizedString("%@", comment: "nationality"), "American"), "6000", false, true, String(format: NSLocalizedString("%@", comment: "reason"), "Running away from winter"), "approved"),]
+        trips["admin"] = [Trip("Saint Louis, MO", "Rochester, NY", "09-09-2018", "10-11-2018", "2", NSLocalizedString("American", comment: "American"), "900", false, false, NSLocalizedString("For fun", comment: "For fun purpose of trip"), NSLocalizedString("approved", comment: "approved status")), Trip("Rochester, NY", NSLocalizedString("Los Angeles, CA", comment: "Los Angeles, CA"), "01-16-2017", "06-30-2017", "1", NSLocalizedString("American", comment: "Nationality: American"), "6000", false, true, NSLocalizedString("Running away from winter", comment: "Reason: Running away from Winter"), NSLocalizedString("approved", comment: "approved status")),]
 
     }
     

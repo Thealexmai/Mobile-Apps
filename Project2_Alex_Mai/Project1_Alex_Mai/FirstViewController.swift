@@ -102,17 +102,16 @@ class FirstViewController: UITableViewController, UITextFieldDelegate {
             
             //Check things to see if they are valid
             if (departLocationText.isEmpty || arrivalLocationText.isEmpty || departureDateText.isEmpty || returnDateText.isEmpty || numTravelersText.isEmpty || travelerNationalityText.isEmpty || budgetText.isEmpty || purposeText.isEmpty) {
-                warnUser("At least one of the fields is empty. Please go back and fix it.")
+                warnUser(NSLocalizedString("At least one of the fields is empty. Please go back and fix it.", comment: "One of the fields is empty."))
             }
             else if (!cityStateConforms(departLocationText) || !cityStateConforms(arrivalLocationText)) {
-                warnUser("Your location must match 'City, State' format. Please go back and fix it.")
+                warnUser(NSLocalizedString("Your location must match 'City, State' format. Please go back and fix it.", comment: "Location must match City, State format"))
             }
             else {
                 //user-requested trips are pending a travel advisor's plan
                 let trip = Trip(departLocationText, arrivalLocationText, departureDateText, returnDateText, numTravelersText, travelerNationalityText, budgetText, ofAge.isOn, disabilities.isOn, purposeText, "pending")
                 
                 //add this trip into the singleton
-                
                 _ = TripManager.sharedInstance.addTrip(AccountManager.sharedInstance.whoAmI, trip)
                 
                 //reset the text fields to be blank
@@ -280,7 +279,7 @@ class FirstViewController: UITableViewController, UITextFieldDelegate {
         super.viewDidLoad()
         
         //set title of nav
-        navigationItem.title = "Request a Plan"
+        navigationItem.title = NSLocalizedString("Request a Plan", comment: "Request Plan nav title")
         
         //make initial label to blank
         departureDateLabel.text = ""
