@@ -26,6 +26,8 @@
 		FAD003BF1DF8F4AA00AE19E8 /* ImageURLFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD003BE1DF8F4AA00AE19E8 /* ImageURLFetcher.swift */; };
 		FAD003C11DF8F4D900AE19E8 /* ImageURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD003C01DF8F4D900AE19E8 /* ImageURL.swift */; };
 		FAD003C31DF90BCF00AE19E8 /* ImageFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD003C21DF90BCF00AE19E8 /* ImageFetcher.swift */; };
+		FAD003C61DF9A76400AE19E8 /* Project3_Alex_Mai.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FAD003C41DF9A76400AE19E8 /* Project3_Alex_Mai.xcdatamodeld */; };
+		FAD003C81DF9AC5600AE19E8 /* AccountDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD003C71DF9AC5600AE19E8 /* AccountDataSource.swift */; };
 		FAF438801DC0FDAA0095D6FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF4387F1DC0FDAA0095D6FC /* AppDelegate.swift */; };
 		FAF438821DC0FDAA0095D6FC /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF438811DC0FDAA0095D6FC /* FirstViewController.swift */; };
 		FAF438841DC0FDAA0095D6FC /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF438831DC0FDAA0095D6FC /* SecondViewController.swift */; };
@@ -61,6 +63,8 @@
 		FAD003BE1DF8F4AA00AE19E8 /* ImageURLFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageURLFetcher.swift; sourceTree = "<group>"; };
 		FAD003C01DF8F4D900AE19E8 /* ImageURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageURL.swift; sourceTree = "<group>"; };
 		FAD003C21DF90BCF00AE19E8 /* ImageFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageFetcher.swift; sourceTree = "<group>"; };
+		FAD003C51DF9A76400AE19E8 /* Project3_Alex_Mai.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Project3_Alex_Mai.xcdatamodel; sourceTree = "<group>"; };
+		FAD003C71DF9AC5600AE19E8 /* AccountDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountDataSource.swift; sourceTree = "<group>"; };
 		FAF4387C1DC0FDAA0095D6FC /* Project3_Alex_Mai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project3_Alex_Mai.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAF4387F1DC0FDAA0095D6FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAF438811DC0FDAA0095D6FC /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -109,9 +113,11 @@
 			children = (
 				FA8EA4521DC1989300BEAAC6 /* Account.swift */,
 				FAAB1FEE1DC2DA790040604F /* AccountManager.swift */,
+				FAD003C71DF9AC5600AE19E8 /* AccountDataSource.swift */,
 				FAAB1FF21DC2E9B70040604F /* Trip.swift */,
 				FAAB1FF01DC2E47B0040604F /* TripManager.swift */,
 				FA5305181DE7F979001EB674 /* PersistentStorage */,
+				FAD003C41DF9A76400AE19E8 /* Project3_Alex_Mai.xcdatamodeld */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -235,6 +241,7 @@
 			files = (
 				FAF438841DC0FDAA0095D6FC /* SecondViewController.swift in Sources */,
 				FAAC45111DE891480032A3A5 /* Login.swift in Sources */,
+				FAD003C81DF9AC5600AE19E8 /* AccountDataSource.swift in Sources */,
 				FAAB1FEF1DC2DA790040604F /* AccountManager.swift in Sources */,
 				FAF438801DC0FDAA0095D6FC /* AppDelegate.swift in Sources */,
 				FAAC451E1DE904E90032A3A5 /* FourthViewController.swift in Sources */,
@@ -249,6 +256,7 @@
 				FAAC45151DE8B2030032A3A5 /* TempTripPersister.swift in Sources */,
 				FA5305161DE7D2C7001EB674 /* UIButton+CustomBorder.swift in Sources */,
 				FAF438821DC0FDAA0095D6FC /* FirstViewController.swift in Sources */,
+				FAD003C61DF9A76400AE19E8 /* Project3_Alex_Mai.xcdatamodeld in Sources */,
 				FA09FAFE1DC58DDB00ED9599 /* SecondViewCell.swift in Sources */,
 				FA8EA4531DC1989300BEAAC6 /* Account.swift in Sources */,
 				FA53051A1DE7F9AB001EB674 /* TempTrip.swift in Sources */,
@@ -438,6 +446,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FAD003C41DF9A76400AE19E8 /* Project3_Alex_Mai.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FAD003C51DF9A76400AE19E8 /* Project3_Alex_Mai.xcdatamodel */,
+			);
+			currentVersion = FAD003C51DF9A76400AE19E8 /* Project3_Alex_Mai.xcdatamodel */;
+			path = Project3_Alex_Mai.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = FAF438741DC0FDAA0095D6FC /* Project object */;
 }

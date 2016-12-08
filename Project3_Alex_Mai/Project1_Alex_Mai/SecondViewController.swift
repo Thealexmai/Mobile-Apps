@@ -36,7 +36,7 @@ class SecondViewController: UITableViewController {
         var toReturnNumRows = 0
         
         //get the number of rows needed that's tied from the user's login
-        if let numRows = TripManager.sharedInstance.trips[AccountManager.sharedInstance.whoAmI] {
+        if let numRows = TripManager.sharedInstance.trips[AccountDataSource.whoAmI] {
             toReturnNumRows = numRows.count
         }
         
@@ -51,7 +51,7 @@ class SecondViewController: UITableViewController {
         cell.updateLabels()
         
         //find all the trips that match the user's login and set the labels
-        if let trip = TripManager.sharedInstance.trips[AccountManager.sharedInstance.whoAmI] {
+        if let trip = TripManager.sharedInstance.trips[AccountDataSource.whoAmI] {
             let trips = trip[indexPath.row]
             
             cell.arrivalDestination.text = String(format: NSLocalizedString("cell-trip-arrival", comment: "%@"), trips.arrivalLocationText)
@@ -66,11 +66,11 @@ class SecondViewController: UITableViewController {
     //delete cell
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            if let trip = TripManager.sharedInstance.trips[AccountManager.sharedInstance.whoAmI] {
+            if let trip = TripManager.sharedInstance.trips[AccountDataSource.whoAmI] {
                 let deleteTrip = trip[indexPath.row]
                 //send alert to verify
                 verifyDelete(deleteTrip.arrivalLocationText, { (UIAlertAction) in
-                    TripManager.sharedInstance.removeTrip(AccountManager.sharedInstance.whoAmI, deleteTrip)
+                    TripManager.sharedInstance.removeTrip(AccountDataSource.whoAmI, deleteTrip)
                     self.tableView.deleteRows(at: [indexPath], with: .automatic)
                 })
                 
@@ -80,7 +80,7 @@ class SecondViewController: UITableViewController {
     
     //rearrange cells
     override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-        TripManager.sharedInstance.moveTrip(AccountManager.sharedInstance.whoAmI, sourceIndexPath.row, destinationIndexPath.row)
+        TripManager.sharedInstance.moveTrip(AccountDataSource.whoAmI, sourceIndexPath.row, destinationIndexPath.row)
     }
     
     //confirm delete helper method

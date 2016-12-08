@@ -112,7 +112,7 @@ class FirstViewController: UITableViewController, UITextFieldDelegate {
                 let trip = Trip(departLocationText, arrivalLocationText, departureDateText, returnDateText, numTravelersText, travelerNationalityText, budgetText, ofAge.isOn, disabilities.isOn, purposeText, "pending")
                 
                 //add this trip into the singleton
-                _ = TripManager.sharedInstance.addTrip(AccountManager.sharedInstance.whoAmI, trip)
+                _ = TripManager.sharedInstance.addTrip(AccountDataSource.whoAmI, trip)
                 
                 //reset the text fields to be blank
                 departLocation.text = nil

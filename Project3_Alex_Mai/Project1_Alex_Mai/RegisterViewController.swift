@@ -10,6 +10,8 @@ import UIKit
 
 class RegisterViewController: UIViewController, UITextFieldDelegate {
 
+    var accounts: AccountDataSource!
+    
     @IBOutlet weak var registerButton: UIButton!
     @IBOutlet weak var firstName: UITextField!
     @IBOutlet weak var lastName: UITextField!
@@ -40,7 +42,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
                     return
                 })
             }
-            else if (AccountManager.sharedInstance.matchesOtherLogin(lowercaseLogin)) {
+            else if (accounts.matchesOtherLogin(lowercaseLogin)) {
                 //if login matches one of the logins already in the array, then deny account creation and alert user to choose another
                 promptUser(NSLocalizedString("dualLoginWarning", comment: "Login already exists, please choose another one!"), true, { (UIAlertAction) in
                     return
@@ -53,11 +55,11 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
                 })
             }
             else {
-                //insert into the Singleton
+                //insert into the dataSource
                 let fullName = firstnameText + " " + lastnameText
-                let newAccount = Account(fullName, genderText, Int(ageText)!, "noperson.jpg", lowercaseLogin, passwordText, emailText, emergencyEmailText)
                 
-                AccountManager.sharedInstance.addAccount(newAccount)
+                print(accounts.newAccount(fullName, genderText, Int32(ageText)!, "noperson.jpg", lowercaseLogin, passwordText, emailText, emergencyEmailText))
+                
                 
                 //show alert saying true and dismiss this view controller
                 promptUser(NSLocalizedString("accountCreatedWarning", comment: "Your account has been created! Please log in"), false, { (UIAlertAction) in
@@ -116,6 +118,12 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        accounts = AccountDataSource()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
@@ -127,4 +135,6 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
         registerButton.setBorder(sampleButton: registerButton)
 
     }
+    
+    
 }

@@ -31,7 +31,7 @@ class FourthViewController: UIViewController {
         imageURLFetcher = ImageURLFetcher()
         imageFetcher = ImageFetcher()
         
-        if let trips = TripManager.sharedInstance.trips[AccountManager.sharedInstance.whoAmI] {
+        if let trips = TripManager.sharedInstance.trips[AccountDataSource.whoAmI] {
             let thisTrip = trips[cellClicked]
             //assign thisTrip to the SPECIFIC one clicked
 
