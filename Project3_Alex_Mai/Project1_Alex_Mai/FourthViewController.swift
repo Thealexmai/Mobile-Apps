@@ -12,6 +12,10 @@ class FourthViewController: UIViewController {
     
     var cellClicked: Int!
     
+    //fetch the URL from google search result
+    var imageURLFetcher: ImageURLFetcher!
+    var imageFetcher: ImageFetcher!
+    
     @IBOutlet weak var destinationLabel: UILabel!
     @IBOutlet weak var destinationImageView: UIImageView!
     @IBOutlet weak var departFromLabel: UILabel!
@@ -24,9 +28,13 @@ class FourthViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        imageURLFetcher = ImageURLFetcher()
+        imageFetcher = ImageFetcher()
+        
         if let trips = TripManager.sharedInstance.trips[AccountManager.sharedInstance.whoAmI] {
             let thisTrip = trips[cellClicked]
             //assign thisTrip to the SPECIFIC one clicked
+
             
             destinationLabel.text = thisTrip.arrivalLocationText
             departFromLabel.text = String(format: NSLocalizedString("Depart From: %@", comment: "departFromLabel"), thisTrip.departLocationText)
@@ -41,35 +49,35 @@ class FourthViewController: UIViewController {
                 statusLabel.textColor = UIColor.green
             }
             
-            let imageToDisplay: UIImage
+            //fetch for a URL
+            imageURLFetcher.fetchURLImage(for: thisTrip.arrivalLocationText) {
+                (ImageURLResult) -> Void in
+                
+                switch(ImageURLResult) {
+                case let .ImageURLSuccess(imageURL):
+                    //if imageURL is fetched then fetch it from the website
+                    self.imageFetcher.fetchImage(url: imageURL.imageString!) {
+                        (fetchResult) -> Void in
+                        switch(fetchResult) {
+                        case let .ImageSuccess(image):
+                            OperationQueue.main.addOperation() {
+                                self.destinationImageView.image = image
+                            }
+                        case let .ImageFailure(error):
+                            OperationQueue.main.addOperation {
+                                self.destinationImageView.image = #imageLiteral(resourceName: "cruise")
+                            }
+                            print("error: \(error)")
+                        }
+                    }
+                case let .ImageURLFailure(error):
+                    print("error: \(error)")
+                }
+            } //close .fetchURLImage
             
-            //eventually I want to make API Calls to grab the first image off of Google's search engine
-            switch thisTrip.arrivalLocationText {
-            case "Rochester, NY":
-                imageToDisplay = UIImage(named: "rochester")!
-            case "Los Angeles, CA":
-                imageToDisplay = UIImage(named: "la")!
-            case "Saint Louis, Missouri":
-                imageToDisplay = UIImage(named: "stlouis")!
-            case "Toronto, Ontario":
-                imageToDisplay = UIImage(named: "toronto")!
-            case "Honolulu, HI":
-                imageToDisplay = UIImage(named: "honolulu")!
-            case "New York, NY":
-                imageToDisplay = UIImage(named: "nyc")!
-            case "Los Angeles, CA":
-                imageToDisplay = UIImage(named: "la")!
-            case "Seattle, Washington":
-                imageToDisplay = UIImage(named: "seattle")!
-            default:
-                imageToDisplay = UIImage(named: "cruise")!
-            }
-            
-            destinationImageView.image = imageToDisplay
-            
-        }
+        } //close if-let trips
             
         
-    }
+    } //viewDidLoad
     
 }

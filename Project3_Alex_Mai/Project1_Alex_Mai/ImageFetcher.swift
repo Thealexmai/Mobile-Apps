@@ -7,23 +7,44 @@
 //
 
 import Foundation
-
-enum ImageError: Error {
-    case InvalidJSONError
-    case NotYetImplementedError
+import UIKit
+enum ImageFetchError: Error {
+    case BadURL
+    case ImageFetchFailed
 }
 
-enum ImageResult {
-    case ImageSuccess(Image)
+enum ImageFetchResult {
+    case ImageSuccess(UIImage)
     case ImageFailure(Error)
 }
 
 class ImageFetcher {
-    private static let baseUrl = 
+    let session = URLSession(configuration: URLSessionConfiguration.default)
     
-    let session: URLSession = {
-        let config = URLSessionConfiguration.default
-        return URLSession(configuration: config)
-    }()
-    
+    func fetchImage(url: String, completion: @escaping (ImageFetchResult) -> Void) {
+        if let imageURL = URL(string: url) {
+            let request = URLRequest(url: imageURL)
+            
+            let task = session.dataTask(with: request) {
+                (data, response, error) -> Void in
+                
+                guard let imageData = data,
+                    let image = UIImage(data: imageData) else {
+                        if data == nil {
+                            completion(.ImageFailure(error!))
+                        }
+                        else {
+                            completion(.ImageFailure(ImageFetchError.ImageFetchFailed))
+                        }
+                        return
+                }
+                
+                completion(.ImageSuccess(image))
+            }
+            task.resume()
+        }
+        else {
+            completion(.ImageFailure(ImageFetchError.BadURL))
+        }
+    }
 }

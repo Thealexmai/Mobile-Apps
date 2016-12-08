@@ -8,6 +8,8 @@
 
 import Foundation
 
-struct Image {
+struct ImageURL {
     var imageString: String?
+    
+    
 }
