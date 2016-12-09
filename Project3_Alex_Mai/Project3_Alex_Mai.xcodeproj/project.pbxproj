@@ -28,6 +28,7 @@
 		FAD003C31DF90BCF00AE19E8 /* ImageFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD003C21DF90BCF00AE19E8 /* ImageFetcher.swift */; };
 		FAD003C61DF9A76400AE19E8 /* Project3_Alex_Mai.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FAD003C41DF9A76400AE19E8 /* Project3_Alex_Mai.xcdatamodeld */; };
 		FAD003C81DF9AC5600AE19E8 /* AccountDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD003C71DF9AC5600AE19E8 /* AccountDataSource.swift */; };
+		FAD003CA1DFA5DDB00AE19E8 /* TripDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD003C91DFA5DDA00AE19E8 /* TripDataSource.swift */; };
 		FAF438801DC0FDAA0095D6FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF4387F1DC0FDAA0095D6FC /* AppDelegate.swift */; };
 		FAF438821DC0FDAA0095D6FC /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF438811DC0FDAA0095D6FC /* FirstViewController.swift */; };
 		FAF438841DC0FDAA0095D6FC /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF438831DC0FDAA0095D6FC /* SecondViewController.swift */; };
@@ -65,6 +66,7 @@
 		FAD003C21DF90BCF00AE19E8 /* ImageFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageFetcher.swift; sourceTree = "<group>"; };
 		FAD003C51DF9A76400AE19E8 /* Project3_Alex_Mai.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Project3_Alex_Mai.xcdatamodel; sourceTree = "<group>"; };
 		FAD003C71DF9AC5600AE19E8 /* AccountDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountDataSource.swift; sourceTree = "<group>"; };
+		FAD003C91DFA5DDA00AE19E8 /* TripDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripDataSource.swift; sourceTree = "<group>"; };
 		FAF4387C1DC0FDAA0095D6FC /* Project3_Alex_Mai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project3_Alex_Mai.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAF4387F1DC0FDAA0095D6FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAF438811DC0FDAA0095D6FC /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				FAD003C71DF9AC5600AE19E8 /* AccountDataSource.swift */,
 				FAAB1FF21DC2E9B70040604F /* Trip.swift */,
 				FAAB1FF01DC2E47B0040604F /* TripManager.swift */,
+				FAD003C91DFA5DDA00AE19E8 /* TripDataSource.swift */,
 				FA5305181DE7F979001EB674 /* PersistentStorage */,
 				FAD003C41DF9A76400AE19E8 /* Project3_Alex_Mai.xcdatamodeld */,
 			);
@@ -253,6 +256,7 @@
 				FA8EA44D1DC1913000BEAAC6 /* ThirdViewController.swift in Sources */,
 				FAD003C31DF90BCF00AE19E8 /* ImageFetcher.swift in Sources */,
 				FAF438941DC110660095D6FC /* ViewController.swift in Sources */,
+				FAD003CA1DFA5DDB00AE19E8 /* TripDataSource.swift in Sources */,
 				FAAC45151DE8B2030032A3A5 /* TempTripPersister.swift in Sources */,
 				FA5305161DE7D2C7001EB674 /* UIButton+CustomBorder.swift in Sources */,
 				FAF438821DC0FDAA0095D6FC /* FirstViewController.swift in Sources */,

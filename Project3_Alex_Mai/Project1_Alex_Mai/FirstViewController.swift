@@ -13,6 +13,7 @@ import UIKit
 class FirstViewController: UITableViewController, UITextFieldDelegate {
     
     var tempTrip: TempTrip!
+    var trips: TripDataSource!
     
     var departureDatePickerisVisible = false
     var returnDatePickerisVisible = false
@@ -109,10 +110,10 @@ class FirstViewController: UITableViewController, UITextFieldDelegate {
             }
             else {
                 //user-requested trips are pending a travel advisor's plan
-                let trip = Trip(departLocationText, arrivalLocationText, departureDateText, returnDateText, numTravelersText, travelerNationalityText, budgetText, ofAge.isOn, disabilities.isOn, purposeText, "pending")
+                //add to data source and save
                 
-                //add this trip into the singleton
-                _ = TripManager.sharedInstance.addTrip(AccountDataSource.whoAmI, trip)
+                print(trips.newTrip(departLocationText, arrivalLocationText, departureDateText, returnDateText, numTravelersText, travelerNationalityText, budgetText, ofAge.isOn, disabilities.isOn, purposeText, "pending"))
+
                 
                 //reset the text fields to be blank
                 departLocation.text = nil
@@ -277,6 +278,9 @@ class FirstViewController: UITableViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //initialize core data
+        trips = TripDataSource()
         
         //set title of nav
         navigationItem.title = NSLocalizedString("Request a Plan", comment: "Request Plan nav title")

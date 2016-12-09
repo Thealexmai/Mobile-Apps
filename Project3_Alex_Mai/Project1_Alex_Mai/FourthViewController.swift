@@ -11,6 +11,8 @@ import UIKit
 class FourthViewController: UIViewController {
     
     var cellClicked: Int!
+    var tripsDataSource: TripDataSource!
+    var userTrips: [Trip]?
     
     //fetch the URL from google search result
     var imageURLFetcher: ImageURLFetcher!
@@ -28,29 +30,34 @@ class FourthViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tripsDataSource = TripDataSource()
+        userTrips = tripsDataSource.getUserTrips()
+        
         imageURLFetcher = ImageURLFetcher()
         imageFetcher = ImageFetcher()
         
-        if let trips = TripManager.sharedInstance.trips[AccountDataSource.whoAmI] {
+        print("View Did Load loaded")
+        
+        if let trips = userTrips {
             let thisTrip = trips[cellClicked]
+            print("HI")
             //assign thisTrip to the SPECIFIC one clicked
-
             
-            destinationLabel.text = thisTrip.arrivalLocationText
-            departFromLabel.text = String(format: NSLocalizedString("Depart From: %@", comment: "departFromLabel"), thisTrip.departLocationText)
-            departureDateLabel.text = String(format: NSLocalizedString("Depart Date: %@", comment: "departureDateLabel"), thisTrip.departureDateText)
-            returnDateLabel.text = String(format: NSLocalizedString("Return Date: %@", comment: "returnDateLabel"), thisTrip.returnDateText)
-            numTravelersLabel.text = String(format: NSLocalizedString("Num Travelers: %@", comment: "numTravelersLabel"), thisTrip.numTravelersText)
-            purposeLabel.text = String(format: NSLocalizedString("Purpose of Trip: %@", comment: "purposeLabel"), thisTrip.purposeText)
-            statusLabel.text = String(format: NSLocalizedString("Status: %@", comment: "statusLabel"), thisTrip.statusText)
+            destinationLabel.text = thisTrip.arrivalLocation
+            departFromLabel.text = String(format: NSLocalizedString("Depart From: %@", comment: "departFromLabel"), thisTrip.departLocation!)
+            departureDateLabel.text = String(format: NSLocalizedString("Depart Date: %@", comment: "departureDateLabel"), thisTrip.departureDate!)
+            returnDateLabel.text = String(format: NSLocalizedString("Return Date: %@", comment: "returnDateLabel"), thisTrip.returnDate!)
+            numTravelersLabel.text = String(format: NSLocalizedString("Num Travelers: %@", comment: "numTravelersLabel"), thisTrip.numTravelers!)
+            purposeLabel.text = String(format: NSLocalizedString("Purpose of Trip: %@", comment: "purposeLabel"), thisTrip.purpose!)
+            statusLabel.text = String(format: NSLocalizedString("Status: %@", comment: "statusLabel"), thisTrip.status!)
             
             //if the trip has been approved, then 
-            if (thisTrip.statusText == "approved") {
+            if (thisTrip.status == "approved") {
                 statusLabel.textColor = UIColor.green
             }
             
             //fetch for a URL
-            imageURLFetcher.fetchURLImage(for: thisTrip.arrivalLocationText) {
+            imageURLFetcher.fetchURLImage(for: thisTrip.arrivalLocation!) {
                 (ImageURLResult) -> Void in
                 
                 switch(ImageURLResult) {
@@ -80,4 +87,10 @@ class FourthViewController: UIViewController {
         
     } //viewDidLoad
     
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        
+    }
 }
