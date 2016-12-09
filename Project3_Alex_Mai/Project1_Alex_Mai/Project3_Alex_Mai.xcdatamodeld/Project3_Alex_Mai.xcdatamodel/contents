@@ -10,6 +10,10 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="password" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="Destination" representedClassName="Destination" syncable="YES" codeGenerationType="class">
+        <attribute name="place" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="trip" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Trip" inverseName="destinations" inverseEntity="Trip" syncable="YES"/>
+    </entity>
     <entity name="Trip" representedClassName="Trip" syncable="YES" codeGenerationType="class">
         <attribute name="arrivalLocation" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="budget" optional="YES" attributeType="String" syncable="YES"/>
@@ -23,9 +27,11 @@
         <attribute name="returnDate" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="status" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="travelerNationality" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="destinations" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Destination" inverseName="trip" inverseEntity="Destination" syncable="YES"/>
     </entity>
     <elements>
         <element name="Account" positionX="-63" positionY="-18" width="108" height="163"/>
-        <element name="Trip" positionX="135" positionY="11" width="128" height="225"/>
+        <element name="Trip" positionX="135" positionY="11" width="128" height="240"/>
+        <element name="Destination" positionX="36" positionY="90" width="128" height="75"/>
     </elements>
 </model>

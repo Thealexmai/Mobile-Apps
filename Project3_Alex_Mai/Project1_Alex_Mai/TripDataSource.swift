@@ -77,6 +77,20 @@ class TripDataSource: NSObject {
         trip.status = statusText
         trip.login = AccountDataSource.whoAmI
         
+        let destinationEntity = NSEntityDescription.entity(forEntityName: "Destination", in: managedContext)!
+        let destination = Destination(entity: destinationEntity, insertInto: managedContext)
+        destination.place = "Downtown"
+        
+        trip.destinations = NSOrderedSet()
+        
+        //this is how you add destinations into the Trip object
+        
+//        let mutableSetcopy: NSMutableOrderedSet = trip.destinations?.mutableCopy() as! NSMutableOrderedSet
+//        mutableSetcopy.add(destination)
+//        trip.destinations = mutableSetcopy.copy() as? NSOrderedSet
+//        let arrayRepresentation = trip.destinations?.array[0] as! Destination
+//        print(arrayRepresentation.place)
+        
         do {
             try managedContext.save()
             trips.append(trip)

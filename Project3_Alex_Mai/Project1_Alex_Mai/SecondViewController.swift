@@ -64,42 +64,23 @@ class SecondViewController: UITableViewController {
 
         return cell
     }
-    
-    //delete cell
-//    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-//        if editingStyle == .delete {
-//            if let trip = TripManager.sharedInstance.trips[AccountDataSource.whoAmI] {
-//                let deleteTrip = trip[indexPath.row]
-//                //send alert to verify
-//                verifyDelete(deleteTrip.arrivalLocationText, { (UIAlertAction) in
-//                    TripManager.sharedInstance.removeTrip(AccountDataSource.whoAmI, deleteTrip)
-//                    self.tableView.deleteRows(at: [indexPath], with: .automatic)
-//                })
-//                
-//            }
-//        }
+
+//    
+//    //confirm delete helper method
+//    func verifyDelete(_ name: String, _ delete: @escaping (UIAlertAction) -> Void) {
+//        let title = String(format: NSLocalizedString("verifyDelete-title", comment: "Delete %@?"), name)
+//        let message = String(format: NSLocalizedString("verifyDelete-message", comment: "Are you sure that you want to delete %@?"), title)
+//        
+//        let ac = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
+//        
+//        let cancelAction = UIAlertAction(title: NSLocalizedString("verifyDelete-cancel", comment: "Cancel"), style: .cancel, handler: nil)
+//        ac.addAction(cancelAction)
+//        
+//        let deleteAction = UIAlertAction(title: NSLocalizedString("verifyDelete-delete", comment: "Delete"), style: .destructive, handler: delete)
+//        ac.addAction(deleteAction)
+//        
+//        present(ac, animated: true, completion: nil)
 //    }
-    
-    //rearrange cells
-    override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-        tripsDataSource.moveTrip(sourceIndexPath.row, destinationIndexPath.row)
-    }
-    
-    //confirm delete helper method
-    func verifyDelete(_ name: String, _ delete: @escaping (UIAlertAction) -> Void) {
-        let title = String(format: NSLocalizedString("verifyDelete-title", comment: "Delete %@?"), name)
-        let message = String(format: NSLocalizedString("verifyDelete-message", comment: "Are you sure that you want to delete %@?"), title)
-        
-        let ac = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
-        
-        let cancelAction = UIAlertAction(title: NSLocalizedString("verifyDelete-cancel", comment: "Cancel"), style: .cancel, handler: nil)
-        ac.addAction(cancelAction)
-        
-        let deleteAction = UIAlertAction(title: NSLocalizedString("verifyDelete-delete", comment: "Delete"), style: .destructive, handler: delete)
-        ac.addAction(deleteAction)
-        
-        present(ac, animated: true, completion: nil)
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
