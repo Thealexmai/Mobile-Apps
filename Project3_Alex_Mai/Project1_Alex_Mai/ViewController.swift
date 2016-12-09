@@ -12,6 +12,7 @@ import UIKit
 class ViewController: UIViewController, UITextFieldDelegate {
     
     var loginTextFields: Login!
+    var accounts: AccountDataSource!
     
     //Outlets
     @IBOutlet var loginText: UITextField!
@@ -40,11 +41,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         //if login and password validates, then move to next view
         if let userLogin = loginText.text, let userPassword = passwordText.text {
-            if AccountManager.sharedInstance.validatedAccount(userLogin, userPassword) {
+            if accounts.validatedAccount(userLogin, userPassword) {
                 let navController = self.storyboard!.instantiateViewController(withIdentifier: "NavController")
                 
                 print("Login successful")
-                print(AccountManager.sharedInstance.whoAmI)
+                print(AccountDataSource.whoAmI)
                 
                 self.present(navController, animated:true, completion: nil)
             }
@@ -78,6 +79,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         
         
+        
     }
     
     //automatically log the user in if the credentials are right
@@ -85,6 +87,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
         super.viewDidAppear(animated)
         loginText.text = loginTextFields.login
         passwordText.text = loginTextFields.password
+        //must create accounts instance here to update after the user registers
+        accounts = AccountDataSource()
+        
 //        if let login = loginText.text, let password = passwordText.text {
 //            checkLogin(login, password)
 //        }
@@ -93,7 +98,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     //does same thing as if user presses login button - only used when the screen finishes launching for automated login with correct credentials
     func checkLogin(_ login:String, _ password:String) {
         
-        if AccountManager.sharedInstance.validatedAccount(login, password) {
+        if accounts.validatedAccount(login, password) {
             let navController = self.storyboard!.instantiateViewController(withIdentifier: "NavController")
             
             self.present(navController, animated:true, completion: nil)

@@ -12,6 +12,8 @@ import UIKit
 //This class details the personal information of the user
 class ThirdViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate {
     
+    var accounts:AccountDataSource!
+    
     //MARK: Outlets
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var emailLabel: UILabel!
@@ -42,7 +44,7 @@ class ThirdViewController: UIViewController, UINavigationControllerDelegate, UII
     }
     
     @IBAction func logoutButtonPressed(_ sender: Any) {
-        AccountManager.sharedInstance.whoAmI = ""
+        AccountDataSource.whoAmI = ""
         dismiss(animated: true, completion: nil)
     }
     
@@ -51,7 +53,7 @@ class ThirdViewController: UIViewController, UINavigationControllerDelegate, UII
         let photo = info[UIImagePickerControllerOriginalImage] as! UIImage
         
         //save the photo - tie the unique ID from caption to the image, so link
-        ImagePersister.saveImage(photo, forEmail: AccountManager.sharedInstance.accounts[AccountManager.sharedInstance.getAccountIndex(AccountManager.sharedInstance.whoAmI)].email)
+        ImagePersister.saveImage(photo, forEmail: accounts.accounts[accounts.getAccountIndex(AccountDataSource.whoAmI)].email!)
         
         imageViewer.image = photo
         
@@ -61,28 +63,31 @@ class ThirdViewController: UIViewController, UINavigationControllerDelegate, UII
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        accounts = AccountDataSource()
+        
         //if camera is unavailable, disable the camera button
         if !UIImagePickerController.isSourceTypeAvailable(.camera) {
             cameraItem.isEnabled = false
         }
         
         //autopopulate the user's information given login
-        nameLabel.text = AccountManager.sharedInstance.accounts[AccountManager.sharedInstance.getAccountIndex(AccountManager.sharedInstance.whoAmI)].name
-        emailLabel.text = AccountManager.sharedInstance.accounts[AccountManager.sharedInstance.getAccountIndex(AccountManager.sharedInstance.whoAmI)].email
-        genderLabel.text = AccountManager.sharedInstance.accounts[AccountManager.sharedInstance.getAccountIndex(AccountManager.sharedInstance.whoAmI)].gender
-        ageLabel.text = (String) (AccountManager.sharedInstance.accounts[AccountManager.sharedInstance.getAccountIndex(AccountManager.sharedInstance.whoAmI)].age)
+        let whoamI = AccountDataSource.whoAmI
+        nameLabel.text = accounts.accounts[accounts.getAccountIndex(whoamI)].name
+        emailLabel.text = accounts.accounts[accounts.getAccountIndex(whoamI)].email
+        genderLabel.text = accounts.accounts[accounts.getAccountIndex(whoamI)].gender
+        ageLabel.text = (String) (accounts.accounts[accounts.getAccountIndex(whoamI)].age)
         
         //if the image were saved, then persist the last saved image, otherwise display its default associated with the account
-        if let img = ImagePersister.getImage(forEmail: AccountManager.sharedInstance.accounts[AccountManager.sharedInstance.getAccountIndex(AccountManager.sharedInstance.whoAmI)].email) {
+        if let img = ImagePersister.getImage(forEmail: accounts.accounts[accounts.getAccountIndex(whoamI)].email!) {
             imageViewer.image = img
         }
         else {
-            let img = AccountManager.sharedInstance.accounts[AccountManager.sharedInstance.getAccountIndex(AccountManager.sharedInstance.whoAmI)].image
+            let img = accounts.accounts[accounts.getAccountIndex(whoamI)].image
             
-            imageViewer.image = UIImage(named: img)
+            imageViewer.image = UIImage(named: img!)
         }
         
-        emergencyContact.text = AccountManager.sharedInstance.accounts[AccountManager.sharedInstance.getAccountIndex(AccountManager.sharedInstance.whoAmI)].emergencyContact
+        emergencyContact.text = accounts.accounts[accounts.getAccountIndex(whoamI)].emergencyContact
         
         
     }

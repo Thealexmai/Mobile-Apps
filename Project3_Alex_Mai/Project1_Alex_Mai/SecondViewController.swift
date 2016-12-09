@@ -13,7 +13,9 @@ import UIKit
 
 //This class displays the trips the user has stored
 class SecondViewController: UITableViewController {
-    //will need to use TripManager singleton
+
+    var tripsDataSource: TripDataSource!
+    var userTrips: [Trip]?
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //find out which cell is clicked
@@ -36,7 +38,7 @@ class SecondViewController: UITableViewController {
         var toReturnNumRows = 0
         
         //get the number of rows needed that's tied from the user's login
-        if let numRows = TripManager.sharedInstance.trips[AccountManager.sharedInstance.whoAmI] {
+        if let numRows = userTrips {
             toReturnNumRows = numRows.count
         }
         
@@ -51,12 +53,12 @@ class SecondViewController: UITableViewController {
         cell.updateLabels()
         
         //find all the trips that match the user's login and set the labels
-        if let trip = TripManager.sharedInstance.trips[AccountManager.sharedInstance.whoAmI] {
-            let trips = trip[indexPath.row]
+        if let trips = userTrips {
+            let trip = trips[indexPath.row]
             
-            cell.arrivalDestination.text = String(format: NSLocalizedString("cell-trip-arrival", comment: "%@"), trips.arrivalLocationText)
-            cell.departureDate.text = String(format: NSLocalizedString("cell-trip-departDate", comment: "depart: %@"), trips.departureDateText)
-            cell.returnDate.text = String(format: NSLocalizedString("cell-trip-returnDate", comment: "return: %@"), trips.returnDateText)
+            cell.arrivalDestination.text = String(format: NSLocalizedString("cell-trip-arrival", comment: "%@"), trip.arrivalLocation!)
+            cell.departureDate.text = String(format: NSLocalizedString("cell-trip-departDate", comment: "depart: %@"), trip.departLocation!)
+            cell.returnDate.text = String(format: NSLocalizedString("cell-trip-returnDate", comment: "return: %@"), trip.returnDate!)
 
         }
 
@@ -64,23 +66,23 @@ class SecondViewController: UITableViewController {
     }
     
     //delete cell
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            if let trip = TripManager.sharedInstance.trips[AccountManager.sharedInstance.whoAmI] {
-                let deleteTrip = trip[indexPath.row]
-                //send alert to verify
-                verifyDelete(deleteTrip.arrivalLocationText, { (UIAlertAction) in
-                    TripManager.sharedInstance.removeTrip(AccountManager.sharedInstance.whoAmI, deleteTrip)
-                    self.tableView.deleteRows(at: [indexPath], with: .automatic)
-                })
-                
-            }
-        }
-    }
+//    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+//        if editingStyle == .delete {
+//            if let trip = TripManager.sharedInstance.trips[AccountDataSource.whoAmI] {
+//                let deleteTrip = trip[indexPath.row]
+//                //send alert to verify
+//                verifyDelete(deleteTrip.arrivalLocationText, { (UIAlertAction) in
+//                    TripManager.sharedInstance.removeTrip(AccountDataSource.whoAmI, deleteTrip)
+//                    self.tableView.deleteRows(at: [indexPath], with: .automatic)
+//                })
+//                
+//            }
+//        }
+//    }
     
     //rearrange cells
     override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-        TripManager.sharedInstance.moveTrip(AccountManager.sharedInstance.whoAmI, sourceIndexPath.row, destinationIndexPath.row)
+        tripsDataSource.moveTrip(sourceIndexPath.row, destinationIndexPath.row)
     }
     
     //confirm delete helper method
@@ -122,6 +124,9 @@ class SecondViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        tripsDataSource = TripDataSource()
+        userTrips = tripsDataSource.getUserTrips()
         
         self.tableView.reloadData()
         
