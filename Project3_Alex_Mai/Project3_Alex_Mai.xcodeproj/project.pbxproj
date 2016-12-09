@@ -14,10 +14,6 @@
 		FA53051A1DE7F9AB001EB674 /* TempTrip.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5305191DE7F9AB001EB674 /* TempTrip.swift */; };
 		FA88B4F81DF48D0600E9ED85 /* FifthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA88B4F71DF48D0600E9ED85 /* FifthViewController.swift */; };
 		FA8EA44D1DC1913000BEAAC6 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8EA44C1DC1913000BEAAC6 /* ThirdViewController.swift */; };
-		FA8EA4531DC1989300BEAAC6 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8EA4521DC1989300BEAAC6 /* Account.swift */; };
-		FAAB1FEF1DC2DA790040604F /* AccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAB1FEE1DC2DA790040604F /* AccountManager.swift */; };
-		FAAB1FF11DC2E47B0040604F /* TripManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAB1FF01DC2E47B0040604F /* TripManager.swift */; };
-		FAAB1FF31DC2E9B70040604F /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAB1FF21DC2E9B70040604F /* Trip.swift */; };
 		FAAC45111DE891480032A3A5 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAC45101DE891480032A3A5 /* Login.swift */; };
 		FAAC45131DE896110032A3A5 /* LoginTextPersister.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAC45121DE896110032A3A5 /* LoginTextPersister.swift */; };
 		FAAC45151DE8B2030032A3A5 /* TempTripPersister.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAC45141DE8B2030032A3A5 /* TempTripPersister.swift */; };
@@ -52,10 +48,6 @@
 		FA5305191DE7F9AB001EB674 /* TempTrip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TempTrip.swift; sourceTree = "<group>"; };
 		FA88B4F71DF48D0600E9ED85 /* FifthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FifthViewController.swift; sourceTree = "<group>"; };
 		FA8EA44C1DC1913000BEAAC6 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
-		FA8EA4521DC1989300BEAAC6 /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
-		FAAB1FEE1DC2DA790040604F /* AccountManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountManager.swift; sourceTree = "<group>"; };
-		FAAB1FF01DC2E47B0040604F /* TripManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripManager.swift; sourceTree = "<group>"; };
-		FAAB1FF21DC2E9B70040604F /* Trip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
 		FAAC45101DE891480032A3A5 /* Login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		FAAC45121DE896110032A3A5 /* LoginTextPersister.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginTextPersister.swift; sourceTree = "<group>"; };
 		FAAC45141DE8B2030032A3A5 /* TempTripPersister.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TempTripPersister.swift; sourceTree = "<group>"; };
@@ -113,11 +105,7 @@
 		FAAC45161DE8BB380032A3A5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				FA8EA4521DC1989300BEAAC6 /* Account.swift */,
-				FAAB1FEE1DC2DA790040604F /* AccountManager.swift */,
 				FAD003C71DF9AC5600AE19E8 /* AccountDataSource.swift */,
-				FAAB1FF21DC2E9B70040604F /* Trip.swift */,
-				FAAB1FF01DC2E47B0040604F /* TripManager.swift */,
 				FAD003C91DFA5DDA00AE19E8 /* TripDataSource.swift */,
 				FA5305181DE7F979001EB674 /* PersistentStorage */,
 				FAD003C41DF9A76400AE19E8 /* Project3_Alex_Mai.xcdatamodeld */,
@@ -245,14 +233,12 @@
 				FAF438841DC0FDAA0095D6FC /* SecondViewController.swift in Sources */,
 				FAAC45111DE891480032A3A5 /* Login.swift in Sources */,
 				FAD003C81DF9AC5600AE19E8 /* AccountDataSource.swift in Sources */,
-				FAAB1FEF1DC2DA790040604F /* AccountManager.swift in Sources */,
 				FAF438801DC0FDAA0095D6FC /* AppDelegate.swift in Sources */,
 				FAAC451E1DE904E90032A3A5 /* FourthViewController.swift in Sources */,
 				FA5305101DE796DD001EB674 /* ImagePersister.swift in Sources */,
 				FA88B4F81DF48D0600E9ED85 /* FifthViewController.swift in Sources */,
 				FAC5B1ED1DC8ED6B006C9156 /* RegisterViewController.swift in Sources */,
 				FAD003C11DF8F4D900AE19E8 /* ImageURL.swift in Sources */,
-				FAAB1FF31DC2E9B70040604F /* Trip.swift in Sources */,
 				FA8EA44D1DC1913000BEAAC6 /* ThirdViewController.swift in Sources */,
 				FAD003C31DF90BCF00AE19E8 /* ImageFetcher.swift in Sources */,
 				FAF438941DC110660095D6FC /* ViewController.swift in Sources */,
@@ -262,11 +248,9 @@
 				FAF438821DC0FDAA0095D6FC /* FirstViewController.swift in Sources */,
 				FAD003C61DF9A76400AE19E8 /* Project3_Alex_Mai.xcdatamodeld in Sources */,
 				FA09FAFE1DC58DDB00ED9599 /* SecondViewCell.swift in Sources */,
-				FA8EA4531DC1989300BEAAC6 /* Account.swift in Sources */,
 				FA53051A1DE7F9AB001EB674 /* TempTrip.swift in Sources */,
 				FAD003BF1DF8F4AA00AE19E8 /* ImageURLFetcher.swift in Sources */,
 				FAAC45131DE896110032A3A5 /* LoginTextPersister.swift in Sources */,
-				FAAB1FF11DC2E47B0040604F /* TripManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

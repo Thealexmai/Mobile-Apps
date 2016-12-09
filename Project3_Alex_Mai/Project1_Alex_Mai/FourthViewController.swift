@@ -36,11 +36,8 @@ class FourthViewController: UIViewController {
         imageURLFetcher = ImageURLFetcher()
         imageFetcher = ImageFetcher()
         
-        print("View Did Load loaded")
-        
         if let trips = userTrips {
             let thisTrip = trips[cellClicked]
-            print("HI")
             //assign thisTrip to the SPECIFIC one clicked
             
             destinationLabel.text = thisTrip.arrivalLocation

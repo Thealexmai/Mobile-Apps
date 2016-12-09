@@ -125,21 +125,6 @@ class AccountDataSource: NSObject {
             print("Failed to save. \(error), \(error.userInfo)")
         }
     }
-    
-    //for log in validation
-//    func validatedAccount(_ login:String, _ password:String) -> Bool {
-//
-//        for i in 0..<accounts.count {
-//            if login == accounts[i].login && password == accounts[i].password {
-//                print("Hi")
-//                AccountDataSource.whoAmI = login
-//                print(AccountDataSource.whoAmI)
-//                return true
-//            }
-//        }
-//
-//        return false
-//    }
 
     //for registration - validate the login doesn't already exist
     func matchesOtherLogin(_ login: String) -> Bool {

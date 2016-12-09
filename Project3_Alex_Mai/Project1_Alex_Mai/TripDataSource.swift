@@ -11,7 +11,6 @@ import CoreData
 
 class TripDataSource: NSObject {
     var trips: [Trip]
-//    let fetchRequest = NSFetchRequest<Account>(entityName: "Account")
     
     override init() {
         if let delegate = UIApplication.shared.delegate as? AppDelegate {
@@ -89,24 +88,6 @@ class TripDataSource: NSObject {
             return false
         }
     }
-    
-//    func deleteEntree(entree: Entree) {
-//        guard let delegate = UIApplication.shared.delegate as? AppDelegate else {
-//            print("Failed to save.")
-//            return
-//        }
-//        
-//        if let index = entrees.index(of: entree) {
-//            
-//            let managedContext = delegate.persistentContainer.viewContext
-//            
-//            managedContext.delete(entree)
-//            
-//            entrees.remove(at: index)
-//        }
-//        
-//        save()
-//    }
     
     func save() {
         guard let delegate = UIApplication.shared.delegate as? AppDelegate else {
