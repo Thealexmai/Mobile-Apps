@@ -41,7 +41,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         //if login and password validates, then move to next view
         if let userLogin = loginText.text, let userPassword = passwordText.text {
-            if accounts.validatedAccount(userLogin, userPassword) {
+            
+            let userLoginLower = userLogin.lowercased()
+            
+            if accounts.validatedAccount(userLoginLower, userPassword) {
                 let navController = self.storyboard!.instantiateViewController(withIdentifier: "NavController")
                 
                 print("Login successful")

@@ -60,6 +60,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
                 
                 print(accounts.newAccount(fullName, genderText, Int32(ageText)!, "noperson.jpg", lowercaseLogin, passwordText, emailText, emergencyEmailText))
                 
+                AccountDataSource.whoAmI = lowercaseLogin
                 
                 //show alert saying true and dismiss this view controller
                 promptUser(NSLocalizedString("accountCreatedWarning", comment: "Your account has been created! Please log in"), false, { (UIAlertAction) in
