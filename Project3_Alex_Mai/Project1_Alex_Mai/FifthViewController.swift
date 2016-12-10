@@ -9,15 +9,32 @@
 import Foundation
 import UIKit
 import CoreLocation
+import MapKit
 
 class FifthViewController: UIViewController, CLLocationManagerDelegate {
     
     let locationManager = CLLocationManager()
     
-//    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-//        let locationValue: CLLocationCoordinate2D = (manager.location?.coordinate)!
-//        print("locations \(locationValue.latitude) \(locationValue.longitude)")
-//    }
+    //MARK: Outlets
+    @IBOutlet weak var tripDestination: UILabel!
+    @IBOutlet weak var timeline: UILabel!
+    @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var address: UILabel!
+    @IBOutlet weak var locationName: UILabel!
+    @IBOutlet weak var locationHours: UILabel!
+    @IBOutlet weak var locationReviews: UILabel!
+    @IBOutlet weak var aroundYou: UILabel!
+    @IBOutlet weak var nextdestinationName: UILabel!
+
+    
+    //MARK: Actions
+    @IBAction func readmoreClicked(_ sender: Any) {
+    }
+    @IBAction func alreadybeenClicked(_ sender: Any) {
+    }
+    @IBAction func directionsClicked(_ sender: Any) {
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -674,17 +674,126 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P3x-Hl-dCs">
-                                <rect key="frame" x="16" y="40" width="343" height="178"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </mapView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="InW-6f-jjp">
+                                <rect key="frame" x="16" y="20" width="343" height="647"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Destination Trip" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BQD-xO-ORu">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Destination 1 of n" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eoL-wW-uYs">
+                                        <rect key="frame" x="0.0" y="31.5" width="343" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P3x-Hl-dCs">
+                                        <rect key="frame" x="0.0" y="63" width="343" height="226"/>
+                                    </mapView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Gb-em-nSP">
+                                        <rect key="frame" x="0.0" y="300" width="343" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="SRf-lz-K4i">
+                                        <rect key="frame" x="0.0" y="331.5" width="343" height="112"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Details about this place" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uv9-DF-388" userLabel="Details about this">
+                                                <rect key="frame" x="0.0" y="0.0" width="343" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lFa-jP-A7K">
+                                                <rect key="frame" x="0.0" y="20.5" width="343" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hours:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aLc-HK-yQE">
+                                                <rect key="frame" x="0.0" y="41" width="343" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reviews:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="en2-eJ-GH1">
+                                                <rect key="frame" x="0.0" y="61.5" width="343" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YYH-qF-ebj">
+                                                <rect key="frame" x="0.0" y="82" width="343" height="30"/>
+                                                <state key="normal" title="Read more about this place">
+                                                    <color key="titleColor" red="0.36372692950000002" green="0.35667470639999999" blue="0.89204068790000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="readmoreClicked:" destination="2NC-Q3-Acb" eventType="touchUpInside" id="r6p-t0-T4H"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="1" green="0.77523487810000002" blue="0.50217151640000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Around You:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZGL-1q-2y8">
+                                        <rect key="frame" x="0.0" y="454.5" width="343" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Next destination is:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wMn-2D-Aaz">
+                                        <rect key="frame" x="0.0" y="486" width="343" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="247" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Ij9-vg-qea">
+                                        <rect key="frame" x="0.0" y="517.5" width="343" height="129.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OZJ-k0-SV3">
+                                                <rect key="frame" x="0.0" y="0.0" width="189" height="30"/>
+                                                <state key="normal" title="Already been here!"/>
+                                                <connections>
+                                                    <action selector="alreadybeenClicked:" destination="2NC-Q3-Acb" eventType="touchUpInside" id="Cvd-eQ-Oqh"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vIK-CR-8ub">
+                                                <rect key="frame" x="189" y="0.0" width="154" height="30"/>
+                                                <state key="normal" title="Directions to get there"/>
+                                                <connections>
+                                                    <action selector="directionsClicked:" destination="2NC-Q3-Acb" eventType="touchUpInside" id="LhO-Pr-l5V"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="InW-6f-jjp" firstAttribute="trailing" secondItem="cGr-nL-dP3" secondAttribute="trailingMargin" id="IP5-Ka-APb"/>
+                            <constraint firstItem="InW-6f-jjp" firstAttribute="top" secondItem="xbq-l7-dpf" secondAttribute="bottom" id="SC0-HQ-V4W"/>
+                            <constraint firstItem="InW-6f-jjp" firstAttribute="leading" secondItem="cGr-nL-dP3" secondAttribute="leadingMargin" id="TRb-nm-LIS"/>
+                            <constraint firstItem="nch-hc-MUg" firstAttribute="top" secondItem="InW-6f-jjp" secondAttribute="bottom" id="fho-bY-VE9"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="address" destination="9Gb-em-nSP" id="lX4-35-uMW"/>
+                        <outlet property="aroundYou" destination="ZGL-1q-2y8" id="0ne-DA-bbY"/>
+                        <outlet property="locationHours" destination="aLc-HK-yQE" id="Cn9-2a-Dyi"/>
+                        <outlet property="locationName" destination="lFa-jP-A7K" id="k33-fT-48g"/>
+                        <outlet property="locationReviews" destination="en2-eJ-GH1" id="T4u-mr-OeG"/>
+                        <outlet property="mapView" destination="P3x-Hl-dCs" id="chp-sU-9RY"/>
+                        <outlet property="nextdestinationName" destination="wMn-2D-Aaz" id="QeG-p6-lXX"/>
+                        <outlet property="timeline" destination="eoL-wW-uYs" id="97b-lu-4vv"/>
+                        <outlet property="tripDestination" destination="BQD-xO-ORu" id="O52-2t-cM4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YGa-ZT-9so" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1588" y="61.619190404797607"/>
+            <point key="canvasLocation" x="1588" y="154.72263868065968"/>
         </scene>
         <!--Details About Trip-->
         <scene sceneID="TwZ-Gt-kvX">
@@ -774,7 +883,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7A2-OQ-q2I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1588" y="696"/>
+            <point key="canvasLocation" x="1588" y="918"/>
         </scene>
         <!--ViewController-->
         <scene sceneID="NI8-3e-sOh">
