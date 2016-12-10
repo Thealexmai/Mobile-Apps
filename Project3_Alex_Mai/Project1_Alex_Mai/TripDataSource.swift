@@ -53,6 +53,64 @@ class TripDataSource: NSObject {
         
     }
     
+    func addPlannedTrip() -> Bool {
+        guard let delegate = UIApplication.shared.delegate as? AppDelegate else {
+            return false
+        }
+        
+        let managedContext = delegate.persistentContainer.viewContext
+        
+        let entity = NSEntityDescription.entity(forEntityName: "Trip", in: managedContext)!
+        
+        let trip = Trip(entity: entity, insertInto: managedContext)
+        trip.departLocation = "Rochester, NY"
+        trip.arrivalLocation = "Seattle, WA"
+        trip.departureDate = "12-10-2016"
+        trip.returnDate = "12-31-2016"
+        trip.numTravelers = "2"
+        trip.travelerNationality = "American"
+        trip.budget = "5000"
+        trip.ofAge = true
+        trip.disabilities = false
+        trip.purpose = "For fun"
+        trip.status = "approved"
+        trip.login = AccountDataSource.whoAmI
+        
+        let presetDestinations = ["Space Needle", "Pike Place Market", "Pacific Science Center", "Museum of Flight", "5th Avenue Theatre", "Seattle Asian Art Museum"]
+        let destinationEntity = NSEntityDescription.entity(forEntityName: "Destination", in: managedContext)!
+        
+        
+        let mutableSetcopy: NSMutableOrderedSet = trip.destinations?.mutableCopy() as! NSMutableOrderedSet
+        
+        for aDestination in presetDestinations {
+            let destination = Destination(entity: destinationEntity, insertInto: managedContext)
+            destination.place = aDestination
+            mutableSetcopy.add(destination)
+            
+        }
+        
+        trip.destinations = mutableSetcopy.copy() as? NSOrderedSet
+        
+        let arrayRepresentation = trip.destinations?.array as! [Destination]
+        for destination in arrayRepresentation {
+            print(destination.place!)
+        }
+        
+        
+        do {
+            try managedContext.save()
+            trips.append(trip)
+            save()
+            return true
+        }
+        catch let error as NSError {
+            print("Failed to save Entree.  \(error), \(error.userInfo)")
+            return false
+        }
+        
+        
+    }
+    
     func newTrip(_ departLocationText:String , _ arrivalLocationText:String, _ departureDateText:String, _ returnDateText:String, _ numTravelersText:String, _ travelerNationalityText:String, _ budgetText:String, _ ofAge:Bool, _ disabilities:Bool, _ purposeText:String, _ statusText:String) -> Bool {
         guard let delegate = UIApplication.shared.delegate as? AppDelegate else {
             return false

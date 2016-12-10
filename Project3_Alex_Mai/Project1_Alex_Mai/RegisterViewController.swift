@@ -11,6 +11,7 @@ import UIKit
 class RegisterViewController: UIViewController, UITextFieldDelegate {
 
     var accounts: AccountDataSource!
+    var trips: TripDataSource!
     
     @IBOutlet weak var registerButton: UIButton!
     @IBOutlet weak var firstName: UITextField!
@@ -61,6 +62,9 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
                 print(accounts.newAccount(fullName, genderText, Int32(ageText)!, "noperson.jpg", lowercaseLogin, passwordText, emailText, emergencyEmailText))
                 
                 AccountDataSource.whoAmI = lowercaseLogin
+                
+                //Give this user a preset trip (FOR DEMO ONLY)
+                print("Pre set Trip added: \(trips.addPlannedTrip())")
                 
                 //show alert saying true and dismiss this view controller
                 promptUser(NSLocalizedString("accountCreatedWarning", comment: "Your account has been created! Please log in"), false, { (UIAlertAction) in
@@ -123,6 +127,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         
         accounts = AccountDataSource()
+        trips = TripDataSource()
     }
     
     override func didReceiveMemoryWarning() {
