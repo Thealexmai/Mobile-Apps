@@ -14,25 +14,19 @@ class FifthViewController: UIViewController, CLLocationManagerDelegate {
     
     let locationManager = CLLocationManager()
     
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        var locationValue: CLLocationCoordinate2D = (manager.location?.coordinate)!
-        print("locations \(locationValue.latitude) \(locationValue.longitude)")
-    }
+//    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+//        let locationValue: CLLocationCoordinate2D = (manager.location?.coordinate)!
+//        print("locations \(locationValue.latitude) \(locationValue.longitude)")
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //when app running request permission from user to use location
-        locationManager.requestAlwaysAuthorization()
-        
-        //when app is in foreground request
-        locationManager.requestWhenInUseAuthorization()
-        
-        if CLLocationManager.locationServicesEnabled() {
-            locationManager.delegate = self
-            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-            locationManager.startUpdatingLocation()
+        if let userLocation = locationManager.location {
+            print(userLocation.coordinate.latitude)
+            print(userLocation.coordinate.longitude)
         }
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {

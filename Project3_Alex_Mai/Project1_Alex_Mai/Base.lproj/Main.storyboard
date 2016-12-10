@@ -673,12 +673,18 @@
                     <view key="view" contentMode="scaleToFill" id="cGr-nL-dP3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P3x-Hl-dCs">
+                                <rect key="frame" x="16" y="40" width="343" height="178"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </mapView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YGa-ZT-9so" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1588" y="62"/>
+            <point key="canvasLocation" x="1588" y="61.619190404797607"/>
         </scene>
         <!--Details About Trip-->
         <scene sceneID="TwZ-Gt-kvX">

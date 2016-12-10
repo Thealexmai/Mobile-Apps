@@ -7,18 +7,21 @@
 //
 
 import UIKit
+import CoreLocation
 
 //This class handles the login
-class ViewController: UIViewController, UITextFieldDelegate {
+class ViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate {
     
+    //MARK: Initializing custom data
     var loginTextFields: Login!
     var accounts: AccountDataSource!
+    let locationManager = CLLocationManager() //for use in 5th VC
     
-    //Outlets
+    //MARK: Outlets
     @IBOutlet var loginText: UITextField!
     @IBOutlet var passwordText: UITextField!
 
-    //Action
+    //MARK: Action
     @IBAction func loginTextChanged(sender: UITextField) {
         if let loginValue = loginText.text {
             loginTextFields.login = loginValue
@@ -71,16 +74,19 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         
     }
@@ -88,10 +94,18 @@ class ViewController: UIViewController, UITextFieldDelegate {
     //automatically log the user in if the credentials are right
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
         loginText.text = loginTextFields.login
         passwordText.text = loginTextFields.password
+        
         //must create accounts instance here to update after the user registers
         accounts = AccountDataSource()
+        
+        //when app running request permission from user to use location
+        locationManager.requestAlwaysAuthorization()
+        
+        //when app is in foreground request
+        locationManager.requestWhenInUseAuthorization()
         
 //        if let login = loginText.text, let password = passwordText.text {
 //            checkLogin(login, password)
