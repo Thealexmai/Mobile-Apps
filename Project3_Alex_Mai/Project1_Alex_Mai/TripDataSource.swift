@@ -61,6 +61,10 @@ class TripDataSource: NSObject {
         let managedContext = delegate.persistentContainer.viewContext
         
         let entity = NSEntityDescription.entity(forEntityName: "Trip", in: managedContext)!
+        let destinationEntity = NSEntityDescription.entity(forEntityName: "Destination", in: managedContext)!
+
+        
+        let presetDestinations = ["Space Needle", "Pike Place Market", "Pacific Science Center", "Museum of Flight", "5th Avenue Theatre", "Seattle Asian Art Museum"]
         
         let trip = Trip(entity: entity, insertInto: managedContext)
         trip.departLocation = "Rochester, NY"
@@ -73,12 +77,8 @@ class TripDataSource: NSObject {
         trip.ofAge = true
         trip.disabilities = false
         trip.purpose = "For fun"
-        trip.status = "approved"
+        trip.status = "Active"
         trip.login = AccountDataSource.whoAmI
-        
-        let presetDestinations = ["Space Needle", "Pike Place Market", "Pacific Science Center", "Museum of Flight", "5th Avenue Theatre", "Seattle Asian Art Museum"]
-        let destinationEntity = NSEntityDescription.entity(forEntityName: "Destination", in: managedContext)!
-        
         
         let mutableSetcopy: NSMutableOrderedSet = trip.destinations?.mutableCopy() as! NSMutableOrderedSet
         
@@ -134,20 +134,8 @@ class TripDataSource: NSObject {
         trip.purpose = purposeText
         trip.status = statusText
         trip.login = AccountDataSource.whoAmI
-        
-        let destinationEntity = NSEntityDescription.entity(forEntityName: "Destination", in: managedContext)!
-        let destination = Destination(entity: destinationEntity, insertInto: managedContext)
-        destination.place = "Downtown"
-        
         trip.destinations = NSOrderedSet()
         
-        //this is how you add destinations into the Trip object
-        
-//        let mutableSetcopy: NSMutableOrderedSet = trip.destinations?.mutableCopy() as! NSMutableOrderedSet
-//        mutableSetcopy.add(destination)
-//        trip.destinations = mutableSetcopy.copy() as? NSOrderedSet
-//        let arrayRepresentation = trip.destinations?.array[0] as! Destination
-//        print(arrayRepresentation.place)
         
         do {
             try managedContext.save()

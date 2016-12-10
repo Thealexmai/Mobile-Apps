@@ -19,18 +19,58 @@ class SecondViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //find out which cell is clicked
-        if segue.identifier == "SecondVC-to-FourthVC" {
+        
+//        if segue.identifier == "SecondVC-to-FourthVC" {
+//            
+//            //get the cell row that has been selected and pass to 4th VC
+//            let indexPath:Int = self.tableView.indexPathForSelectedRow!.row
+//
+//            if let fourthVC = segue.destination as? FourthViewController {
+//            
+//                fourthVC.cellClicked = indexPath
+//                
+//            }
+//            
+//        }
+    }
+    
+    //MARK: Actions
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("Hi \(indexPath.row)")
+        
+        if let trips = userTrips {
+            let trip = trips[indexPath.row]
             
-            //get the cell row that has been selected and pass to 4th VC
-            let indexPath:Int = self.tableView.indexPathForSelectedRow!.row
+            //Test printing the destinations
+//            if let destinations = trip.destinations {
+//                let destinationsArray: [Destination] = destinations.array as! [Destination]
+//                
+//                for destination in destinationsArray {
+//                    if let thePlace: String = destination.place {
+//                        print(thePlace)
+//
+//                    }
+//                }
+//            }
             
-            if let fourthVC = segue.destination as? FourthViewController {
-            
-                fourthVC.cellClicked = indexPath
+            //if the selected row's trip is active, show the 5th view controller
+            if(trip.status=="Active") {
+                let fifthViewController = self.storyboard?.instantiateViewController(withIdentifier: "FifthViewController") as! FifthViewController
                 
+                self.navigationController?.pushViewController(fifthViewController, animated: true)
+            }
+            else {
+                //otherwise show the 4th view controller
+                let fourthViewController = self.storyboard?.instantiateViewController(withIdentifier: "FourthViewController") as! FourthViewController
+                fourthViewController.cellClicked = indexPath.row
+                
+                self.navigationController?.pushViewController(fourthViewController, animated: true)
             }
             
+            
         }
+        
+        
     }
     
     //how many cells need to be created
