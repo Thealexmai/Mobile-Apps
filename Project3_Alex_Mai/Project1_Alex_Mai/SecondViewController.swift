@@ -41,18 +41,6 @@ class SecondViewController: UITableViewController {
         if let trips = userTrips {
             let trip = trips[indexPath.row]
             
-            //Test printing the destinations
-//            if let destinations = trip.destinations {
-//                let destinationsArray: [Destination] = destinations.array as! [Destination]
-//                
-//                for destination in destinationsArray {
-//                    if let thePlace: String = destination.place {
-//                        print(thePlace)
-//
-//                    }
-//                }
-//            }
-            
             //if the selected row's trip is active, show the 5th view controller
             if(trip.status=="Active") {
                 

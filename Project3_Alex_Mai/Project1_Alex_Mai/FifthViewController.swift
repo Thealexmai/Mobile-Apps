@@ -62,9 +62,6 @@ class FifthViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     @IBAction func directionsClicked(_ sender: Any) {
-        
-//        let coordinate = CLLocationCoordinate2DMake(43.5, -70.6)
-//        let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinate))
 
         let tripDestinations = tripDataSource.getTripDestinationsAsDestinations(trip: thisTrip)
         let nextDestination = tripDestinations[Int(thisTrip.leg)]
@@ -105,7 +102,7 @@ class FifthViewController: UIViewController, CLLocationManagerDelegate {
         
         tripDestination.text = thisTrip.arrivalLocation
         timeline.text = "Destination \(thisTrip.leg + 1) of \(tripDestinations.count)"
-        returnDate.text = thisTrip.returnDate
+        returnDate.text = "Returning: \(thisTrip.returnDate)"
         
         
         if let userLocation = locationManager.location {
