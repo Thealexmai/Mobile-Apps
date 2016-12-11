@@ -10,7 +10,6 @@ import Foundation
 
 enum ImageURLError: Error {
     case InvalidJSONError
-    case NotYetImplementedError
 }
 
 enum ImageURLResult {

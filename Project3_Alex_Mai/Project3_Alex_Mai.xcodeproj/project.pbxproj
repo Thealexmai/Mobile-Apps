@@ -12,6 +12,10 @@
 		FA5305101DE796DD001EB674 /* ImagePersister.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA53050F1DE796DD001EB674 /* ImagePersister.swift */; };
 		FA5305161DE7D2C7001EB674 /* UIButton+CustomBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5305151DE7D2C7001EB674 /* UIButton+CustomBorder.swift */; };
 		FA53051A1DE7F9AB001EB674 /* TempTrip.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5305191DE7F9AB001EB674 /* TempTrip.swift */; };
+		FA7412331DFCEC0A00FB44D7 /* PlaceIDFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7412321DFCEC0A00FB44D7 /* PlaceIDFetcher.swift */; };
+		FA7412351DFCEE7100FB44D7 /* PlaceID.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7412341DFCEE7100FB44D7 /* PlaceID.swift */; };
+		FA7412371DFCF9A000FB44D7 /* PlaceDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7412361DFCF9A000FB44D7 /* PlaceDetail.swift */; };
+		FA7412391DFCF9AD00FB44D7 /* PlaceDetailFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7412381DFCF9AD00FB44D7 /* PlaceDetailFetcher.swift */; };
 		FA88B4F81DF48D0600E9ED85 /* FifthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA88B4F71DF48D0600E9ED85 /* FifthViewController.swift */; };
 		FA8EA44D1DC1913000BEAAC6 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8EA44C1DC1913000BEAAC6 /* ThirdViewController.swift */; };
 		FAAC45111DE891480032A3A5 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAC45101DE891480032A3A5 /* Login.swift */; };
@@ -46,6 +50,10 @@
 		FA53050F1DE796DD001EB674 /* ImagePersister.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePersister.swift; sourceTree = "<group>"; };
 		FA5305151DE7D2C7001EB674 /* UIButton+CustomBorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIButton+CustomBorder.swift"; path = "Extensions/UIButton+CustomBorder.swift"; sourceTree = "<group>"; };
 		FA5305191DE7F9AB001EB674 /* TempTrip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TempTrip.swift; sourceTree = "<group>"; };
+		FA7412321DFCEC0A00FB44D7 /* PlaceIDFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceIDFetcher.swift; sourceTree = "<group>"; };
+		FA7412341DFCEE7100FB44D7 /* PlaceID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceID.swift; sourceTree = "<group>"; };
+		FA7412361DFCF9A000FB44D7 /* PlaceDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceDetail.swift; sourceTree = "<group>"; };
+		FA7412381DFCF9AD00FB44D7 /* PlaceDetailFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceDetailFetcher.swift; sourceTree = "<group>"; };
 		FA88B4F71DF48D0600E9ED85 /* FifthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FifthViewController.swift; sourceTree = "<group>"; };
 		FA8EA44C1DC1913000BEAAC6 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		FAAC45101DE891480032A3A5 /* Login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
@@ -146,6 +154,10 @@
 				FAD003BE1DF8F4AA00AE19E8 /* ImageURLFetcher.swift */,
 				FAD003C21DF90BCF00AE19E8 /* ImageFetcher.swift */,
 				FAAC451D1DE904E90032A3A5 /* FourthViewController.swift */,
+				FA7412341DFCEE7100FB44D7 /* PlaceID.swift */,
+				FA7412321DFCEC0A00FB44D7 /* PlaceIDFetcher.swift */,
+				FA7412361DFCF9A000FB44D7 /* PlaceDetail.swift */,
+				FA7412381DFCF9AD00FB44D7 /* PlaceDetailFetcher.swift */,
 				FA88B4F71DF48D0600E9ED85 /* FifthViewController.swift */,
 				FAF438851DC0FDAA0095D6FC /* Main.storyboard */,
 				FAF438881DC0FDAA0095D6FC /* Assets.xcassets */,
@@ -236,10 +248,13 @@
 				FAF438801DC0FDAA0095D6FC /* AppDelegate.swift in Sources */,
 				FAAC451E1DE904E90032A3A5 /* FourthViewController.swift in Sources */,
 				FA5305101DE796DD001EB674 /* ImagePersister.swift in Sources */,
+				FA7412351DFCEE7100FB44D7 /* PlaceID.swift in Sources */,
+				FA7412331DFCEC0A00FB44D7 /* PlaceIDFetcher.swift in Sources */,
 				FA88B4F81DF48D0600E9ED85 /* FifthViewController.swift in Sources */,
 				FAC5B1ED1DC8ED6B006C9156 /* RegisterViewController.swift in Sources */,
 				FAD003C11DF8F4D900AE19E8 /* ImageURL.swift in Sources */,
 				FA8EA44D1DC1913000BEAAC6 /* ThirdViewController.swift in Sources */,
+				FA7412371DFCF9A000FB44D7 /* PlaceDetail.swift in Sources */,
 				FAD003C31DF90BCF00AE19E8 /* ImageFetcher.swift in Sources */,
 				FAF438941DC110660095D6FC /* ViewController.swift in Sources */,
 				FAD003CA1DFA5DDB00AE19E8 /* TripDataSource.swift in Sources */,
@@ -250,6 +265,7 @@
 				FA09FAFE1DC58DDB00ED9599 /* SecondViewCell.swift in Sources */,
 				FA53051A1DE7F9AB001EB674 /* TempTrip.swift in Sources */,
 				FAD003BF1DF8F4AA00AE19E8 /* ImageURLFetcher.swift in Sources */,
+				FA7412391DFCF9AD00FB44D7 /* PlaceDetailFetcher.swift in Sources */,
 				FAAC45131DE896110032A3A5 /* LoginTextPersister.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
