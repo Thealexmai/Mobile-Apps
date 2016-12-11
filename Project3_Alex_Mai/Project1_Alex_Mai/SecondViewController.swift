@@ -55,7 +55,12 @@ class SecondViewController: UITableViewController {
             
             //if the selected row's trip is active, show the 5th view controller
             if(trip.status=="Active") {
+                
+                
                 let fifthViewController = self.storyboard?.instantiateViewController(withIdentifier: "FifthViewController") as! FifthViewController
+                
+                //pass the array of destinations as a string
+                fifthViewController.thisTrip = trip
                 
                 self.navigationController?.pushViewController(fifthViewController, animated: true)
             }

@@ -11,9 +11,12 @@ import UIKit
 import CoreLocation
 import MapKit
 
+//mapkit help: https://www.raywenderlich.com/90971/introduction-mapkit-swift-tutorial 
 class FifthViewController: UIViewController, CLLocationManagerDelegate {
     
     let locationManager = CLLocationManager()
+    var tripDataSource: TripDataSource!
+    var thisTrip: Trip!
     
     //MARK: Outlets
     @IBOutlet weak var tripDestination: UILabel!
@@ -39,15 +42,33 @@ class FifthViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tripDataSource = TripDataSource()
+        
+        //MARK: Load in known data
+        
+        //get the trip destinations
+        let tripDestinations = tripDataSource.getTripDestinations(trip: thisTrip)
+        print(tripDestinations)
+        
+        tripDestination.text = thisTrip.arrivalLocation
+        timeline.text = "Destination \(thisTrip.leg + 1) of \(tripDestinations.count)"
+        
+        //get the user's location and make the map point to it
         if let userLocation = locationManager.location {
-            print(userLocation.coordinate.latitude)
-            print(userLocation.coordinate.longitude)
+            centerMap(userLocation)
         }
+        
+        
         
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    //helper method for map
+    func centerMap(_ location: CLLocation) {
         
+        let locationDistance: CLLocationDistance = 1000
+        
+        let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate, locationDistance*2, locationDistance*2)
+        
+        mapView.setRegion(coordinateRegion, animated: true)
     }
 }

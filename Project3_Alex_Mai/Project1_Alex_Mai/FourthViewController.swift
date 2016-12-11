@@ -38,12 +38,6 @@ class FourthViewController: UIViewController {
         
         if let trips = userTrips {
             let thisTrip = trips[cellClicked]
-            //assign thisTrip to the SPECIFIC one clicked
-//            if let activeDestinations = thisTrip.destinations {
-//               
-            //the above if-let doesn't check for not nulls, be sure to check that
-//                print((activeDestinations.array[0] as! Destination).place!)
-//            }
             
             destinationLabel.text = thisTrip.arrivalLocation
             departFromLabel.text = String(format: NSLocalizedString("Depart From: %@", comment: "departFromLabel"), thisTrip.departLocation!)

@@ -64,16 +64,16 @@ class TripDataSource: NSObject {
         let destinationEntity = NSEntityDescription.entity(forEntityName: "Destination", in: managedContext)!
 
         
-        let presetDestinations = ["Space Needle", "Pike Place Market", "Pacific Science Center", "Museum of Flight", "5th Avenue Theatre", "Seattle Asian Art Museum"]
+        let presetDestinations = ["Waikiki Beach", "Diamond Head", "North Shore", "Arizona Memorial", "Polynesian Cultural Center", "Hanauma Bay"]
         
         let trip = Trip(entity: entity, insertInto: managedContext)
         trip.departLocation = "Rochester, NY"
-        trip.arrivalLocation = "Seattle, WA"
+        trip.arrivalLocation = "Honolulu, WA"
         trip.departureDate = "12-10-2016"
         trip.returnDate = "12-31-2016"
         trip.numTravelers = "2"
         trip.travelerNationality = "American"
-        trip.budget = "5000"
+        trip.budget = "10000"
         trip.ofAge = true
         trip.disabilities = false
         trip.purpose = "For fun"
@@ -100,7 +100,6 @@ class TripDataSource: NSObject {
         do {
             try managedContext.save()
             trips.append(trip)
-            save()
             return true
         }
         catch let error as NSError {
@@ -134,19 +133,40 @@ class TripDataSource: NSObject {
         trip.purpose = purposeText
         trip.status = statusText
         trip.login = AccountDataSource.whoAmI
+        trip.leg = 0
         trip.destinations = NSOrderedSet()
         
         
         do {
             try managedContext.save()
             trips.append(trip)
-            save()
             return true
         }
         catch let error as NSError {
-            print("Failed to save Entree.  \(error), \(error.userInfo)")
+            print("Failed to save Trip.  \(error), \(error.userInfo)")
             return false
         }
+    }
+    
+    func updateLeg(trip: Trip, leg: Int16) -> Bool{
+        guard let delegate = UIApplication.shared.delegate as? AppDelegate else {
+            return false
+        }
+        
+        let managedContext = delegate.persistentContainer.viewContext
+        
+        trip.leg = leg
+        
+        do {
+            try managedContext.save()
+            return true
+        }
+        catch let error as NSError {
+            print("Failed to save Trip.  \(error), \(error.userInfo)")
+            return false
+        }
+        
+        
     }
     
     func save() {
@@ -165,25 +185,27 @@ class TripDataSource: NSObject {
         }
     }
     
+    func getTripDestinations(trip: Trip) -> [String] {
+        
+        var destinationsStringArray = [String]()
+        
+        if let destinations = trip.destinations {
     
-    func moveTrip(_ from:Int, _ to:Int) {
-        let login = AccountDataSource.whoAmI
-        
-        //if from index not the same as to index
-        
-        var userTrips = [Trip]()
-        
-        for trip in trips {
-            if trip.login == login {
-                print(trip.arrivalLocation!)
-                userTrips.append(trip)
+            let destinationsArray: [Destination] = destinations.array as! [Destination]
+
+            for destination in destinationsArray {
+                if let thePlace: String = destination.place {
+                    destinationsStringArray.append(thePlace)
+
+                }
             }
-        }
+    
+        } //end if-let
         
-        if from != to {
-            let trip = userTrips[from]
-            userTrips.remove(at: from)
-            userTrips.insert(trip, at: to)
-        }
+        return destinationsStringArray
+    
+        
     }
+    
+    
 }

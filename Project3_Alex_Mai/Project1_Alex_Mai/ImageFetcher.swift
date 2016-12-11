@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+
 enum ImageFetchError: Error {
     case BadURL
     case ImageFetchFailed
