@@ -675,7 +675,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="InW-6f-jjp">
-                                <rect key="frame" x="16" y="20" width="343" height="647"/>
+                                <rect key="frame" x="16" y="40" width="343" height="607"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Destination Trip" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BQD-xO-ORu">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
@@ -731,7 +731,7 @@
                                                     <color key="titleColor" red="0.36372692950000002" green="0.35667470639999999" blue="0.89204068790000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="readmoreClicked:" destination="2NC-Q3-Acb" eventType="touchUpInside" id="r6p-t0-T4H"/>
+                                                    <segue destination="rlq-Am-I2R" kind="show" identifier="FifthVC-to-SixthVC" id="dM2-sS-Hjj"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -750,7 +750,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="247" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Ij9-vg-qea">
-                                        <rect key="frame" x="0.0" y="528" width="343" height="119"/>
+                                        <rect key="frame" x="0.0" y="528" width="343" height="79"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OZJ-k0-SV3">
                                                 <rect key="frame" x="0.0" y="0.0" width="189" height="30"/>
@@ -774,9 +774,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="InW-6f-jjp" firstAttribute="trailing" secondItem="cGr-nL-dP3" secondAttribute="trailingMargin" id="IP5-Ka-APb"/>
-                            <constraint firstItem="InW-6f-jjp" firstAttribute="top" secondItem="xbq-l7-dpf" secondAttribute="bottom" id="SC0-HQ-V4W"/>
+                            <constraint firstItem="InW-6f-jjp" firstAttribute="top" secondItem="xbq-l7-dpf" secondAttribute="bottom" constant="20" id="SC0-HQ-V4W"/>
                             <constraint firstItem="InW-6f-jjp" firstAttribute="leading" secondItem="cGr-nL-dP3" secondAttribute="leadingMargin" id="TRb-nm-LIS"/>
-                            <constraint firstItem="nch-hc-MUg" firstAttribute="top" secondItem="InW-6f-jjp" secondAttribute="bottom" id="fho-bY-VE9"/>
+                            <constraint firstItem="nch-hc-MUg" firstAttribute="top" secondItem="InW-6f-jjp" secondAttribute="bottom" constant="20" id="fho-bY-VE9"/>
                         </constraints>
                     </view>
                     <connections>
@@ -796,6 +796,39 @@
             </objects>
             <point key="canvasLocation" x="1588" y="154.72263868065968"/>
         </scene>
+        <!--Sixth View Controller-->
+        <scene sceneID="7ef-1B-Quw">
+            <objects>
+                <viewController id="rlq-Am-I2R" customClass="SixthViewController" customModule="Project3_Alex_Mai" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mm8-zp-KxW"/>
+                        <viewControllerLayoutGuide type="bottom" id="kVa-C7-OBv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Vsi-OW-Bjs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hra-LG-vcm">
+                                <rect key="frame" x="16" y="30" width="343" height="627"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="hra-LG-vcm" firstAttribute="top" secondItem="mm8-zp-KxW" secondAttribute="bottom" constant="10" id="95d-aQ-0ea"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hra-LG-vcm" secondAttribute="trailing" id="MCf-7P-U33"/>
+                            <constraint firstItem="kVa-C7-OBv" firstAttribute="top" secondItem="hra-LG-vcm" secondAttribute="bottom" constant="10" id="YGy-1k-aST"/>
+                            <constraint firstItem="hra-LG-vcm" firstAttribute="leading" secondItem="Vsi-OW-Bjs" secondAttribute="leadingMargin" id="YHf-1J-YHA"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="hra-LG-vcm" id="XVs-1i-cBh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kw1-t9-fyR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2476" y="154"/>
+        </scene>
         <!--Details About Trip-->
         <scene sceneID="TwZ-Gt-kvX">
             <objects>
@@ -809,7 +842,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="uLM-0z-Vq8">
-                                <rect key="frame" x="16" y="84" width="343" height="563"/>
+                                <rect key="frame" x="16" y="40" width="343" height="607"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalCompressionResistancePriority="753" text="Destination" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7z1-zl-EAh">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="33.5"/>
@@ -817,47 +850,47 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" verticalHuggingPriority="248" verticalCompressionResistancePriority="748" image="rochester" translatesAutoresizingMaskIntoConstraints="NO" id="AhM-Ge-g0R">
-                                        <rect key="frame" x="0.0" y="43.5" width="343" height="326.5"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" verticalHuggingPriority="248" verticalCompressionResistancePriority="748" image="la" translatesAutoresizingMaskIntoConstraints="NO" id="AhM-Ge-g0R">
+                                        <rect key="frame" x="0.0" y="43.5" width="343" height="370.5"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Depart From:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bMf-SG-Mod">
-                                        <rect key="frame" x="0.0" y="380" width="343" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="424" width="343" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Departure Date:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fB8-Sj-zD9">
-                                        <rect key="frame" x="0.0" y="410.5" width="343" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="454.5" width="343" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalCompressionResistancePriority="752" text="Return Date:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JrU-aq-ofE">
-                                        <rect key="frame" x="0.0" y="441" width="343" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="485" width="343" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalCompressionResistancePriority="751" text="Num Travelers:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H93-Sq-scD">
-                                        <rect key="frame" x="0.0" y="471.5" width="343" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="515.5" width="343" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Purpose of Trip:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yYz-DS-XEg">
-                                        <rect key="frame" x="0.0" y="502" width="343" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="546" width="343" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Status:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y4d-ZD-OF0">
-                                        <rect key="frame" x="0.0" y="532.5" width="343" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="576.5" width="343" height="20.5"/>
                                         <fontDescription key="fontDescription" type="italicSystem" pointSize="17"/>
                                         <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" verticalHuggingPriority="1" verticalCompressionResistancePriority="1" translatesAutoresizingMaskIntoConstraints="NO" id="RVy-FR-E8N">
-                                        <rect key="frame" x="0.0" y="563" width="343" height="0.0"/>
+                                        <rect key="frame" x="0.0" y="607" width="343" height="0.0"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                 </subviews>
@@ -1194,7 +1227,7 @@
     <resources>
         <image name="Personal" width="37" height="37"/>
         <image name="Planning" width="38" height="38"/>
+        <image name="la" width="1200" height="800"/>
         <image name="noperson" width="300" height="400"/>
-        <image name="rochester" width="2353" height="1225"/>
     </resources>
 </document>

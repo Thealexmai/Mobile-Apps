@@ -64,11 +64,11 @@ class TripDataSource: NSObject {
         let destinationEntity = NSEntityDescription.entity(forEntityName: "Destination", in: managedContext)!
 
         
-        let presetDestinations = ["Waikiki Beach", "Diamond Head", "North Shore", "Arizona Memorial", "Polynesian Cultural Center", "Hanauma Bay"]
+        let presetDestinations = ["Times Square", "Empire State Building", "High Line", "Intrepid Museum", "World Trade Center", "Chinatown"]
         
         let trip = Trip(entity: entity, insertInto: managedContext)
         trip.departLocation = "Rochester, NY"
-        trip.arrivalLocation = "Honolulu, WA"
+        trip.arrivalLocation = "New York, NY"
         trip.departureDate = "12-10-2016"
         trip.returnDate = "12-31-2016"
         trip.numTravelers = "2"
@@ -148,9 +148,9 @@ class TripDataSource: NSObject {
         }
     }
     
-    func updateLeg(trip: Trip, leg: Int16) -> Bool{
+    func updateLeg(trip: Trip, leg: Int16) -> Int16{
         guard let delegate = UIApplication.shared.delegate as? AppDelegate else {
-            return false
+            return 0
         }
         
         let managedContext = delegate.persistentContainer.viewContext
@@ -159,11 +159,11 @@ class TripDataSource: NSObject {
         
         do {
             try managedContext.save()
-            return true
+            return trip.leg
         }
         catch let error as NSError {
             print("Failed to save Trip.  \(error), \(error.userInfo)")
-            return false
+            return 0
         }
         
         

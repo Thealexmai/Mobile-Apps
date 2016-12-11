@@ -19,6 +19,8 @@ class FifthViewController: UIViewController, CLLocationManagerDelegate {
     var thisTrip: Trip!
     var placeIDFetcher: PlaceIDFetcher!
     var placeDetailFetcher: PlaceDetailFetcher!
+    var urlToInject: String!
+    
     
     //MARK: Outlets
     @IBOutlet weak var tripDestination: UILabel!
@@ -34,13 +36,43 @@ class FifthViewController: UIViewController, CLLocationManagerDelegate {
 
     
     //MARK: Actions
-    @IBAction func readmoreClicked(_ sender: Any) {
-    }
     @IBAction func alreadybeenClicked(_ sender: Any) {
-    }
-    @IBAction func directionsClicked(_ sender: Any) {
+        
+        let tripDestinations = tripDataSource.getTripDestinations(trip: thisTrip)
+
+        if (Int(thisTrip.leg) < (tripDestinations.count-1)) {
+        //update table
+        print(tripDataSource.updateLeg(trip: thisTrip, leg: thisTrip.leg+1))
+        
+        //update the view
+            //next destination is leg + 1
+        timeline.text = "Destination \(thisTrip.leg + 1) of \(tripDestinations.count)"
+
+        nextdestinationName.text = "Next Destination: \(tripDestinations[Int(thisTrip.leg)])"
+            
+        }
+        else {
+            nextdestinationName.text = "Trip complete!"
+            promptUser("Congratulations!", { (alert) in })
+
+        }
+        
     }
     
+    @IBAction func directionsClicked(_ sender: Any) {
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "FifthVC-to-SixthVC" {
+            if let sixthVC = segue.destination as? SixthViewController {
+
+                sixthVC.url = urlToInject
+
+            }
+
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -95,9 +127,10 @@ class FifthViewController: UIViewController, CLLocationManagerDelegate {
                                     self.locationReviews.text = "Rating information unavailable"
                                 }
                                 //if the website exists, then enable it to segue into 6thVC to link it there
-                                if (placeDetail.website != nil) {
+                                if let website = placeDetail.website {
                                     self.readmoreButton.isEnabled = true
                                     self.readmoreButton.setTitle("Click to read more", for: .normal)
+                                    self.urlToInject = website
                                     
                                 }
                             }
@@ -112,11 +145,12 @@ class FifthViewController: UIViewController, CLLocationManagerDelegate {
             } //end fetchPlaceID()
             
             
-            //search around user
+            //MARK: search around user
             
             
         }
         
+        nextdestinationName.text = "Next Destination: \(tripDestinations[Int(thisTrip.leg)])"
         
     }
     
@@ -128,5 +162,18 @@ class FifthViewController: UIViewController, CLLocationManagerDelegate {
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate, locationDistance*2, locationDistance*2)
         
         mapView.setRegion(coordinateRegion, animated: true)
+    }
+    
+    //helper method for prompt
+    func promptUser(_ message: String, _ dismiss: @escaping (UIAlertAction) -> Void) {
+        
+            let title = NSLocalizedString("Trip Finished", comment: "Trip Finished!")
+            let ac = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            
+            let warningMessage = UIAlertAction(title: NSLocalizedString("You finished your trip! Let's plan another!", comment: "You finished your trip! Let's plan another!"), style: .cancel, handler: dismiss)
+            ac.addAction(warningMessage)
+            
+            present(ac, animated: true, completion: nil)
+        
     }
 }
