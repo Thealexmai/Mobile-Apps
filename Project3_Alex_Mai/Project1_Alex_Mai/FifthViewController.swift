@@ -61,6 +61,17 @@ class FifthViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBAction func directionsClicked(_ sender: Any) {
         
+//        let coordinate = CLLocationCoordinate2DMake(43.5, -70.6)
+//        let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinate))
+
+        let tripDestinations = tripDataSource.getTripDestinationsAsDestinations(trip: thisTrip)
+        let nextDestination = tripDestinations[Int(thisTrip.leg)]
+        
+        let coordinate = CLLocationCoordinate2DMake(nextDestination.latittude, nextDestination.longitude)
+        let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinate))
+        mapItem.name = nextDestination.place
+        mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDefault])
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

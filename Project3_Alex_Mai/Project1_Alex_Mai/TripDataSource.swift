@@ -65,6 +65,8 @@ class TripDataSource: NSObject {
 
         
         let presetDestinations = ["Times Square", "Empire State Building", "High Line", "Intrepid Museum", "World Trade Center", "Chinatown"]
+        let latitudes = [40.7589, 40.7484, 40.7480, 40.7644, 40.7130, 40.7158]
+        let longitudes = [-73.9851, -73.9857, -74.0048, -73.9993, -74.0132, -73.9970]
         
         let trip = Trip(entity: entity, insertInto: managedContext)
         trip.departLocation = "Rochester, NY"
@@ -82,12 +84,21 @@ class TripDataSource: NSObject {
         
         let mutableSetcopy: NSMutableOrderedSet = trip.destinations?.mutableCopy() as! NSMutableOrderedSet
         
-        for aDestination in presetDestinations {
+        for i in 0..<presetDestinations.count {
             let destination = Destination(entity: destinationEntity, insertInto: managedContext)
-            destination.place = aDestination
+            destination.place = presetDestinations[i]
+            destination.latittude = latitudes[i]
+            destination.longitude = longitudes[i]
             mutableSetcopy.add(destination)
             
         }
+        
+//        for aDestination in presetDestinations {
+//            let destination = Destination(entity: destinationEntity, insertInto: managedContext)
+//            destination.place = aDestination
+//            mutableSetcopy.add(destination)
+//            
+//        }
         
         trip.destinations = mutableSetcopy.copy() as? NSOrderedSet
         
@@ -204,7 +215,19 @@ class TripDataSource: NSObject {
         
         return destinationsStringArray
     
+    }
+    
+    //to pass longitude and latitude
+    func getTripDestinationsAsDestinations(trip: Trip) -> [Destination] {
         
+        var destinationsArray: [Destination] = [Destination]()
+        
+        if let destinations = trip.destinations {
+            
+            destinationsArray = destinations.array as! [Destination]
+        }
+        
+        return destinationsArray
     }
     
     
