@@ -689,17 +689,23 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Return Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SMT-i5-YW6">
+                                        <rect key="frame" x="0.0" y="72.5" width="343" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.80000000000000004" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" mapType="standard" showsUserLocation="YES" showsScale="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P3x-Hl-dCs">
-                                        <rect key="frame" x="0.0" y="72.5" width="343" height="226"/>
+                                        <rect key="frame" x="0.0" y="104" width="343" height="226"/>
                                     </mapView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Gb-em-nSP">
-                                        <rect key="frame" x="0.0" y="309.5" width="343" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="341" width="343" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="SRf-lz-K4i">
-                                        <rect key="frame" x="0.0" y="341" width="343" height="113"/>
+                                        <rect key="frame" x="0.0" y="372.5" width="343" height="113"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Details about this place" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uv9-DF-388" userLabel="Details about this">
                                                 <rect key="frame" x="0.0" y="0.0" width="343" height="21.5"/>
@@ -737,19 +743,13 @@
                                         </subviews>
                                         <color key="backgroundColor" red="1" green="0.77523487810000002" blue="0.50217151640000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </stackView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Around You:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZGL-1q-2y8">
-                                        <rect key="frame" x="0.0" y="465" width="343" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Next destination is:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wMn-2D-Aaz">
                                         <rect key="frame" x="0.0" y="496.5" width="343" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="247" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Ij9-vg-qea">
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Ij9-vg-qea">
                                         <rect key="frame" x="0.0" y="528" width="343" height="79"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OZJ-k0-SV3">
@@ -781,7 +781,6 @@
                     </view>
                     <connections>
                         <outlet property="address" destination="9Gb-em-nSP" id="lX4-35-uMW"/>
-                        <outlet property="aroundYou" destination="ZGL-1q-2y8" id="0ne-DA-bbY"/>
                         <outlet property="locationHours" destination="aLc-HK-yQE" id="Cn9-2a-Dyi"/>
                         <outlet property="locationName" destination="lFa-jP-A7K" id="k33-fT-48g"/>
                         <outlet property="locationReviews" destination="en2-eJ-GH1" id="T4u-mr-OeG"/>

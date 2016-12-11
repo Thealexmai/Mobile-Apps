@@ -12,11 +12,13 @@ import CoreLocation
 import MapKit
 
 //mapkit help: https://www.raywenderlich.com/90971/introduction-mapkit-swift-tutorial 
+//map item https://developer.apple.com/reference/mapkit/mkmapitem
+
 class FifthViewController: UIViewController, CLLocationManagerDelegate {
     
     let locationManager = CLLocationManager()
     var tripDataSource: TripDataSource!
-    var thisTrip: Trip!
+    var thisTrip: Trip! //is injected by 4thVC
     var placeIDFetcher: PlaceIDFetcher!
     var placeDetailFetcher: PlaceDetailFetcher!
     var urlToInject: String!
@@ -25,12 +27,12 @@ class FifthViewController: UIViewController, CLLocationManagerDelegate {
     //MARK: Outlets
     @IBOutlet weak var tripDestination: UILabel!
     @IBOutlet weak var timeline: UILabel!
+    @IBOutlet weak var returnDate: UILabel!
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var address: UILabel!
     @IBOutlet weak var locationName: UILabel!
     @IBOutlet weak var locationHours: UILabel!
     @IBOutlet weak var locationReviews: UILabel!
-    @IBOutlet weak var aroundYou: UILabel!
     @IBOutlet weak var nextdestinationName: UILabel!
     @IBOutlet weak var readmoreButton: UIButton!
 
@@ -103,6 +105,8 @@ class FifthViewController: UIViewController, CLLocationManagerDelegate {
         
         tripDestination.text = thisTrip.arrivalLocation
         timeline.text = "Destination \(thisTrip.leg + 1) of \(tripDestinations.count)"
+        returnDate.text = thisTrip.returnDate
+        
         
         if let userLocation = locationManager.location {
             print("\(userLocation.coordinate.latitude) , \(userLocation.coordinate.longitude)")
@@ -154,9 +158,6 @@ class FifthViewController: UIViewController, CLLocationManagerDelegate {
                     print("error: \(error)")
                 }
             } //end fetchPlaceID()
-            
-            
-            //MARK: search around user
             
             
         }

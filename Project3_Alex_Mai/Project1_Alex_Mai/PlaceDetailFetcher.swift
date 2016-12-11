@@ -80,7 +80,7 @@ class PlaceDetailFetcher {
             //this json key is optional by google
             let open_hours = result["open_hours"] as? [String:AnyObject]
             
-            let placeDetail = PlaceDetail(formattedAddress: result["formatted_address"] as? String, name: result["name"] as? String, open_now: open_hours?["open_now"] as? Bool, rating: result["rating"] as? Double, website: result["website"] as? String)
+            let placeDetail = PlaceDetail(formattedAddress: result["formatted_address"] as? String, name: result["name"] as? String, open_now: open_hours?["open_now"] as? Bool, rating: result["rating"] as? Double, website: "http://www.alexpmai.com")
             
             return .PlaceDetailSuccess(placeDetail)
         }
