@@ -26,11 +26,17 @@
 /* Class = "UILabel"; text = "Destination"; ObjectID = "7z1-zl-EAh"; */
 "7z1-zl-EAh.text" = "Destination";
 
+/* Class = "UILabel"; text = "Address"; ObjectID = "9Gb-em-nSP"; */
+"9Gb-em-nSP.text" = "Address";
+
 /* Class = "UIButton"; normalTitle = "Login"; ObjectID = "AF7-kJ-4nl"; */
 "AF7-kJ-4nl.normalTitle" = "Login";
 
 /* Class = "UILabel"; text = "Departure Date:"; ObjectID = "ASI-V3-YDl"; */
 "ASI-V3-YDl.text" = "Departure Date:";
+
+/* Class = "UILabel"; text = "Destination Trip"; ObjectID = "BQD-xO-ORu"; */
+"BQD-xO-ORu.text" = "Destination Trip";
 
 /* Class = "UITabBarItem"; title = "My Plans"; ObjectID = "CAH-QB-ywl"; */
 "CAH-QB-ywl.title" = "My Plans";
@@ -59,6 +65,9 @@
 /* Class = "UITextField"; placeholder = "Number of Travelers"; ObjectID = "OSt-O6-RGK"; */
 "OSt-O6-RGK.placeholder" = "Number of Travelers";
 
+/* Class = "UIButton"; normalTitle = "Already been here!"; ObjectID = "OZJ-k0-SV3"; */
+"OZJ-k0-SV3.normalTitle" = "Already been here!";
+
 /* Class = "UILabel"; text = "Name: Donald Trump"; ObjectID = "PWa-g1-hBD"; */
 "PWa-g1-hBD.text" = "Name: Donald Trump";
 
@@ -76,6 +85,9 @@
 
 /* Class = "UILabel"; text = "Emergency: "; ObjectID = "RW7-dd-vwD"; */
 "RW7-dd-vwD.text" = "Emergency: ";
+
+/* Class = "UILabel"; text = "Return Date:"; ObjectID = "SMT-i5-YW6"; */
+"SMT-i5-YW6.text" = "Return Date:";
 
 /* Class = "UILabel"; text = "arrivalDestination"; ObjectID = "SP4-41-qXM"; */
 "SP4-41-qXM.text" = "arrivalDestination";
@@ -95,11 +107,17 @@
 /* Class = "UILabel"; text = "Status:"; ObjectID = "Y4d-ZD-OF0"; */
 "Y4d-ZD-OF0.text" = "Status:";
 
+/* Class = "UIButton"; normalTitle = "Read more about this place"; ObjectID = "YYH-qF-ebj"; */
+"YYH-qF-ebj.normalTitle" = "Read more about this place";
+
 /* Class = "UITextField"; placeholder = "Arrival Location (Rochester, NY)"; ObjectID = "ZJ0-KR-oUa"; */
 "ZJ0-KR-oUa.placeholder" = "Arrival Location (Rochester, NY)";
 
 /* Class = "UILabel"; text = "Email"; ObjectID = "ZvY-4v-UwF"; */
 "ZvY-4v-UwF.text" = "Email";
+
+/* Class = "UILabel"; text = "Open now:"; ObjectID = "aLc-HK-yQE"; */
+"aLc-HK-yQE.text" = "Open now:";
 
 /* Class = "UILabel"; text = "Hello this is a very long placeholder to see if what will shrink"; ObjectID = "aRH-Z1-c2S"; */
 "aRH-Z1-c2S.text" = "Hello this is a very long placeholder to see if what will shrink";
@@ -122,6 +140,12 @@
 /* Class = "UIButton"; normalTitle = "Register"; ObjectID = "eKw-F3-pPj"; */
 "eKw-F3-pPj.normalTitle" = "Register";
 
+/* Class = "UILabel"; text = "Ratings:"; ObjectID = "en2-eJ-GH1"; */
+"en2-eJ-GH1.text" = "Ratings:";
+
+/* Class = "UILabel"; text = "Destination 1 of n"; ObjectID = "eoL-wW-uYs"; */
+"eoL-wW-uYs.text" = "Destination 1 of n";
+
 /* Class = "UILabel"; text = "Departure Date:"; ObjectID = "fB8-Sj-zD9"; */
 "fB8-Sj-zD9.text" = "Departure Date:";
 
@@ -142,6 +166,9 @@
 
 /* Class = "UILabel"; text = "No"; ObjectID = "l53-uG-YzW"; */
 "l53-uG-YzW.text" = "No";
+
+/* Class = "UILabel"; text = "Name:"; ObjectID = "lFa-jP-A7K"; */
+"lFa-jP-A7K.text" = "Name:";
 
 /* Class = "UITextField"; placeholder = "Nationalities of Travelers"; ObjectID = "lga-uJ-vx8"; */
 "lga-uJ-vx8.placeholder" = "Nationalities of Travelers";
@@ -176,11 +203,20 @@
 /* Class = "UILabel"; text = "Already have an account? Sign in"; ObjectID = "ura-Rq-klt"; */
 "ura-Rq-klt.text" = "Already have an account? Sign in";
 
+/* Class = "UILabel"; text = "Details about this place"; ObjectID = "uv9-DF-388"; */
+"uv9-DF-388.text" = "Details about this place";
+
+/* Class = "UIButton"; normalTitle = "Directions to get there"; ObjectID = "vIK-CR-8ub"; */
+"vIK-CR-8ub.normalTitle" = "Directions to get there";
+
 /* Class = "UILabel"; text = "Yes"; ObjectID = "vbY-Us-9aD"; */
 "vbY-Us-9aD.text" = "Yes";
 
 /* Class = "UIViewController"; title = "ViewController"; ObjectID = "wKJ-Tn-Dl3"; */
 "wKJ-Tn-Dl3.title" = "ViewController";
+
+/* Class = "UILabel"; text = "Next destination is:"; ObjectID = "wMn-2D-Aaz"; */
+"wMn-2D-Aaz.text" = "Next destination is:";
 
 /* Class = "UIViewController"; title = "Personal Info"; ObjectID = "wlD-Ld-Z9s"; */
 "wlD-Ld-Z9s.title" = "Personal Info";
