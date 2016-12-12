@@ -48,14 +48,14 @@ class FifthViewController: UIViewController, CLLocationManagerDelegate {
         
         //update the view
             //next destination is leg + 1
-        timeline.text = "Destination \(thisTrip.leg + 1) of \(tripDestinations.count)"
+        timeline.text = NSLocalizedString("Destination \(thisTrip.leg + 1) of \(tripDestinations.count)", comment: "timeline label")
 
-        nextdestinationName.text = "Next Destination: \(tripDestinations[Int(thisTrip.leg)])"
+        nextdestinationName.text = NSLocalizedString("Next Destination: \(tripDestinations[Int(thisTrip.leg)])", comment: "nextDestinationName Label - next destination")
             
         }
         else {
-            nextdestinationName.text = "Trip complete!"
-            promptUser("Congratulations!", { (alert) in })
+            nextdestinationName.text = NSLocalizedString("Trip complete!", comment: "nextDestinationName label - trip complete")
+            promptUser(NSLocalizedString("Congratulations!", comment: "congratulations prompt"), { (alert) in })
 
         }
         
@@ -101,8 +101,8 @@ class FifthViewController: UIViewController, CLLocationManagerDelegate {
         print(tripDestinations)
         
         tripDestination.text = thisTrip.arrivalLocation
-        timeline.text = "Destination \(thisTrip.leg + 1) of \(tripDestinations.count)"
-        returnDate.text = "Returning: \(thisTrip.returnDate)"
+        timeline.text = NSLocalizedString("Destination \(thisTrip.leg + 1) of \(tripDestinations.count)", comment: "timeline label - update leg of trip")
+        returnDate.text = NSLocalizedString("Returning: \(thisTrip.returnDate!)", comment: "returnDate label")
         
         
         if let userLocation = locationManager.location {
@@ -125,23 +125,23 @@ class FifthViewController: UIViewController, CLLocationManagerDelegate {
                         case let .PlaceDetailSuccess(placeDetail):
                             OperationQueue.main.addOperation() {
                                 self.address.text = placeDetail.formattedAddress
-                                self.locationName.text = "Name: \(placeDetail.name!)"
+                                self.locationName.text = NSLocalizedString("Name: \(placeDetail.name!)", comment: "locationName label")
                                 if let open_now = placeDetail.open_now {
-                                    self.locationHours.text = "Open now: \(open_now.description))"
+                                    self.locationHours.text = NSLocalizedString("Open now: \(open_now.description))", comment: "locationHours label is open now")
                                 }
                                 else {
-                                    self.locationHours.text = "Open now information unavailable"
+                                    self.locationHours.text = NSLocalizedString("Open now information unavailable", comment: "locationHours unavailable")
                                 }
                                 if let rating = placeDetail.rating {
-                                    self.locationReviews.text = "Rating: \(rating.description)"
+                                    self.locationReviews.text = NSLocalizedString("Rating: \(rating.description)", comment: "locationReviews rating available")
                                 }
                                 else {
-                                    self.locationReviews.text = "Rating information unavailable"
+                                    self.locationReviews.text = NSLocalizedString("Rating information unavailable", comment: "locationReviews unavailable")
                                 }
                                 //if the website exists, then enable it to segue into 6thVC to link it there
                                 if let website = placeDetail.website {
                                     self.readmoreButton.isEnabled = true
-                                    self.readmoreButton.setTitle("Click to read more", for: .normal)
+                                    self.readmoreButton.setTitle(NSLocalizedString("Click to read more", comment: "readmoreButton title"), for: .normal)
                                     self.urlToInject = website
                                     
                                 }
@@ -159,7 +159,7 @@ class FifthViewController: UIViewController, CLLocationManagerDelegate {
             
         }
         
-        nextdestinationName.text = "Next Destination: \(tripDestinations[Int(thisTrip.leg)])"
+        nextdestinationName.text = NSLocalizedString("Next Destination: \(tripDestinations[Int(thisTrip.leg)])", comment: "nextdestinationName")
         
     }
     

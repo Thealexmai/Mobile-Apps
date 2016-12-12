@@ -17,23 +17,6 @@ class SecondViewController: UITableViewController {
     var tripsDataSource: TripDataSource!
     var userTrips: [Trip]?
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        //find out which cell is clicked
-        
-//        if segue.identifier == "SecondVC-to-FourthVC" {
-//            
-//            //get the cell row that has been selected and pass to 4th VC
-//            let indexPath:Int = self.tableView.indexPathForSelectedRow!.row
-//
-//            if let fourthVC = segue.destination as? FourthViewController {
-//            
-//                fourthVC.cellClicked = indexPath
-//                
-//            }
-//            
-//        }
-    }
-    
     //MARK: Actions
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("Hi \(indexPath.row)")
@@ -97,23 +80,6 @@ class SecondViewController: UITableViewController {
 
         return cell
     }
-
-//    
-//    //confirm delete helper method
-//    func verifyDelete(_ name: String, _ delete: @escaping (UIAlertAction) -> Void) {
-//        let title = String(format: NSLocalizedString("verifyDelete-title", comment: "Delete %@?"), name)
-//        let message = String(format: NSLocalizedString("verifyDelete-message", comment: "Are you sure that you want to delete %@?"), title)
-//        
-//        let ac = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
-//        
-//        let cancelAction = UIAlertAction(title: NSLocalizedString("verifyDelete-cancel", comment: "Cancel"), style: .cancel, handler: nil)
-//        ac.addAction(cancelAction)
-//        
-//        let deleteAction = UIAlertAction(title: NSLocalizedString("verifyDelete-delete", comment: "Delete"), style: .destructive, handler: delete)
-//        ac.addAction(deleteAction)
-//        
-//        present(ac, animated: true, completion: nil)
-//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
