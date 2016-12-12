@@ -105,7 +105,10 @@ class FirstViewController: UITableViewController, UITextFieldDelegate {
             if (departLocationText.isEmpty || arrivalLocationText.isEmpty || departureDateText.isEmpty || returnDateText.isEmpty || numTravelersText.isEmpty || travelerNationalityText.isEmpty || budgetText.isEmpty || purposeText.isEmpty) {
                 warnUser(NSLocalizedString("At least one of the fields is empty. Please go back and fix it.", comment: "One of the fields is empty."))
             }
-            else if (!cityStateConforms(departLocationText) || !cityStateConforms(arrivalLocationText)) {
+            else if (!cityStateConforms(departLocationText)) {
+                warnUser(NSLocalizedString("Your location must match 'City, State' format. Please go back and fix it.", comment: "Location must match City, State format"))
+            }
+            else if (!cityStateConforms(arrivalLocationText)) {
                 warnUser(NSLocalizedString("Your location must match 'City, State' format. Please go back and fix it.", comment: "Location must match City, State format"))
             }
             else {
@@ -255,10 +258,24 @@ class FirstViewController: UITableViewController, UITextFieldDelegate {
     func cityStateConforms(_ location: String) -> Bool {
         let characters = location.components(separatedBy: " ")
         
-        if (!characters[0].contains(",")) {
+        print(characters.count)
+        
+        if (characters.count < 2) {
             return false
         }
-        else if (characters.count != 2) {
+        else if (characters.count < 4) {
+            if(characters.count == 2) {
+                if(!characters[0].contains(",")) {
+                    return false
+                }
+            }
+            if(characters.count == 3) {
+                if(!characters[1].contains(",")) {
+                    return false
+                }
+            }
+        }
+        else if(characters.count > 3) {
             return false
         }
         
