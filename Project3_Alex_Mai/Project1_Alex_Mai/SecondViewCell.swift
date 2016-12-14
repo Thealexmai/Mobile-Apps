@@ -12,6 +12,7 @@ class SecondViewCell: UITableViewCell {
     @IBOutlet var arrivalDestination: UILabel!
     @IBOutlet var departureDate: UILabel!
     @IBOutlet var returnDate: UILabel!
+    @IBOutlet weak var arrowLabel: UILabel!
     
     func updateLabels() {
         let bodyFont = UIFont.preferredFont(forTextStyle: UIFontTextStyle.body)

@@ -613,7 +613,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="63H-hf-3Nr">
-                                            <rect key="frame" x="356" y="61" width="11" height="21"/>
+                                            <rect key="frame" x="335" y="61" width="11" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
@@ -623,7 +623,7 @@
                                         <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="SP4-41-qXM" secondAttribute="trailing" id="HMH-WM-Gs5"/>
                                         <constraint firstItem="tcb-DR-Zwd" firstAttribute="centerY" secondItem="G3e-YN-T0w" secondAttribute="centerY" constant="4" id="NRU-eB-3Im"/>
                                         <constraint firstItem="tcb-DR-Zwd" firstAttribute="top" secondItem="SP4-41-qXM" secondAttribute="bottom" constant="17" id="VKD-zN-6lq"/>
-                                        <constraint firstItem="63H-hf-3Nr" firstAttribute="centerX" secondItem="G3e-YN-T0w" secondAttribute="centerX" constant="174" id="dmL-90-3RP"/>
+                                        <constraint firstItem="63H-hf-3Nr" firstAttribute="centerX" secondItem="G3e-YN-T0w" secondAttribute="centerX" constant="153" id="dmL-90-3RP"/>
                                         <constraint firstItem="0Ou-Wn-kAa" firstAttribute="leading" secondItem="SP4-41-qXM" secondAttribute="leading" id="eQc-eL-oeT"/>
                                         <constraint firstItem="63H-hf-3Nr" firstAttribute="centerY" secondItem="G3e-YN-T0w" secondAttribute="centerY" id="nA0-M2-NEZ"/>
                                         <constraint firstItem="tcb-DR-Zwd" firstAttribute="leading" secondItem="SP4-41-qXM" secondAttribute="leading" id="ocM-yp-Aex"/>
@@ -635,6 +635,7 @@
                                 <gestureRecognizers/>
                                 <connections>
                                     <outlet property="arrivalDestination" destination="SP4-41-qXM" id="Gig-PN-cml"/>
+                                    <outlet property="arrowLabel" destination="63H-hf-3Nr" id="MDK-aY-8WY"/>
                                     <outlet property="departureDate" destination="tcb-DR-Zwd" id="b1G-16-z3i"/>
                                     <outlet property="returnDate" destination="0Ou-Wn-kAa" id="XbJ-Bg-w8a"/>
                                 </connections>
@@ -698,7 +699,7 @@
                                     <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" mapType="standard" showsUserLocation="YES" showsScale="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P3x-Hl-dCs">
                                         <rect key="frame" x="0.0" y="104" width="343" height="226"/>
                                     </mapView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Gb-em-nSP">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Gb-em-nSP">
                                         <rect key="frame" x="0.0" y="341" width="343" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -743,25 +744,31 @@
                                         </subviews>
                                         <color key="backgroundColor" red="1" green="0.77523487810000002" blue="0.50217151640000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </stackView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Next destination is:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wMn-2D-Aaz">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Next destination is:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wMn-2D-Aaz">
                                         <rect key="frame" x="0.0" y="496.5" width="343" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Ij9-vg-qea">
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Ij9-vg-qea">
                                         <rect key="frame" x="0.0" y="528" width="343" height="79"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OZJ-k0-SV3">
-                                                <rect key="frame" x="0.0" y="0.0" width="189" height="30"/>
-                                                <state key="normal" title="Already been here!"/>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OZJ-k0-SV3">
+                                                <rect key="frame" x="0.0" y="0.0" width="171.5" height="30"/>
+                                                <color key="backgroundColor" red="0.37647058820000001" green="0.34509803919999998" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <state key="normal" title="Already been here!">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="alreadybeenClicked:" destination="2NC-Q3-Acb" eventType="touchUpInside" id="Cvd-eQ-Oqh"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vIK-CR-8ub">
-                                                <rect key="frame" x="189" y="0.0" width="154" height="30"/>
-                                                <state key="normal" title="Directions to get there"/>
+                                                <rect key="frame" x="171.5" y="0.0" width="171.5" height="30"/>
+                                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <state key="normal" title="Directions">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="directionsClicked:" destination="2NC-Q3-Acb" eventType="touchUpInside" id="LhO-Pr-l5V"/>
                                                 </connections>

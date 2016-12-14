@@ -206,8 +206,8 @@
 /* Class = "UILabel"; text = "Details about this place"; ObjectID = "uv9-DF-388"; */
 "uv9-DF-388.text" = "Details about this place";
 
-/* Class = "UIButton"; normalTitle = "Directions to get there"; ObjectID = "vIK-CR-8ub"; */
-"vIK-CR-8ub.normalTitle" = "Directions to get there";
+/* Class = "UIButton"; normalTitle = "Directions"; ObjectID = "vIK-CR-8ub"; */
+"vIK-CR-8ub.normalTitle" = "Directions";
 
 /* Class = "UILabel"; text = "Yes"; ObjectID = "vbY-Us-9aD"; */
 "vbY-Us-9aD.text" = "Yes";
