@@ -64,9 +64,9 @@ class TripDataSource: NSObject {
         let destinationEntity = NSEntityDescription.entity(forEntityName: "Destination", in: managedContext)!
 
         
-        let presetDestinations = ["Times Square", "Empire State Building", "High Line", "Intrepid Museum", "World Trade Center", "Chinatown"]
-        let latitudes = [40.7589, 40.7484, 40.7480, 40.7644, 40.7130, 40.7158]
-        let longitudes = [-73.9851, -73.9857, -74.0048, -73.9993, -74.0132, -73.9970]
+        let presetDestinations = ["Rochester Airport (ROC)", "Times Square", "Empire State Building", "High Line", "Intrepid Museum", "World Trade Center", "Chinatown"]
+        let latitudes = [43.1225, 40.7589, 40.7484, 40.7480, 40.7644, 40.7130, 40.7158]
+        let longitudes = [-77.6666, -73.9851, -73.9857, -74.0048, -73.9993, -74.0132, -73.9970]
         
         let trip = Trip(entity: entity, insertInto: managedContext)
         trip.departLocation = "Rochester, NY"
@@ -93,19 +93,12 @@ class TripDataSource: NSObject {
             
         }
         
-//        for aDestination in presetDestinations {
-//            let destination = Destination(entity: destinationEntity, insertInto: managedContext)
-//            destination.place = aDestination
-//            mutableSetcopy.add(destination)
-//            
-//        }
-        
         trip.destinations = mutableSetcopy.copy() as? NSOrderedSet
         
-        let arrayRepresentation = trip.destinations?.array as! [Destination]
-        for destination in arrayRepresentation {
-            print(destination.place!)
-        }
+//        let arrayRepresentation = trip.destinations?.array as! [Destination]
+//        for destination in arrayRepresentation {
+//            print(destination.place!)
+//        }
         
         
         do {
@@ -114,7 +107,7 @@ class TripDataSource: NSObject {
             return true
         }
         catch let error as NSError {
-            print("Failed to save Entree.  \(error), \(error.userInfo)")
+            print("Failed to save Trip.  \(error), \(error.userInfo)")
             return false
         }
         

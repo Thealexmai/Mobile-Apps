@@ -20,6 +20,7 @@ class FifthViewController: UIViewController, CLLocationManagerDelegate {
     var tripDataSource: TripDataSource!
     var thisTrip: Trip! //is injected by 4thVC
     var placeIDFetcher: PlaceIDFetcher!
+    var nearbySearchFetcher: NearbySearchFetcher!
     var placeDetailFetcher: PlaceDetailFetcher!
     var urlToInject: String!
     
@@ -90,6 +91,7 @@ class FifthViewController: UIViewController, CLLocationManagerDelegate {
         tripDataSource = TripDataSource()
         placeIDFetcher = PlaceIDFetcher()
         placeDetailFetcher = PlaceDetailFetcher()
+        nearbySearchFetcher = NearbySearchFetcher()
         
         readmoreButton.setTitle("", for: .disabled)
         
@@ -112,11 +114,11 @@ class FifthViewController: UIViewController, CLLocationManagerDelegate {
             
             //fill in details about this place
             //1. reverse geo-locate to get place ID from coordinates, 2. do place details search
-            placeIDFetcher.fetchPlaceID(for: userLocation.coordinate.latitude, longitude: userLocation.coordinate.longitude) {
-                (PlaceIDResult) -> Void in
+            nearbySearchFetcher.fetchNearbySearch(for: userLocation.coordinate.latitude, longitude: userLocation.coordinate.longitude) {
+                (NearbySearchResult) -> Void in
                 
-                switch(PlaceIDResult) {
-                case let .PlaceIDSuccess(placeID):
+                switch(NearbySearchResult) {
+                case let .NearbySearchSuccess(placeID):
                     //make a Google Place details search
                     self.placeDetailFetcher.fetchPlaceDetails(for: placeID.id!) {
                         (placeDetailInfo) -> Void in
@@ -151,10 +153,10 @@ class FifthViewController: UIViewController, CLLocationManagerDelegate {
                         
                         }
                     } //end .fetchPlaceDetails()
-                case let .PlaceIDFailure(error):
+                case let .NearbySearchFailure(error):
                     print("error: \(error)")
                 }
-            } //end fetchPlaceID()
+            } //end NearbySearchFetcher()
             
             
         }

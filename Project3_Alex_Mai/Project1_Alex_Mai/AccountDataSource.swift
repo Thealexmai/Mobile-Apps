@@ -50,9 +50,7 @@ class AccountDataSource: NSObject {
     func validatedAccount(_ login: String, _ password: String) -> Bool {
         for account in accounts {
             if account.login == login {
-                print("Hi")
                 AccountDataSource.whoAmI = login
-                print(AccountDataSource.whoAmI)
                 return true
             }
         }
