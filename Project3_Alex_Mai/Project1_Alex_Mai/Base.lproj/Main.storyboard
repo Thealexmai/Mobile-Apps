@@ -816,25 +816,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hra-LG-vcm">
-                                <rect key="frame" x="16" y="60.5" width="343" height="596.5"/>
+                                <rect key="frame" x="16" y="30" width="343" height="627"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </webView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Website" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KQu-GO-yde">
-                                <rect key="frame" x="16" y="30" width="343" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="hra-LG-vcm" firstAttribute="top" secondItem="KQu-GO-yde" secondAttribute="bottom" constant="10" id="H4o-mv-ZPZ"/>
+                            <constraint firstItem="hra-LG-vcm" firstAttribute="top" secondItem="mm8-zp-KxW" secondAttribute="bottom" constant="10" id="95d-aQ-0ea"/>
                             <constraint firstAttribute="trailingMargin" secondItem="hra-LG-vcm" secondAttribute="trailing" id="MCf-7P-U33"/>
-                            <constraint firstItem="KQu-GO-yde" firstAttribute="top" secondItem="mm8-zp-KxW" secondAttribute="bottom" constant="10" id="N75-UB-ktQ"/>
                             <constraint firstItem="kVa-C7-OBv" firstAttribute="top" secondItem="hra-LG-vcm" secondAttribute="bottom" constant="10" id="YGy-1k-aST"/>
                             <constraint firstItem="hra-LG-vcm" firstAttribute="leading" secondItem="Vsi-OW-Bjs" secondAttribute="leadingMargin" id="YHf-1J-YHA"/>
-                            <constraint firstAttribute="trailingMargin" relation="lessThanOrEqual" secondItem="KQu-GO-yde" secondAttribute="trailing" id="pEf-q5-Cwe"/>
-                            <constraint firstItem="KQu-GO-yde" firstAttribute="leading" secondItem="Vsi-OW-Bjs" secondAttribute="leadingMargin" id="ske-qM-VLL"/>
                         </constraints>
                     </view>
                     <connections>
@@ -843,7 +834,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kw1-t9-fyR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2476" y="152.47376311844079"/>
+            <point key="canvasLocation" x="2476" y="154"/>
         </scene>
         <!--Details About Trip-->
         <scene sceneID="TwZ-Gt-kvX">
