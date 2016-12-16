@@ -16,9 +16,14 @@ Alex Mai (amai2@u.rochester.edu)
 (e) Use of Maps view. I embed a map view to help the user know where he or she is during an active trip. I also have a button that launches the Map app from within my app that navigates him or her to the next leg of the trip.
 
 4. Instructions:
-Launch the app and click on the buttons as you wish. After you register, you can immediately use those credentials to log in.
+Launch the app and click on the buttons as you wish. 
+
+Be sure to say yes to the app using your location, and be sure to specify your location. If you are running this on the phone, then there’s nothing to do. If you’re running this on Simulator, then with Simulator active please click on Debug > Location > Custom Location (for me, I use latitude: 43.1244, and longitude -77.6194). This is close to the Hilton Garden Inn near the Medical Center at the U of R.
+
+After you register, you can immediately use those credentials to log in.
 
 After logging in, you will be presented a a view controller that’s embedded in navigation controller. If you have active trip plans (which you should because I included a trip for New York City for demo purposes), then you may select it on the table view and it will display to you where you are and information about where you currently are. It will have an option for you to navigate to the next destination, which opens up the Maps app. Otherwise, there are two bar buttons on the top. The one on the left shows you more information about yourself, that you entered from the registration form. The right button shows you a form to request a trip. Once you complete the form, you can go back and you will see that it has been added as an pending trip. However, upon tapping to get more information about the trip, you will notice that the status of the trip is “pending”, instead of “active”. In there, the image dynamically loads.
+
 
 5. Attachments
 proposal.pdf - for reference

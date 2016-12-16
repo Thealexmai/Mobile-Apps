@@ -12,7 +12,6 @@
 		FA5305101DE796DD001EB674 /* ImagePersister.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA53050F1DE796DD001EB674 /* ImagePersister.swift */; };
 		FA5305161DE7D2C7001EB674 /* UIButton+CustomBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5305151DE7D2C7001EB674 /* UIButton+CustomBorder.swift */; };
 		FA53051A1DE7F9AB001EB674 /* TempTrip.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5305191DE7F9AB001EB674 /* TempTrip.swift */; };
-		FA7412331DFCEC0A00FB44D7 /* PlaceIDFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7412321DFCEC0A00FB44D7 /* PlaceIDFetcher.swift */; };
 		FA7412351DFCEE7100FB44D7 /* PlaceID.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7412341DFCEE7100FB44D7 /* PlaceID.swift */; };
 		FA7412371DFCF9A000FB44D7 /* PlaceDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7412361DFCF9A000FB44D7 /* PlaceDetail.swift */; };
 		FA7412391DFCF9AD00FB44D7 /* PlaceDetailFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7412381DFCF9AD00FB44D7 /* PlaceDetailFetcher.swift */; };
@@ -50,7 +49,6 @@
 		FA53050F1DE796DD001EB674 /* ImagePersister.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePersister.swift; sourceTree = "<group>"; };
 		FA5305151DE7D2C7001EB674 /* UIButton+CustomBorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIButton+CustomBorder.swift"; path = "Extensions/UIButton+CustomBorder.swift"; sourceTree = "<group>"; };
 		FA5305191DE7F9AB001EB674 /* TempTrip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TempTrip.swift; sourceTree = "<group>"; };
-		FA7412321DFCEC0A00FB44D7 /* PlaceIDFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceIDFetcher.swift; sourceTree = "<group>"; };
 		FA7412341DFCEE7100FB44D7 /* PlaceID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceID.swift; sourceTree = "<group>"; };
 		FA7412361DFCF9A000FB44D7 /* PlaceDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceDetail.swift; sourceTree = "<group>"; };
 		FA7412381DFCF9AD00FB44D7 /* PlaceDetailFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceDetailFetcher.swift; sourceTree = "<group>"; };
@@ -100,7 +98,6 @@
 				FAD003BE1DF8F4AA00AE19E8 /* ImageURLFetcher.swift */,
 				FAD003C21DF90BCF00AE19E8 /* ImageFetcher.swift */,
 				FA7412341DFCEE7100FB44D7 /* PlaceID.swift */,
-				FA7412321DFCEC0A00FB44D7 /* PlaceIDFetcher.swift */,
 				FA7412361DFCF9A000FB44D7 /* PlaceDetail.swift */,
 				FA7412381DFCF9AD00FB44D7 /* PlaceDetailFetcher.swift */,
 				FACF5D8B1E02E36800C3F828 /* NearbySearchFetcher.swift */,
@@ -272,7 +269,6 @@
 				FA5305101DE796DD001EB674 /* ImagePersister.swift in Sources */,
 				FA7412351DFCEE7100FB44D7 /* PlaceID.swift in Sources */,
 				FACF5D8C1E02E36800C3F828 /* NearbySearchFetcher.swift in Sources */,
-				FA7412331DFCEC0A00FB44D7 /* PlaceIDFetcher.swift in Sources */,
 				FA88B4F81DF48D0600E9ED85 /* FifthViewController.swift in Sources */,
 				FAC5B1ED1DC8ED6B006C9156 /* RegisterViewController.swift in Sources */,
 				FAD003C11DF8F4D900AE19E8 /* ImageURL.swift in Sources */,

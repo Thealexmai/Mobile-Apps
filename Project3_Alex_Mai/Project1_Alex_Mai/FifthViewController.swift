@@ -19,7 +19,6 @@ class FifthViewController: UIViewController, CLLocationManagerDelegate {
     let locationManager = CLLocationManager()
     var tripDataSource: TripDataSource!
     var thisTrip: Trip! //is injected by 4thVC
-    var placeIDFetcher: PlaceIDFetcher!
     var nearbySearchFetcher: NearbySearchFetcher!
     var placeDetailFetcher: PlaceDetailFetcher!
     var urlToInject: String!
@@ -89,7 +88,6 @@ class FifthViewController: UIViewController, CLLocationManagerDelegate {
         super.viewDidLoad()
         
         tripDataSource = TripDataSource()
-        placeIDFetcher = PlaceIDFetcher()
         placeDetailFetcher = PlaceDetailFetcher()
         nearbySearchFetcher = NearbySearchFetcher()
         
